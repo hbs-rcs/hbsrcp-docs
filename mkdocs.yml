@@ -2,7 +2,7 @@ site_name: 'HBS Research Computing Platform Documentation'
 site_url: 'https://hbs-rcs.github.io/hbsrcp-docs/'
 copyright: 'Copyright &copy; President & Fellows of Harvard College.'
 repo_url: 'https://github.com/hbs-rcs/hbsrcp-docs'
-edit_uri: '/hbs-rcs/hbsrcp-docs/edit/main/docs/'
+edit_uri: '/main/docs/'
 docs_dir: 'docs'
 remote_branch: gh-pages
 
