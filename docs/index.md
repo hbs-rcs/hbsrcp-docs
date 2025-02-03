@@ -4,21 +4,15 @@ hide:
   - toc
 ---
 
-# The HBS Grid makes massive computing power accessible to the whole HBS research community. Our environments offer a **familiar desktop interface** and **configured software applications** including *Julia*, *Jupyterlab*, *Matlab*, *Python*, *R / Rstudio*, *Stata*, *VSCode*, and hundreds of other popular programs
+# The HBS Research Computing Platform (RCP) in the cloud will transform how computational research is supported at HBS.
 
-The HBS Grid consists of many computers connected by a fast
-network and shared network storage. These powerful machines have up to 1.4Tb of
-memory and up to 32 cores each, and together they provide the backbone
-of HBS's research computing capabilities. User-friendly tools and environments
-are built on top of this physical and network infrastructure,
-making the power of our computing cluster accessible to all HBS researchers.
-Using the HBS Grid you can:
+# Designed to meet the demands of modern research, this platform provides an array of computational tools in a project-based centralized system that facilitates collaboration, data management, and compliance.   
 
-- Interactively analyze data too large for local memory.
-- Speed up your analysis using hundreds of CPUs across multiple machines.
-- Access your persistent remote desktop from anywhere with an internet connection.
-- Store, backup, and access large research data.
-- Share data and collaborate with HBS affiliates and guests.
+The user-friendly interface has been specifically designed with the business researcher in mind. It is customized to your unique projects, seamlessly integrating advanced data science tools, scalable computing power, and cutting-edge collaboration features.
+
+The RCP will have an Initial Release in February 2025 with early adopters to gather feedback, facilitate iterative improvements, validate enhancements, and optimize resources, followed by an Expanded Release available to all HBS researchers and projects in Fall 2025.
+
+If you have a project that you think will be a good fit for the Initial Release, [contact Research Computing Services](mailto:research@hbs.edu).
 
 ## Quick start
    
