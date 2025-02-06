@@ -9,21 +9,19 @@ remote_branch: gh-pages
 nav:
   - Start Here: 'index.md'
   - Launchers and Software:
-      - 🚀 Choosing Launchers: 'menulaunch.md'
-      - 🐚 Launching Sessions: 'commandline.md'
-      - 📦 Available Software: 'software.md'
-      - 📦 Installing Packages: 'software.md'
+      - 🚀 Choosing Launchers: 'chooselaunch.md'
+      - 🐚 Launching and Managing Sessions: 'sessions.md'
+      - 📦 RCP Capabilities and Software: 'software.md'
   - Data & Storage:
       - 💾 Storage & Databases: "storage.md"
       - 🔄 Copy and Transfer Files: 'syncfiles.md'
       - 👥 Collaborate and Share: 'worksafe.md'
   - Billing:
-      - Billing Overview: 'tutorials.md'
-      - Manage Billing: 'environments.md'
+      - 💵 Billing Overview: 'billing.md'
+      - 💸 Monitor Billing: 'monitorbilling.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
-      - Account & Project Requests: 'accountmanagement.md'
 
 theme:
   name: material
