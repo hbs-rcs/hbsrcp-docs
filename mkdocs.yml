@@ -8,26 +8,22 @@ remote_branch: gh-pages
 
 nav:
   - Start Here: 'index.md'
-  - Software & Environments:
+  - Launchers and Software:
+      - 🚀 Choosing Launchers: 'menulaunch.md'
+      - 🐚 Launching Sessions: 'commandline.md'
       - 📦 Available Software: 'software.md'
-      - 🚀 Run Desktop Applications: 'menulaunch.md'
-      - 🐚 Use the Command-line: 'commandline.md'
-      - 🔙 Use Software Versions: 'environments.md'
+      - 📦 Installing Packages: 'software.md'
   - Data & Storage:
       - 💾 Storage & Databases: "storage.md"
       - 🔄 Copy and Transfer Files: 'syncfiles.md'
       - 👥 Collaborate and Share: 'worksafe.md'
+  - Billing:
+      - Billing Overview: 'tutorials.md'
+      - Manage Billing: 'environments.md'
   - Help & Support Requests:
+      - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
       - Account & Project Requests: 'accountmanagement.md'
-      - Troubleshooting: 'trouble.md'
-  - Tutorials:
-    - Topic list: 'tutorials.md'
-    - Parallel processing: 'tutorials/scaling-work.md'
-    - Large data in R: 'tutorials/large_data_R.md'
-    - Web Scraping in Python: 'tutorials/PythonWebScrape.md'
-    - NLP in Python: 'tutorials/nlp_with_python.md'
-    - Database Delimiters: 'tutorials/DatabaseDelimiters.md'
 
 theme:
   name: material
