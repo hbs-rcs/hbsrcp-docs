@@ -34,11 +34,12 @@ To learn more about the Initial Release, visit our [program page](https://hbs.sh
 3.  Project owners: [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new)
     
     Note that before requesting a project space, project owners:
-      - must be an HBS faculty member, doctoral student, or pre-approved postdoc
-      - must have an RCP account
-      - must have logged into their RCP account at least once
+    - must be an HBS faculty member, doctoral student, or pre-approved postdoc
+    - must have an RCP account
+    - must have logged into their RCP account at least once
     
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
+
 4. Use the RCP and manage your project
 
 ## Feedback and support
