@@ -3,8 +3,8 @@
 HBS faculty members, doctoral students, and pre-approve post-docs can be project owners.
 The Project Owner follows the Account and Project Provisioning Process:
 
-    - The first step is to [request access to the RCP](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) as a project owner.
-    - After accessing the RCP, you can [request space for your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). 
+- The first step is to [request access to the RCP](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) as a project owner.
+- After accessing the RCP, you can [request space for your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). 
 
 The Project Owner can [invite team members](#manage-your-team) to the platform and reqest to add or remove them to their projects.
 
@@ -19,17 +19,16 @@ External team members must request access with [this URL](https://secure.hbs.edu
 
 ## Choose Launcher Configurations
 
-Coming soon
+*Coming soon*
       
 ## View Costs
 
 We have developed a cloud cost chargeback model with the following principles:
     
-    - Positive experience for faculty to use the platform and to experiment 
-    - Reasonable and clear to faculty 
-    - Incentive to use resources wisely 
-    - Controls to monitor and manage costs, including faculty-level AWS subaccounts 
-        and code optimization in partnership with RCS and IT Research Technologies 
-    - Alignment with the research budget planning process 
+- Positive experience for faculty to use the platform and to experiment 
+- Reasonable and clear to faculty 
+- Incentive to use resources wisely 
+- Controls to monitor and manage costs, including faculty-level AWS subaccounts and code optimization in partnership with RCS and IT Research Technologies 
+- Alignment with the research budget planning process 
 
 During the initial rollout, all cloud costs incurred on the platform will be covered through an automatic reimbursement process. After the initial rollout, cloud costs incurred on the platform will be covered through an automatic reimbursement process up to a limit, set to cover most faculty and usage. Costs above the limit will be charged to research budgets, with increases to budgets as needed through the research budget supplement request process. We will gather data on cloud costs and usage to validate our budget assumptions. 
