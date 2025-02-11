@@ -4,9 +4,9 @@
 
 A range of software applications, utilities, and libraries are
 available on the platform: 
-*List here*
+*Coming soon*
 
 ### Installing Packages or Modules
 
-You may need to install R packages or Python modules.
+*Coming soon*
 
