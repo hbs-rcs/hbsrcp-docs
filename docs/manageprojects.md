@@ -14,7 +14,7 @@ The Project Owner is responsible for [monitoring cloud usage and costs](#view-co
 
 ## Manage Your Team
 
-The Project Owner can invite additional HBS research team members such as RAs or doctoral students by asking them to request an account using the same URL as above. 
+The Project Owner can invite additional HBS research team members such as RAs or doctoral students by asking them to request an account using the [same URL as above](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new). 
 External team members must request access with [this URL](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new). Please send the appropriate links to your project team members so that they can onboard.
 
 ## Choose Launcher Configurations
