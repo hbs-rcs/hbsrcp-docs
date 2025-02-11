@@ -46,7 +46,7 @@ To learn more about the Initial Release, visit our [program page](https://hbs.sh
 1.  [Request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts:
     - [HBS users](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new).
     - [Guest collaborators](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new)
-2.  Login to the platform: [link]()
+2.  Login to the platform: [https://researchcloud.hbs.edu/](https://researchcloud.hbs.edu/)
 3.  Project owners: [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new)
 
     **Note that before requesting a project space,** project owners:
