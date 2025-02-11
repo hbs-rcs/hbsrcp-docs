@@ -9,10 +9,10 @@ remote_branch: gh-pages
 nav:
   - Start Here: 'index.md'
   - Use the RCP:
-      - 🚀 Launch Sessions: 'sessions.md'
       - 📦 RCP Capabilities and Software: 'software.md'
+      - 🚀 Launch Sessions: 'sessions.md'
       - 🔄 Copy and Transfer Files: 'syncfiles.md'
-      - Manage Your Projects: 'manageprojects.md'
+      - 📋 Manage Your Projects: 'manageprojects.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'

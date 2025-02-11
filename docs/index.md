@@ -31,7 +31,8 @@ If you have a project that you think will be a good fit for the Initial Release,
 
 ### Initial Release Requirements
 
-Criteria for inclusion in the Initial Release are: 
+Criteria for inclusion in the Initial Release are:
+
   - Level 1, 2, or 3 data only   
   - Project requirements compatible with available tools    
   - No batch processing requirements  
@@ -48,7 +49,7 @@ To learn more about the Initial Release, visit our [program page](https://hbs.sh
 2.  Login to the platform: [link]()
 3.  Project owners: [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new)
 
-    Note that before requesting a project space, project owners:
+    **Note that before requesting a project space,** project owners:
       
       - must be an HBS faculty member, doctoral student, or pre-approved postdoc
       - must have an RCP account
@@ -56,7 +57,7 @@ To learn more about the Initial Release, visit our [program page](https://hbs.sh
     
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
 
-4. Use the RCP and manage your project
+4. [Use the RCP](software.md) and [manage your project](manageprojects.md)
 
 ## Feedback and support
 
