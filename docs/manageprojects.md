@@ -22,7 +22,7 @@ Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to 
 ## Get Started with a New Project
 
 <video width="100%" controls>
-  <source src="media\Configuring_a_new_project_captioned.mp4" type="video/mp4">
+  <source src="media\Configuring_a_new_project_captioned_720.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
 
