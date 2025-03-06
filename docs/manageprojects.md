@@ -26,6 +26,8 @@ Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to 
 Your browser does not support the video tag.
 </video> 
 
+<iframe src="https://hbs.sharepoint.com/sites/rcs/_layouts/15/embed.aspx?UniqueId=7f28401d-ca36-4099-b214-996b08672a0d&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Configuring_a_new_project_captioned_720.mp4"></iframe>
+
 *Coming soon*
       
 ## View Costs
