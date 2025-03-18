@@ -21,6 +21,8 @@ Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to 
 
 ## Get Started with a New Project
 
+Once you have [requested your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new) and it has been created, the Project Owner will need to choose what applications are available to the team.
+
 <video width="100%" controls>
   <source src="media\Configuring_a_new_project_captioned_720.mp4" type="video/mp4">
 Your browser does not support the video tag.
