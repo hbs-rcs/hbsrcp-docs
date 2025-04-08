@@ -23,16 +23,7 @@ Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to 
 
 Once you have [requested your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new) and it has been created, the Project Owner will need to choose what applications are available to the team.
 
-<video width="100%" controls>
-  <source src="media\Configuring_a_new_project_captioned_720.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video> 
-
-<iframe src="https://hbs.sharepoint.com/sites/rcs/_layouts/15/embed.aspx?UniqueId=7f28401d-ca36-4099-b214-996b08672a0d&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Configuring_a_new_project_captioned_720.mp4"></iframe>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZrOzN0P0D7M?si=Bi7UDYjCnxWjccvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-*Coming soon*
       
 ## View Costs
 
