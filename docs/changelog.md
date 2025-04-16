@@ -4,8 +4,8 @@
 ### New Features
 - Project Status: Project Owners can now switch a project’s status between 
 Active and Dormant as needed. 
-  - In the **Active** state, your project, launchers, and associated files are fully accessible and ready to use. 
-  - In the **Dormant** state, the project and its resources are temporarily disabled and unavailable—until the status is changed back to Active. 
+    - In the **Active** state, your project, launchers, and associated files are fully accessible and ready to use. 
+    - In the **Dormant** state, the project and its resources are temporarily disabled and unavailable—until the status is changed back to Active. 
 
 This new functionality helps you manage project activity and resources more effectively and reduce clutter when a project is not in use. 
 
