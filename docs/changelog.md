@@ -10,7 +10,7 @@ Active and Dormant as needed.
 This new functionality helps you manage project activity and resources more effectively and reduce clutter when a project is not in use. 
 
 ### Improvements
-- Improved Stata and Jupyter Performance: Stata and Jupyter are now powered by an AMI, reducing launcher load time by up to 50% for a faster startup time. 
+- Improved Stata and Jupyter Performance: Stata and Jupyter are now powered by an AMI, reducing launcher load time by up to 50%. 
 
 *Note: Active sessions initiated prior this release will need to be restarted for the changes to take effect.*
 
