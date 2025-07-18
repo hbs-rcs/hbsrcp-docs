@@ -1,16 +1,16 @@
 # 📋 Manage Your Projects
 
 HBS faculty members, doctoral students, and pre-approve post-docs can be project owners.
-The Project Owner follows the Account and Project Provisioning Process:
+The **Project Owner** follows the Account and Project Provisioning Process:
 
 - The first step is to [request access to the RCP](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) as a project owner.
 - After accessing the RCP, you can [request space for your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). 
 
-The Project Owner can [invite team members](#manage-your-team) to the platform and [request to add or remove them to their projects](https://forms.office.com/r/ZNhNZuySfY).
+The Project Owner is responsible for the following:
 
-The Project Owner can [specify what launchers in what configurations](#choose-launcher-configurations) are available to their research team for their particular project.
-
-The Project Owner is responsible for [monitoring cloud usage and costs](#view-costs). 
+- [Managing access to their projects](#manage-your-team) to the platform and
+- [Specifying what launchers in what configurations](#choose-launcher-configurations) are available to their research team for their particular project
+- [Monitoring cloud usage and costs](#view-costs) 
 
 ## Manage Your Team
 
