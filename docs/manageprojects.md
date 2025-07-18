@@ -19,9 +19,14 @@ External team members must request access with [this URL](https://secure.hbs.edu
 
 Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to request that they be added to your project.
 
+!!! important inline end
+    **Note:** Users must **log into their RCP account** at least once before they can be added to a project.
+
 ## Get Started with a New Project
 
 Once you have [requested your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new) and it has been created, the Project Owner will need to choose what applications are available to the team.
+
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZrOzN0P0D7M?si=Bi7UDYjCnxWjccvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       
