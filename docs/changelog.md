@@ -1,5 +1,9 @@
 # 📝 Changelog
 
+## 8/26/25: New Feature Available
+### New Feature
+- SageMaker Canvas: RCP users can now launch SageMaker Canvas directly within the RCP. 
+
 ## 7/22/25: New Features Available
 ### New Features
 - Database Support: Aurora DB available through Python across all launchers for improved reliability.
