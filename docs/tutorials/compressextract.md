@@ -26,13 +26,13 @@ To zip one file:
 
 | Command | Example |
 | ------- | ------- |
-| zip ZIPFILE FILE | zip data.zip data.R | 
+| `zip ZIPFILE FILE` | `zip data.zip data.R` | 
 	
 To zip a folder: 
 
 | Command | Example |
 | ------- | ------- |
-| zip –r ZIPFOLDER FOLDER/ | zip –R datafolder.zip datafolder/ | 
+| `zip –r ZIPFOLDER FOLDER/` | `zip –R datafolder.zip datafolder/` | 
 
 Full documentation can be found here: [https://linux.die.net/man/1/zip](https://linux.die.net/man/1/zip)
 
@@ -44,19 +44,19 @@ To extract all contents to the current directory:
 
 | Command | Example |
 | ------- | ------- |
-| unzip FILE | unzip data.zip | 
+| `unzip FILE` | `unzip data.zip` | 
 
 To only extract all contents to the current directory within a specific subfolder of the archive: 
 
 | Command | Example |
 | ------- | ------- |
-| unzip FILE FILENOEXTENSION/SUBFOLDER/* | unzip data.zip data/2005/* | 
+| `unzip FILE FILENOEXTENSION/SUBFOLDER/*` | `unzip data.zip data/2005/*` | 
 
 To extract contents to a specific folder:  
 
 | Command | Example |
 | ------- | ------- |
-| unzip FILE -d DESTINATION | unzip ziptest.zip -d '/export/home/dor/jharvard' | 
+| `unzip FILE -d DESTINATION` | `unzip ziptest.zip -d '/export/home/dor/jharvard'` | 
 
 Full documentation can be found here: [https://linux.die.net/man/1/unzip](https://linux.die.net/man/1/unzip)
 
@@ -68,13 +68,13 @@ To extract a file into the current directory and not save the original compresse
 
 | Command | Example |
 | ------- | ------- |
-| gunzip FILE | gunzip yourdocument.docx.gz | 
+| `gunzip FILE` | `gunzip yourdocument.docx.gz` | 
 
 To extract a file into the current directory and keep both the compressed and decompressed file: 
 
 | Command | Example |
 | ------- | ------- |
-| gunzip < ORIGINALFILE > EXTRACTEDFILE | gunzip < yourdocument.docx.gz > yourdocument.docx | 
+| `gunzip < ORIGINALFILE > EXTRACTEDFILE` | `gunzip < yourdocument.docx.gz > yourdocument.docx` | 
  
 Full documentation can be found here: [https://linux.die.net/man/1/gunzip](https://linux.die.net/man/1/gunzip) 
 
