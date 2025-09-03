@@ -14,6 +14,9 @@ nav:
       - 🔄 Copy and Transfer Files: 'syncfiles.md'
       - 📋 Manage Your Projects: 'manageprojects.md'
   - Costs and Billing: 'billing.md'
+  - Tutorials: 
+      - Topics: 'tutorials.md'
+      - Compressing and Extracting Files: 'compressextract.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
