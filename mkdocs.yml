@@ -16,7 +16,7 @@ nav:
   - Costs and Billing: 'billing.md'
   - Tutorials: 
       - Topics: 'tutorials.md'
-      - Compressing and Extracting Files: 'compressextract.md'
+      - Compressing and Extracting Files: 'tutorials/compressextract.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
