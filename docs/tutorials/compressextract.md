@@ -11,7 +11,7 @@ tags:
   - extract
 ---
 
-Compressing and Extracting Files {#compressextract} 
+# Compressing and Extracting Files {#compressextract} 
 ================
 
 At this time, only one file can be downloaded from the RCP at a time. Should you need to download more than one file, one option is to compress them (e.g., zip) into one folder for download. Additionally, you may need to extract compressed files you uploaded onto the RCP. This tutorial provides information on how to use system-wide tools to compress and extract files.  
