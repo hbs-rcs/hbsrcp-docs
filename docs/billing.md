@@ -2,16 +2,12 @@
 
 We have developed a cloud cost chargeback model with the following principles:
 
-    - Positive experience for faculty to use the platform and to experiment 
-
-    - Reasonable and clear to faculty 
-    
-    - Incentive to use resources wisely 
-    
-    - Controls to monitor and manage costs, including faculty-level AWS subaccounts 
-        and code optimization in partnership with RCS and IT Research Technologies 
-    
-    - Alignment with the research budget planning process 
+  - Positive experience for faculty to use the platform and to experiment 
+  - Reasonable and clear to faculty 
+  - Incentive to use resources wisely 
+  - Controls to monitor and manage costs, including faculty-level AWS subaccounts 
+    and code optimization in partnership with RCS and IT Research Technologies 
+  - Alignment with the research budget planning process 
 
 During the initial rollout, all cloud costs incurred on the platform will be covered through an automatic reimbursement process. After the initial rollout, cloud costs incurred on the platform will be covered through an automatic reimbursement process up to a limit, set to cover most faculty and usage. Costs above the limit will be charged to research budgets, with increases to budgets as needed through the research budget supplement request process. We will gather data on cloud costs and usage to validate our budget assumptions. 
 
@@ -21,9 +17,8 @@ Project owners can [view accrued costs for their projects within the platform](m
 
 Costs for the RCP are dictated by Amazon Web Services (AWS), which sets rates based on storage type. The RCP has two types of storage, both charged in increments of gigabytes:
 
-    - Project storage using Amazon S3 buckets 
-
-    - Storage associated with each launcher (i.e., local storage for each virtual machine) using Amazon’s Elastic File System (EFS). 
+  - Project storage using Amazon S3 buckets 
+  - Storage associated with each launcher (i.e., local storage for each virtual machine) using Amazon’s Elastic File System (EFS). 
 
 ### Active Projects 
 
