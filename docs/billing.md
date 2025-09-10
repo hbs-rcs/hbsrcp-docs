@@ -70,6 +70,10 @@ Active projects incur project storage and launcher costs. The cost of running la
 | sagemakerNotebook | Extra-large-instance-SageMaker | 4 cores | 32 GB |  | $0.17 |
 | sagemakerNotebook | ml.g4dn.xlarge | 1 core | 4 GB | GPU | $0.74 |
 
+TEST:
+
+{{ read_csv('RCP_Rate_Sheet.csv') }}
+
 ### Dormant and Archived Projects 
 
 Dormant and archived project costs will be for storage only. Dormant project storage rates are similar to active ones, but with no EFS storage as all launchers are terminated. These cost details will be posted shortly. Archived projects will have a much smaller storage rate and will likely not be charged to individual research budgets.   
