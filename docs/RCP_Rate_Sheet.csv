@@ -38,7 +38,6 @@ VSCode,Compute-memory-balanced-large-instance,4,16,-,$0.19
 VSCode,Memory-optimized-large-instance,2,16,-,$0.13
 VSCode,Memory-optimized-extra-large-instance,4,32,-,$0.25
 VSCode,Memory-optimized-double-extra-large-instance,8,64,-,$0.50
-sagemakerCanvas,SageMaker-Canvas-Default,,,-,TBA
 sagemakerNotebook,Medium-instance-SageMaker,2,4,-,TBA
 sagemakerNotebook,Large-instance-SageMaker,2,8,-,$0.08
 sagemakerNotebook,Extra-large-instance-SageMaker,4,32,-,$0.17
