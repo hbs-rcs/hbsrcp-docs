@@ -1,5 +1,21 @@
 # Storage and Managing Project Files
 
+## Managing Source Code - Syncing to Git
+
+All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute git commands.  
+
+For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.com/cheat-sheet).
+
+If you are brand new to code code version control with git, [please visit this useful guide](https://docs.github.com/en/get-started/start-your-journey).
+
+
+If you are using Harvard’s Github enterprise for your repositories the standard login and password do not work and you will need to use either ssh keys or tokens.  Please see
+1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
+2.	https://github.com/settings/ssh for ssh
+
+If you have any questions or run into issues, please reach out to research@hbs.edu
+
+
 ## Transferring Files
 *Coming soon*
 
