@@ -17,29 +17,12 @@ hide:
 
 ## What About Cloud Costs?
 
-  - The Project Owner can view cloud usage and costs in the RCP.
-  - The RCP includes controls to monitor and manage costs, including faculty-level AWS subaccounts and code optimization in partnership with RCS and IT Research Technologies. 
-  - During the initial rollout, all cloud costs incurred on the platform will be covered through an automatic reimbursement process.
-  - After the initial rollout, cloud costs incurred on the platform will be covered through an automatic reimbursement process up to a limit, set to cover most faculty and usage. Costs above the limit will be charged to research budgets, with increases to budgets as needed through the research budget supplement request process. We will gather data on cloud costs and usage to validate our budget assumptions. 
+  - All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement model. At the end of FY26, usage and outcomes will be evaluated, and a long-term cost-coverage strategy for the platform will be developed. Additional details will be shared as they become available.
+  - To ensure cost transparency, Project Owners can view cloud usage and associated costs directly within the RCP.
+  - As the platform is a shared institutional resource, we encourage the research community to act as responsible stewards by actively monitoring and managing usage and costs, and by using the platform efficiently. The RCP includes built-in cost management controls, such as faculty-level AWS subaccounts. RCS is also available to assist with code optimization and data management strategies to support efficient use of the platform.
+  - Through the remainder of FY25 and throughout FY26, cloud usage and cost data will be collected to inform the development of a sustainable budget model for the RCP.
+  - To learn more about Cloud Costs on RCP, please see our [billing section](/billing/)
 
-
-## Initial Release
-
-The RCP will have an Initial Release in February 2025 with early adopters to gather feedback, facilitate iterative improvements, validate enhancements, and optimize resources, followed by an Expanded Release available to all HBS researchers and projects in Fall 2025.
-
-If you have a project that you think will be a good fit for the Initial Release, [contact Research Computing Services](mailto:research@hbs.edu).
-
-### Initial Release Requirements
-
-Criteria for inclusion in the Initial Release are:
-
-  - Level 1, 2, or 3 data only   
-  - Project requirements compatible with available tools    
-  - No batch processing requirements  
-  - No archiving requirements  
-  - Faculty researcher understands this is an “early release” and is willing to provide feedback  
-
-To learn more about the Initial Release, visit our [program page](https://hbs.sharepoint.com/sites/CloudRCP/SitePages/About-the-Initial-Release.aspx?csf=1&web=1&e=D8OZaV). If you have a project that will be a good fit for the Initial Release, [contact Research Computing Services](mailto:research@hbs.edu). 
 
 ## Getting Started
    
