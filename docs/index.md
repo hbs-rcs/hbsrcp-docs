@@ -21,7 +21,7 @@ hide:
   - To ensure cost transparency, Project Owners can view cloud usage and associated costs directly within the RCP.
   - As the platform is a shared institutional resource, we encourage the research community to act as responsible stewards by actively monitoring and managing usage and costs, and by using the platform efficiently. The RCP includes built-in cost management controls, such as faculty-level AWS subaccounts. RCS is also available to assist with code optimization and data management strategies to support efficient use of the platform.
   - Through the remainder of FY25 and throughout FY26, cloud usage and cost data will be collected to inform the development of a sustainable budget model for the RCP.
-  - To learn more about Cloud Costs on RCP, please see our [billing section](/billing.md)
+  - To learn more about Cloud Costs on RCP, please see our [billing section](/billing/)
 
 
 ## Getting Started
