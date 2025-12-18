@@ -2,7 +2,7 @@
 
 ## Managing Source Code - Syncing to Git
 
-All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute Git commands.  
+All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute git commands.  
 
 For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.com/cheat-sheet).
 
