@@ -1,36 +1,38 @@
-# Research Data Storage
+# 📦 Project Spaces and Available Software
+## Project Spaces
+When you log into the [RCP](https://researchcloud.hbs.edu/), you will see tiles with all projects that you have access to:
 
-## Transferring Project Data
-*Coming soon*
+<img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" /><br>
 
-### Uploading and Downloading Local Files
+Clicking on a project will display active [sessions](sessions.md) on the top half of the page and available launchers, each corresponding to different software, on the bottom half of the page: 
 
-### Transferring from Cloud Storage
+<img width="932" height="416" alt="image" src="https://github.com/user-attachments/assets/7d0a3ef0-ec55-4bcc-bc5f-d5e5bf6a656e" />
 
-### Using Globus
+## Available software
 
-## SQL Databases
+The RCP launchers feature the most commonly used research software, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages. 
 
-RCP hosts a MySQL relational database in the cloud called [Aurora](https://aws.amazon.com/rds/aurora/). Please note that RCS provides limited support for databases. 
+## Installing Packages or Modules
 
-### Connecting to your Database 
+If the package that you need to use is **not** preloaded, you can install it using the same commands you would typically use. **Please note that the packages and modules you install are only available within a launcher, and not across the project's launchers**. If you terminate the launcher, these packages and modules will be deleted. 
 
-Connection parameters, including your username, password, and hostname can be obtained by clicking on the “View Aurora Details” link in the upper right hand corner of the Workbench:  
+### Installing R Packages
 
-![Aurora screenshot](/media/Aurora-details-link.png)
+Using the standard command for  `install.packages()` command from within RStudio will download and install the specified packages. 
 
-Otherwise, see below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
-
-#### Python
-
-Using the [mysql python package](link: https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html):
-
+``` sh
+install.packages('somepkg')
 ```
-import mysql.connector 
-# Connect to the database 
-conn = mysql.connector.connect( 
-    user = 'username', 
-    password = 'password'', 
-    host = 'host', 
-    database = ''databasename')
+### Installing Python Modules
+
+Python modules can be installed using the `pip install` command:
+
+``` sh
+pip install some_module
+```
+
+To update/upgrade a module already installed, include also the `--upgrade` option: 
+
+``` sh
+pip install --upgrade some_module
 ```
