@@ -1,6 +1,6 @@
 # 🐚 Starting Launchers and Running Sessions
 ## Selecting and Starting Launchers
-Click on your project and select one of the available **launchers** to create a new **session**. Note that each launcher has multiple configurations of CPUs/GPUs and memory, and that these vary by [software](storage_software.md).
+Click on your project and select one of the available **launchers** to create a new **session**. Note that each launcher has multiple configurations of CPUs/GPUs and memory, and that these vary by [software](storage_software.md#available-software).
 <img width="932" height="245" alt="image" src="https://github.com/user-attachments/assets/9df0bebc-9f24-4562-9b83-acfd03d62bd2" />
 
 Select your software, name the session, and choose the CPU/GPU and memory allocation that is most appropriate for your work. Keep in mind that there are different [costs](/hbsrcp-docs/billing/) associated with each configuration. **Starting a launcher for the first time can take 5-10 minutes.**
