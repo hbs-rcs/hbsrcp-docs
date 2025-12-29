@@ -41,7 +41,10 @@ hide:
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
 
 4. If you are the project owner, review our documentation around how to [manage your project](manageprojects.md).
-5. Start using the RCP! See our documentation on [project spaces, storage, and available software](storage_software.md); [transferring and managing files](syncfiles.md); and [using and managing launchers and sessions](launchers_sessions.md#using-launchers). 
+5. Start using the RCP! See our documentation on:
+    - [Project Spaces, Storage, and Available Software](storage_software.md)
+    - [Transferring and Managing Project Files](syncfiles.md)
+    - [Starting Launchers and Running Sessions](launchers_sessions.md#using-launchers) 
   
 ## Feedback and support
 
