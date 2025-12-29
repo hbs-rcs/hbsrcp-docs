@@ -41,13 +41,8 @@ hide:
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
 
 4. Review our documentation around how to [manage your project](manageprojects.md).
-5. Start using the RCP! Upon logging in, you will see tiles with all projects that you have access to:
-        <img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" />
-
-   Click on your project and select one of the available **launchers**:
-        <img width="932" height="245" alt="image" src="https://github.com/user-attachments/assets/9df0bebc-9f24-4562-9b83-acfd03d62bd2" />
-
-
+5. Start using the RCP! See our documentation on using and managing [launchers](sessions.md#using-launchers). 
+  
 ## Feedback and support
 
 !!! important inline end
