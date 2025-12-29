@@ -1,6 +1,5 @@
-# 🐚 Running Sessions
-## Using Launchers 
-### Selecting and Starting Launchers
+# 🐚 Starting Launchers and Running Sessions
+## Selecting and Starting Launchers
 Click on your project and select one of the available **launchers** to create a new **session**. Note that each launcher has multiple configurations of CPUs/GPUs and memory, and that these vary by [software](software.md).
 <img width="932" height="245" alt="image" src="https://github.com/user-attachments/assets/9df0bebc-9f24-4562-9b83-acfd03d62bd2" />
 
@@ -8,12 +7,18 @@ Select your software, name the session, and choose the CPU/GPU and memory alloca
 
 <img width="368" height="335" alt="image" src="https://github.com/user-attachments/assets/35ca678b-9f37-4c74-a731-76be37e43a13" />
 
-Once your session has been provisioned, click on "Start" to open the software in your browser. This will take a few minutes.
+Once your session has been provisioned, click on "Connect" to open the software in your browser. 
 
-<img width="288" height="181" alt="image" src="https://github.com/user-attachments/assets/c4c035dd-33cb-4409-9a90-041ddb06c7c4" />
+<img width="296" height="191" alt="image" src="https://github.com/user-attachments/assets/d9296a23-7138-42fb-a31f-5c310a2d333e" />
 
+### Starting Sessions
+Once a launcher is provisioned, it will appear as one of your sessions at the top of your project space Workbench. Click on the "Start" button to re-start the session. It will take a few minutes to load, and then the "Connect" button will appear. Click on the "Connect" button to open the software in your browser.
 
-### Stopping Launchers
+<img width="293" height="188" alt="image" src="https://github.com/user-attachments/assets/95515c60-5bc0-4bb8-a778-02f38dfd6067" /><br>
+
+<img width="296" height="191" alt="image" src="https://github.com/user-attachments/assets/097e17f8-82d2-4987-a73d-6a7d042c9e33" />
+
+### Stopping Sessions
 If you have finished with your session, but plan to return to it, please ensure you have **stopped** it. The stop option will appear after clicking on the hamburger menu to the right of the Connect button. Keeping the session running, even when you’re not actively using it, will incur charges, whereas a stopped session only incurs minor storage costs.
 
 <img width="225" height="155" alt="image" src="https://github.com/user-attachments/assets/f355f2bd-7f5c-4fc7-8112-3466b635d68a" />
