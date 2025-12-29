@@ -12,18 +12,20 @@ Clicking on a project will display active [sessions](sessions.md) on the top hal
 
 The RCP launchers feature the most commonly used research software, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages. 
 
-## Installing Packages or Modules
+The RCP will also offer database capabilities through AWS Aurora.
+
+### Installing Packages or Modules
 
 If the package that you need to use is **not** preloaded, you can install it using the same commands you would typically use. **Please note that the packages and modules you install are only available within a launcher, and not across the project's launchers**. If you terminate the launcher, these packages and modules will be deleted. 
 
-### Installing R Packages
+#### Installing R Packages
 
 Using the standard command for  `install.packages()` command from within RStudio will download and install the specified packages. 
 
 ``` sh
 install.packages('somepkg')
 ```
-### Installing Python Modules
+#### Installing Python Modules
 
 Python modules can be installed using the `pip install` command:
 
@@ -35,4 +37,27 @@ To update/upgrade a module already installed, include also the `--upgrade` optio
 
 ``` sh
 pip install --upgrade some_module
+```
+
+### Aurora Database
+#### Connecting to your Database 
+
+Connection parameters, including your username, password, and hostname can be obtained by clicking on the “View Aurora Details” link in the upper right hand corner of the Workbench:  
+
+![Aurora screenshot](/media/Aurora-details-link.png)
+
+Otherwise, see below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
+
+#### Python
+
+Using the [mysql python package](link: https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html):
+
+```
+import mysql.connector 
+# Connect to the database 
+conn = mysql.connector.connect( 
+    user = 'username', 
+    password = 'password'', 
+    host = 'host', 
+    database = ''databasename')
 ```
