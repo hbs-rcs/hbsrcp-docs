@@ -1,20 +1,11 @@
 # Storage and Managing Project Files
 
-## Managing Source Code - Syncing to Git
+## Storage
+Each project has storage available to all members of a project. This can be accessed by clicking on the "Files" tab to the right of the Workbench:<br>
 
-All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute git commands.  
+<img width="932" height="164" alt="image" src="https://github.com/user-attachments/assets/a11274fe-e86a-4630-bc66-c5afa492f534" /><br>
 
-For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.com/cheat-sheet).
-
-If you are brand new to code code version control with git, [please visit this useful guide](https://docs.github.com/en/get-started/start-your-journey).
-
-
-If you are using Harvard’s Github enterprise for your repositories the standard login and password do not work and you will need to use either ssh keys or tokens.  Please see
-1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
-2.	https://github.com/settings/ssh for ssh
-
-If you have any questions or run into issues, please reach out to research@hbs.edu
-
+Please see our documentation below to learn more using this feature. 
 
 ## Transferring Files
 ### Uploading and Downloading Local Files
@@ -35,6 +26,21 @@ To upload a file, click on the "Upload File" button next to the "Actions" Button
 ### Using Globus
 
 Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. To request a Globus file transfer, please contact research@hbs.edu.
+
+## Managing Source Code - Syncing to Git
+
+All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute git commands.  
+
+For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.com/cheat-sheet).
+
+If you are brand new to code code version control with git, [please visit this useful guide](https://docs.github.com/en/get-started/start-your-journey).
+
+
+If you are using Harvard’s Github enterprise for your repositories the standard login and password do not work and you will need to use either ssh keys or tokens.  Please see
+1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
+2.	https://github.com/settings/ssh for ssh
+
+If you have any questions or run into issues, please reach out to research@hbs.edu
 
 ## SQL Databases
 
