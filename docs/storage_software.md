@@ -4,7 +4,7 @@ When you log into the [RCP](https://researchcloud.hbs.edu/), you will see tiles 
 
 <img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" /><br>
 
-Clicking on a project will display active [sessions](sessions.md) on the top half of the page and available launchers, each corresponding to different software, on the bottom half of the page: 
+Clicking on a project will display active [sessions](launchers_sessions.md) on the top half of the page and available [launchers](launchers_sessions.md), each corresponding to different software, on the bottom half of the page: 
 
 <img width="932" height="416" alt="image" src="https://github.com/user-attachments/assets/7d0a3ef0-ec55-4bcc-bc5f-d5e5bf6a656e" />
 
