@@ -1,4 +1,4 @@
-# Storage and Managing Project Files
+# Transferring and Managing Project Files
 
 ## Transferring Files
 ### Uploading and Downloading Local Files
