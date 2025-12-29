@@ -1,12 +1,5 @@
 # Storage and Managing Project Files
 
-## Storage
-Each project has storage available to all members of a project. This can be accessed by clicking on the "Files" tab to the right of the Workbench:<br>
-
-<img width="932" height="164" alt="image" src="https://github.com/user-attachments/assets/a11274fe-e86a-4630-bc66-c5afa492f534" /><br>
-
-Please see our documentation below to learn more using this feature. 
-
 ## Transferring Files
 ### Uploading and Downloading Local Files
 
