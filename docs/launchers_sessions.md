@@ -19,12 +19,12 @@ Once a launcher is provisioned, it will appear as one of your sessions at the to
 <img width="296" height="191" alt="image" src="https://github.com/user-attachments/assets/097e17f8-82d2-4987-a73d-6a7d042c9e33" />
 
 ### Stopping Sessions
-If you have finished with your session, but plan to return to it, please ensure you have **stopped** it. The stop option will appear after clicking on the hamburger menu to the right of the Connect button. Keeping the session running, even when you’re not actively using it, will incur charges, whereas a stopped session only incurs minor storage costs.
+If you have finished with your session, but plan to return to it, please ensure you have **stopped** it. The Stop option will appear after clicking on the hamburger menu to the right of the Connect button. Keeping the session running, even when you’re not actively using it, will incur charges, whereas a stopped session only incurs minor storage costs.
 
 <img width="225" height="155" alt="image" src="https://github.com/user-attachments/assets/f355f2bd-7f5c-4fc7-8112-3466b635d68a" />
 
 ### Terminating Launchers
-If you anticipate no longer needing a launcher, please **terminate** it. The terminate option will appear after clicking on the hamburger menu to the right of the Start button. A terminated launcher will incur no costs. Keep in mind that once you terminate a launcher, downloaded packages (e.g., R packages) will be removed and unavailable for future use (i.e., if you restart a launcher you will need to recreate your environment).
+If you anticipate no longer needing a launcher, please **terminate** it. The Terminate option will appear after clicking on the hamburger menu to the right of the Start button. A terminated launcher will incur no costs. Keep in mind that once you terminate a launcher, downloaded packages (e.g., R packages) will be removed and unavailable for future use (i.e., if you restart a launcher you will need to recreate your environment).
 
 
 <img width="233" height="141" alt="image" src="https://github.com/user-attachments/assets/c1f3978d-934e-4566-adb0-f73a5131b3d7" />
