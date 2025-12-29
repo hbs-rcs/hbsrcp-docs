@@ -24,12 +24,12 @@ hide:
   - To learn more about Cloud Costs on RCP, please see our [billing section](/hbsrcp-docs/billing/)
 
 
-## Getting Started
+## Quick Start
    
-1.  [Request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts:
+1. HBS faculty, staff, doctoral students and their guest collaborators are eligible for RCP accounts. To [request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts, please use one of the links below:
     - [HBS users](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) (For users with hbs.edu credentials)
-    - [Guest collaborators](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new) (Only for users who **do not** have HBS credentials)
-2.  Login to the platform: [https://researchcloud.hbs.edu/](https://researchcloud.hbs.edu/)
+    - [Guest collaborators](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new) (Only for users who **do not** have HBS credentials)  
+2.  Login to the platform: [https://researchcloud.hbs.edu/](https://researchcloud.hbs.edu/). We suggest doing this as soon as you've been notified your account is ready, as it impacts your ability to log into project spaces. 
 3.  Project owners: [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new)
 
     **Note that before requesting a project space,** project owners:
@@ -40,7 +40,13 @@ hide:
     
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
 
-4. [Use the RCP](software.md) and [manage your project](manageprojects.md)
+4. Review our documentation around how to [manage your project](manageprojects.md).
+5. Start using the RCP! Upon logging in, you will see tiles with all projects that you have access to:
+        <img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" />
+
+   Click on your project and select one of the available **launchers**:
+        <img width="932" height="245" alt="image" src="https://github.com/user-attachments/assets/9df0bebc-9f24-4562-9b83-acfd03d62bd2" />
+
 
 ## Feedback and support
 
