@@ -57,7 +57,7 @@ See below for sample code to connect to your database using Python. If you prefe
 
 #### Python
 
-Using the [mysql python package](link: https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html):
+Using the [mysql python package](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html):
 
 ```
 import mysql.connector 
