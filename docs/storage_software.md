@@ -53,7 +53,7 @@ Connection parameters, including your username, password, and hostname can be ob
 
 ![Aurora screenshot](/media/Aurora-details-link.png)
 
-Otherwise, see below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
+See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
 
 #### Python
 
