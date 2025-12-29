@@ -17,7 +17,7 @@ Please see our documentation about [Transferring Files](syncfiles.md) to learn m
 
 ## Available software
 
-The RCP launchers feature the most commonly used research software, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages. 
+The RCP launchers feature the most commonly used research software, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages and modules. 
 
 The RCP will also offer database capabilities through AWS Aurora.
 
