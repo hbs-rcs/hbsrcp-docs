@@ -1,10 +1,19 @@
-# 🐚 Running Sessions
-
-## Project Spaces
+# 🐚 Project Spaces
 When you log into the [RCP](https://researchcloud.hbs.edu/), you will see tiles with all projects that you have access to:
 
 <img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" />
 
+Clicking on a project will display active sessions on the top half of the page and available launchers on the bottom half of the page: 
+<img width="932" height="416" alt="image" src="https://github.com/user-attachments/assets/7d0a3ef0-ec55-4bcc-bc5f-d5e5bf6a656e" />
+
+## Storage
+Each project has storage available to all members of a project. This can be accessed by clicking on the "Files" tab to the right of the Workbench:
+<img width="932" height="164" alt="image" src="https://github.com/user-attachments/assets/a11274fe-e86a-4630-bc66-c5afa492f534" />
+
+Currently, only one file or folder up to 5GB can be uploaded at a time by users. Please see our documentation on [transferring files](syncfiles.md) to learn more using this feature, along with ways to transfer multiple and/or large files. 
+
+
+# 🐚 Running Sessions
 ## Using Launchers 
 ### Selecting and Starting Launchers
 Click on your project and select one of the available **launchers** to create a new **session**. Note that each launcher has multiple configurations of CPUs/GPUs and memory, and that these vary by [software](software.md).
