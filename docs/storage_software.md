@@ -10,7 +10,7 @@ Clicking on a project will display active [sessions](launchers_sessions.md#start
 
 ## Storage
 ### S3 Bucket
-Each project has [S3 storage](https://aws.amazon.com/s3/) available to all members of a project. This can be accessed by clicking on the "Files" tab to the right of the Workbench:<br>
+Each project has shared [S3 storage](https://aws.amazon.com/s3/) available to all members of a project. This can be accessed by clicking on the "Files" tab to the right of the Workbench:<br>
 
 <img width="932" height="164" alt="image" src="https://github.com/user-attachments/assets/a11274fe-e86a-4630-bc66-c5afa492f534" /><br>
 
@@ -21,7 +21,7 @@ The RCP offers database capabilities through a back-end connection to [AWS Auror
 
 #### Python
 
-Using the [mysql python package](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html):
+Using the [mysql](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html) python package:
 
 ```
 import mysql.connector 
