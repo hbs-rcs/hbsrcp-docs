@@ -41,7 +41,7 @@ hide:
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
 
 4. Review our documentation around how to [manage your project](manageprojects.md).
-5. Start using the RCP! See our documentation on using and managing [launchers](sessions.md#using-launchers). 
+5. Start using the RCP! See our documentation on using and managing [launchers](launchers_sessions.md#using-launchers). 
   
 ## Feedback and support
 
