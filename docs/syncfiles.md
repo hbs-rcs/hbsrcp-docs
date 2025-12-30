@@ -7,7 +7,7 @@ Users can upload and download local files by clicking on the "Files" tab to the 
 
 <img width="932" height="164" alt="image" src="https://github.com/user-attachments/assets/a11274fe-e86a-4630-bc66-c5afa492f534" /><br>
 
-To upload a file, click on the "Upload File" button next to the "Actions" Button. To upload a folder, click on the down arrow to the right of the "Upload File" button, which will reveal the option to upload a folder:
+To upload a file, click on the "Upload File" button next to the "Actions" button. To upload a folder, click on the down arrow to the right of the "Upload File" button, which will reveal the option to upload a folder:
 
 <img width="204" height="68" alt="image" src="https://github.com/user-attachments/assets/0d04d084-fceb-4cd1-876e-75c078ae54b9" /><br>
 
