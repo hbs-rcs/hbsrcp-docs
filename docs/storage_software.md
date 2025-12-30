@@ -17,7 +17,7 @@ Each project has shared [S3 storage](https://aws.amazon.com/s3/) available to al
 Please see our documentation about [Transferring Files](syncfiles.md) to learn more using this feature. 
 
 ### Database
-The RCP offers database capabilities through a back-end connection to [AWS Aurora](https://aws.amazon.com/rds/aurora/). Connection parameters, including your username, password, and hostname can be obtained by reaching out to research@hbs.edu. See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
+The RCP offers database capabilities through a back-end connection to [Amazon Aurora](https://aws.amazon.com/rds/aurora/). Connection parameters, including your username, password, and hostname can be obtained by reaching out to research@hbs.edu. See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
 
 #### Python
 
@@ -38,11 +38,12 @@ conn = mysql.connector.connect(
 
 The RCP launchers feature the most commonly used research software, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages and modules. 
 
-
-
 ### Installing Packages or Modules
 
-If the package that you need to use is **not** preloaded, you can install it using the same commands you would typically use. **Please note that the packages and modules you install are only available within a launcher, and not across the project's launchers**. If you terminate the launcher, these packages and modules will be deleted. 
+If the package that you need to use is **not** preloaded, you can install it using the usual commands.
+
+!!! important inline end
+     **Please note that the packages and modules you install are only available within a launcher, and not across the project's launchers**. If you terminate the launcher, these packages and modules will be deleted. 
 
 #### Installing R Packages
 
