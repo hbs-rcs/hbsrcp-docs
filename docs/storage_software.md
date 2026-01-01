@@ -1,6 +1,8 @@
 # 📦 Project Spaces, Storage, and Available Software
 ## Project Spaces
-When you log into the [RCP](https://researchcloud.hbs.edu/), you will see tiles with all projects that you have access to:
+Project owners can request new projects using this [form](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). Remember that you will not be able to request a project space until you have logged into the RCP at least once. To add additional team members to a project space, contact research@hbs.edu. 
+
+The landing page of the RCP displays tiles with all projects that you have access to:
 
 <img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" /><br>
 
