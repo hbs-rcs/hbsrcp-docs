@@ -12,7 +12,7 @@ Once your session has been provisioned, click on "Connect" to open the software 
 <img width="296" height="191" alt="image" src="https://github.com/user-attachments/assets/d9296a23-7138-42fb-a31f-5c310a2d333e" />
 
 ### Starting Sessions
-Once a launcher is provisioned, it will appear as one of your sessions at the top of your project space Workbench. Click on the "Start" button to re-start the session. It will take a few minutes to load, and then the "Connect" button will appear. Click on the "Connect" button to open the software in your browser.
+Once a launcher is provisioned, it will appear as one of your sessions at the top of your project space Workbench when you log into the RCP. Click on the "Start" button to re-start the session. It will take a few minutes to load, and then the "Connect" button will appear. Click on the "Connect" button to open the software in your browser.
 
 <img width="293" height="188" alt="image" src="https://github.com/user-attachments/assets/95515c60-5bc0-4bb8-a778-02f38dfd6067" /><br>
 
