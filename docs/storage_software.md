@@ -1,4 +1,4 @@
-# 📦 Project Spaces, Storage, and Available Software
+# 📦 Project Spaces, Storage, and Available Software and Analysis Tools
 ## Project Spaces
 Project owners can request new projects using this [form](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). To add additional team members to a project space, contact research@hbs.edu. Remember that you will not be able to request a project space or be added to an existing project until you have logged into the RCP at least once.
 
@@ -6,7 +6,7 @@ The landing page of the RCP displays tiles with all projects that you have acces
 
 <img width="335" height="221" alt="image" src="https://github.com/user-attachments/assets/2254541a-c40a-44ca-97ae-85fd344be337" /><br>
 
-Clicking on a project will display active [sessions](launchers_sessions.md#starting-sessions) on the top half of the page and available [launchers](launchers_sessions.md), each corresponding to different [software](storage_software.md#available-software), on the bottom half of the page: 
+Clicking on a project will bring you to the project workbench.  The workbench displays active [sessions](launchers_sessions.md#starting-sessions) on the top half of the page and available [launchers](launchers_sessions.md), each corresponding to different [analysis tools](storage_software.md#available-software), on the bottom half of the page: 
 
 <img width="932" height="416" alt="image" src="https://github.com/user-attachments/assets/7d0a3ef0-ec55-4bcc-bc5f-d5e5bf6a656e" />
 
@@ -19,7 +19,10 @@ Each project has shared [S3 storage](https://aws.amazon.com/s3/) available to al
 Please see our documentation about [Transferring Files](syncfiles.md) to learn more using this feature. 
 
 ### Database
-The RCP offers database capabilities through a back-end connection to [Amazon Aurora](https://aws.amazon.com/rds/aurora/). Connection parameters, including your username, password, and hostname can be obtained by reaching out to research@hbs.edu. See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
+The RCP offers database capabilities through a back-end connection to [Amazon Aurora](https://aws.amazon.com/rds/aurora/). Connection parameters, including the username, password, and hostname can be obtained by the project owner in the project management tab.  Within the Servcies section, click on the three vertical dots next to the Aurora Databse Service and select "View Details" to view the parameters as shown below.
+
+
+See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
 
 #### Python
 
@@ -36,9 +39,9 @@ conn = mysql.connector.connect(
 ```
 
 
-## Available software
+## Available software and analysis tools
 
-The RCP launchers feature the most commonly used research software, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages and modules. 
+The RCP launchers feature the most commonly used research software and analysis tools, including *Rstudio*, *Spyder*, *VSCode*, and *Stata*. Additionally, if applicable for the software, each launcher is preloaded with commonly used packages and modules. 
 
 ### Installing Packages or Modules
 
