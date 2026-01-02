@@ -19,8 +19,9 @@ Each project has shared [S3 storage](https://aws.amazon.com/s3/) available to al
 Please see our documentation about [Transferring Files](syncfiles.md) to learn more using this feature. 
 
 ### Database
-The RCP offers database capabilities through a back-end connection to [Amazon Aurora](https://aws.amazon.com/rds/aurora/). Connection parameters, including the username, password, and hostname can be obtained by the project owner in the project management tab.  Within the Servcies section, click on the three vertical dots next to the Aurora DB service and select "View Details" to view the parameters as shown below.
+The RCP offers database capabilities through a back-end connection to [Amazon Aurora](https://aws.amazon.com/rds/aurora/). Connection parameters, including the username, password, and hostname can be obtained by the Project Owner in the Project Management tab. Within the Servcies section, click on the three vertical dots next to the Aurora DB service and select "View Details" to view the parameters as shown below.
 
+<img width="596" height="200" alt="image" src="https://github.com/user-attachments/assets/d414855f-4162-4aa7-9796-bc4719667df4" />
 
 See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
 
