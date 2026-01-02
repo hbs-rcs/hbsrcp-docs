@@ -33,7 +33,7 @@ hide:
 3.  [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new).
 
       **Note that to request a project space,** you:      
-      - must be an HBS faculty member, doctoral student, or pre-approved postdoc
+      - must be an HBS faculty member or doctoral student
       - must have an RCP account
       - must have logged into their RCP account at least once
     
