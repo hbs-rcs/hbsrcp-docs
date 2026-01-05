@@ -1,6 +1,6 @@
 # 📦 Project Spaces, Storage, and Available Software and Analysis Tools
 ## Project Spaces
-Project owners can request new projects using this [form](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). To add additional team members to a project space, contact research@hbs.edu. Remember that you will not be able to request a project space or be added to an existing project until you have logged into the RCP at least once.
+Project owners can request new projects using this [form](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). To add additional team members to a project space, contact [research@hbs.edu](mailto:research@hbs.edu). Remember that you will not be able to request a project space or be added to an existing project until you have logged into the RCP at least once.
 
 The landing page of the RCP displays tiles with all projects that you have access to:
 
