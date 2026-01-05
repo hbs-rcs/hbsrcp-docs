@@ -18,25 +18,25 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 ### Using Globus
 
-Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to estblish your project as an end point for Globus.  To do this, log into the Globus transfer application at www.globus.org.  You will need to selection Harvard University as your institution followed by entering your Harvard Key credentials and password.  Please note that only HBS credentials will have access to HBS resources.  Credentials from other schools will not work properly.
+Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. To do this, log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
 
 Once logged in, navigate to the file manager tab and locate the Harvard Business School S3 Collection by searching for this collection in the Collection dialog box.
 
 <img width="1663" height="541" alt="image" src="https://github.com/user-attachments/assets/892886ff-ed87-421e-9dc7-bd51f38e8709" />
 
-After selecting the "Harvard Business School S3 Storage" Collection, you should see the following dialog
+After selecting the "Harvard Business School S3 Storage" Collection, you should see the following dialog:
 <img width="982" height="651" alt="image" src="https://github.com/user-attachments/assets/1860388f-dc61-42df-ac43-9e00d1acade2" />
-Click the continue button and you will be brought to this dialog box.
+Click the continue button and you will be brought to this dialog box:
 <img width="867" height="428" alt="image" src="https://github.com/user-attachments/assets/202ec06d-29fa-498d-977b-3d928ded4203" />
 
-Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project.   If you don't have an Access Key ID or Secret Key ID, please contact RCS at research@hbs.edu and request them for you project.   If you are not the project owner, you will need permission from the project owner to obtain these Key IDs.
+Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project. If you don't have an Access Key ID or Secret Key ID, please contact RCS at research@hbs.edu and request them for you project. If you are not the project owner, you will need permission from the project owner to obtain these Key IDs.
 
 After entering the Key IDs, you should be able to see the directory listing of your project, as well as be able to upload and download files as shown below.
 <img width="1306" height="1016" alt="image" src="https://github.com/user-attachments/assets/66dd65c0-5e6f-4bb9-b7d1-bbe7762d59f6" />
 
 If you are transferring very large files, we recommend transfer from another Globus endpoint (such as the Harvard Business School DTN, attached to the HBSGrid, or by creating your own endpoint using Globus Personal).
 
-If you need help at any point along the way, please contact research@hbs.edu.
+If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
 
 ## Managing Source Code - Syncing to Git
 
