@@ -24,24 +24,27 @@ hide:
   - To learn more about Cloud Costs on RCP, please see our [billing section](/hbsrcp-docs/billing/)
 
 
-## Getting Started
+## Quick Start
    
-1.  [Request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts:
+1. To [request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts, please use one of the links below. HBS faculty, staff, doctoral students and their guest collaborators are eligible for RCP accounts. 
     - [HBS users](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) (For users with hbs.edu credentials)
-    - [Guest collaborators](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new) (Only for users who **do not** have HBS credentials)
-2.  Login to the platform: [https://researchcloud.hbs.edu/](https://researchcloud.hbs.edu/)
-3.  Project owners: [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new)
+    - [Guest collaborators](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new) (Only for users who **do not** have HBS credentials)  
+2.  Login to the platform: [https://researchcloud.hbs.edu/](https://researchcloud.hbs.edu/). We suggest doing this as soon as you've been notified your account is ready, as it impacts your ability to access project spaces. 
+3.  [Request a project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new).
 
-    **Note that before requesting a project space,** project owners:
-      
-      - must be an HBS faculty member, doctoral student, or pre-approved postdoc
+      **Note that to request a project space,** you:      
+      - must be an HBS faculty member or doctoral student
       - must have an RCP account
       - must have logged into their RCP account at least once
     
     **Project owners must put in their own requests**; one may not request a project on behalf of someone else.
 
-4. [Use the RCP](software.md) and [manage your project](manageprojects.md)
-
+5. If you are the project owner, review our documentation around how to [manage your project](manageprojects.md).
+6. Start using the RCP! See our documentation on:
+    - [Project Spaces, Storage, and Available Software](storage_software.md)
+    - [Transferring and Managing Project Files](syncfiles.md)
+    - [Starting Launchers and Running Sessions](launchers_sessions.md#using-launchers) 
+  
 ## Feedback and support
 
 !!! important inline end
