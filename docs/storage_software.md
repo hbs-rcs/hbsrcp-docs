@@ -46,10 +46,10 @@ The RCP launchers feature the most commonly used research software and analysis 
 
 ### Installing Packages or Modules
 
-If the package that you need to use is **not** preloaded, you can install it using the usual commands.
-
 !!! important inline end
      **Please note that the packages and modules you install are only available within a launcher, and not across the project's launchers**. If you terminate the launcher, these packages and modules will be deleted. 
+
+If the package that you need to use is **not** preloaded, you can install it using the usual commands.
 
 #### Installing R Packages
 
