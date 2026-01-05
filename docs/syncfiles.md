@@ -29,7 +29,7 @@ After selecting the "Harvard Business School S3 Storage" Collection, you should 
 Click the continue button and you will be brought to this dialog box:
 <img width="867" height="428" alt="image" src="https://github.com/user-attachments/assets/202ec06d-29fa-498d-977b-3d928ded4203" />
 
-Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project. If you don't have an Access Key ID or Secret Key ID, please contact RCS at research@hbs.edu and request them for you project. If you are not the project owner, you will need permission from the project owner to obtain these Key IDs.
+Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project. If you don't have an Access Key ID or Secret Key ID, please contact RCS at [research@hbs.edu](research@hbs.edu) and request them for you project. If you are not the project owner, you will need permission from the project owner to obtain these Key IDs.
 
 After entering the Key IDs, you should be able to see the directory listing of your project, as well as be able to upload and download files as shown below.
 <img width="1306" height="1016" alt="image" src="https://github.com/user-attachments/assets/66dd65c0-5e6f-4bb9-b7d1-bbe7762d59f6" />
@@ -51,4 +51,4 @@ If you are using Harvard’s Github enterprise for your repositories the standar
 1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
 2.	https://github.com/settings/ssh for ssh
 
-If you have any questions or run into issues, please reach out to research@hbs.edu
+If you have any questions or run into issues, please reach out to [research@hbs.edu](research@hbs.edu).
