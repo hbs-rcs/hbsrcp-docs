@@ -43,7 +43,7 @@ hide:
 6. Start using the RCP! See our documentation on:
     - [Project Spaces, Storage, and Available Software](storage_software.md)
     - [Transferring and Managing Project Files](syncfiles.md)
-    - [Starting Launchers and Running Sessions](launchers_sessions.md#using-launchers) 
+    - [Starting Launchers and Running Sessions](launchers_sessions.md) 
   
 ## Feedback and support
 
