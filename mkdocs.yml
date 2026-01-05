@@ -9,9 +9,9 @@ remote_branch: gh-pages
 nav:
   - Start Here: 'index.md'
   - Use the RCP:
-      - 📦 RCP Capabilities and Software: 'software.md'
-      - 🚀 Launch Sessions: 'sessions.md'
-      - 🔄 Copy and Transfer Files: 'syncfiles.md'
+      - 📦 Project Spaces, Storage, and Available Software and Analysis Tools: 'storage_software.md'
+      - 🔄 Transferring and Managing Project Files: 'syncfiles.md'
+      - 🚀 Starting Launchers and Running Sessions: 'launchers_sessions.md'      
       - 📋 Manage Your Projects: 'manageprojects.md'
   - Costs and Billing: 'billing.md'
   - Tutorials: 
