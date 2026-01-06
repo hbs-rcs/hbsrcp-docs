@@ -4,7 +4,7 @@ Author
 Katie Alsua
 
 Updated  
-2026-01-06
+2026-01-06, KA
 
 This project documents usage and best practices for the [HBS Research Computing Platform](https://researchcloud.hbs.edu/).
 
