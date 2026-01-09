@@ -62,3 +62,23 @@ Costs can be filtered by
 You can find more information about costs and the future of a developing chargeback model at [Costs and Billing](billing.md).
 
 ## Configure Services
+To configure Services, navigate to the Project Management tab, the Services section is in the lower right corner.
+
+
+<img width="662" height="512" alt="image" src="https://github.com/user-attachments/assets/1950b1c3-c75f-487d-9782-6f2ad12a78fb" align="center" />
+
+
+To add a service service, select the "Add Service" button, select the service and click the "Next" button.
+
+
+<img width="496" height="511" alt="image" src="https://github.com/user-attachments/assets/5ab26c27-60fd-4425-8f32-113dfc08d42c" />
+
+
+
+
+
+Each service will have its own configuration parameters
+
+For the Aurora Database Service, for example, it will require a name and a minimum and maximum capacity.
+
+Once a service is running, if there is information needed by the research team for the service, it will be available by selecting the "Service Credentials" within the workbench tab.  For the Aurora Database, for example, it will show a username, password and connect string, or endpoint, for the database.
