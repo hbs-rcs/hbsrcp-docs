@@ -48,6 +48,14 @@ GPU can be faster at completing tasks than CPU. However, it is not true for ever
 
 -- Taken and adapted from Why Deep Learning Uses GPUs
 
+Quick Tips for Choosing Cores:
+
+More is not really better, since this is a shared resource.
+Use fewer cores (1!) for interactive work, especially if you plan on having a session open over several days. It is considered bad form to leave sessions open for more than 7 days, as no one can use the resources that are reserved exclusively for your use.
+Choosing multiple cores for interactive work is OK if you will be finishing your work in hours to a day or two. Please do not let these sessions sit idle.
+Remember that MATLAB, R, and Python can only use 1 CPU unless you've programmed it to do otherwise.
+Stata can use multiple CPUs, but be conservative. Again, more is not necessarily better.
+
 
 Request only 1 CPU unless you know that you are using code or libraries that were written to run in parallel. 
 
