@@ -28,7 +28,7 @@ hide:
 > Ask questions and get instant answers. Note that this is **only** available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account. If you receive a 404 error when clicking the link, first log into ChatGPT:
 >
 > 
-> [![Open Chatbot](https://img.shields.io/badge/Open%20Chatbot-007acc?style=for-the-badge&color=007acc&labelColor=007acc)](https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper)</p>
+> [![Open Chatbot](https://img.shields.io/badge/Open%20Chatbot-007acc?style=for-the-badge&color=007acc&labelColor=007acc)](https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper)
 >
 > You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?"
 
@@ -58,6 +58,28 @@ hide:
 > You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?"
 
 </div>
+
+----
+<div align="center">
+
+> ### 💬 Try our chatbot!
+> Ask questions and get instant answers. Note that this is **only** available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account. If you receive a 404 error when clicking the link, first log into ChatGPT:
+>
+> <a href="https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper">
+>   <img src="https://img.shields.io/badge/Open%20Chatbot-007acc?style=for-the-badge&color=007acc&labelColor=007acc" alt="Open Chatbot">
+> </a>
+>
+> You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?"
+
+</div>
+----
+
+
+!!! 💬 Try our chatbot! inline end
+    Ask questions and get instant answers. Note that this is **only** available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account. If you receive a 404 error when clicking the link, first log into ChatGPT:
+    [![Open Chatbot](https://img.shields.io/badge/Open%20Chatbot-007acc?style=for-the-badge&color=007acc&labelColor=007acc)](https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper)
+    You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?"
+
 
 
 ## Quick Start
