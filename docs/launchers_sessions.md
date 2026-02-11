@@ -29,35 +29,140 @@ If you anticipate no longer needing a launcher, please **terminate** it. The Ter
 
 <img width="233" height="141" alt="image" src="https://github.com/user-attachments/assets/c1f3978d-934e-4566-adb0-f73a5131b3d7" />
 
-## Guidance on Choosing Resources
-### Memory (RAM)
+# Guidance on Choosing Resources
 
-Specific memory requirements depend on the nature of the job, but as a rough guide we recommend requesting RAM 4-10 times the size of your data. For example, if you have a 6 Gb.csv file you may wish to request 24GB of memory or so.
+Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **memory (RAM)**. Choosing the right configuration helps you balance performance and cost. Use the guidance below to choose settings that match your workload and budget.
 
+## Memory (RAM)
 
-Quick Tips for Choosing RAM:
+A helpful rule of thumb is:
 
-If your code runs on your local machine, start by asking for the same amount of RAM or less (for example, if your laptop has 8GB of RAM, try asking for 8GB).
-If you are loading in native binary data files, ask for an amount of RAM about 1.5x the size of your data.
-If you are importing a text file (e.g., .csv), you may need to request up to 10x the size of the text file. We discourage ongoing reading and writing of text files; to save time and RAM, try to read your text files into binary data files and work primarily with those.
-You can review your memory usage from a past job by running bhist -l JOBID (use bhist alone for a list of your recently run jobs). Take note of MAX MEM and when you run a similar job in the future, request that amount plus about 20% for wiggle room (e.g., if your past job had a maximum memory usage of 10GB, request 12GB next time).
-### CPU/GPUs
-A GPU (graphics processing unit) is a processor that is great at handling specialized computations. We can contrast this to the Central Processing Unit (CPU), which is great at handling general computations. CPUs power most of the computations performed on the devices we use daily.
+### **Request RAM that is approximately 4–10× the size of your dataset.**
 
-GPU can be faster at completing tasks than CPU. However, it is not true for every case. The performance hugely depends on the type of computation being performed. GPUs are great at tasks that can be run in parallel ....and are often used for Machine Learning types of'embarrassingly parallel' tasks (== a huge task can be broken down into many smaller ones that are completely independent of one another).
+### Why?
+- Text files like CSVs expand significantly when loaded into memory — sometimes up to **10×** their on‑disk size.  
+- Binary formats (RDS, Parquet, Feather, Arrow, `.fst`) expand only **1.2–1.5×**.  
+- Best practices recommend avoiding both under‑ and over‑provisioning.
 
--- Taken and adapted from Why Deep Learning Uses GPUs
+### Practical Tips
+- If your workflow runs successfully on your local computer, start with a similar RAM or less (for example, if your laptop has 8GB of RAM, try asking for 8GB).
+- For CSVs, assume **10× expansion** when loaded into memory.  
+- For binary formats, assume **1.2–1.5× expansion**.  
+- Convert CSVs to binary formats to reduce RAM usage and improve load times.  
+- If you know your past memory usage, request that amount plus **20% overhead** to avoid crashes.
 
-Quick Tips for Choosing Cores:
+## CPUs and GPUs
 
-More is not really better, since this is a shared resource.
-Use fewer cores (1!) for interactive work, especially if you plan on having a session open over several days. It is considered bad form to leave sessions open for more than 7 days, as no one can use the resources that are reserved exclusively for your use.
-Choosing multiple cores for interactive work is OK if you will be finishing your work in hours to a day or two. Please do not let these sessions sit idle.
-Remember that MATLAB, R, and Python can only use 1 CPU unless you've programmed it to do otherwise.
-Stata can use multiple CPUs, but be conservative. Again, more is not necessarily better.
+### CPUs
+A **CPU** handles general-purpose computation. Most tools such as R, Python, Stata, Spyder, and MATLAB use **one CPU by default** unless explicitly parallelized.
 
+### GPUs
+A **GPU** accelerates massively parallel operations and is useful only when your code uses GPU-enabled libraries, such as:
 
-Request only 1 CPU unless you know that you are using code or libraries that were written to run in parallel. 
+- TensorFlow, PyTorch, or JAX  
+- CUDA-enabled simulation frameworks  
+- Transformer-based NLP models  
+- Large-scale deep learning workloads  
 
+If your code is *not* GPU-enabled, a GPU instance will be **more expensive** and often **slower** than a CPU-only configuration.
 
-We recommend that you request only 1 CPU unless you know that you are using code or libraries that were written to run in parallel such as Matlab parallel processint toolbox, Python multiprocessing library, or the R future package. For detailed parallel processing instructons refer to our tutorial.
+## Quick Tips for Choosing CPUs
+
+- **Use 1 CPU for almost all interactive work**, including R, Python, Stata, Spyder, and Jupyter notebooks.  
+- Choose **2+ CPUs only when your code is explicitly parallel-aware**, such as:
+  - Python: `multiprocessing`, `joblib`, `ray`, PyTorch DataLoader
+  - R: `future`, `parallel`, `data.table` multithreading
+  - MATLAB: Parallel Computing Toolbox
+  - Stata: limited multiprocessor support via `set processors`  
+- More CPUs do **not** improve performance unless your code is parallelized.  
+- Large CPU allocations should be used for **short intensive jobs**, not long-running sessions sitting idle.
+
+## Quick Tips for Choosing GPUs
+
+### Use a GPU if:
+- You are training neural networks  
+- You are working with transformer-based NLP models  
+- You are performing large-scale tensor operations  
+- Your code uses CUDA or GPU-enabled libraries  
+
+### Do *not* use a GPU if:
+- You are performing regression, modeling, or typical statistical tasks  
+- You are cleaning data or visualizing  
+- You are working in R or Stata without GPU packages  
+- You are not intentionally using deep learning libraries  
+
+## Recommended Configurations (with Cost Impact)
+
+### Cost Impact Legend
+
+- 💲 = Low cost  
+- 💲💲 = Moderate cost  
+- 💲💲💲 = High cost  
+- 💲💲💲💲 = Very high cost  
+
+| Use Case | Recommended Config | Example Launcher | Cost Impact | Notes |
+|----------|-------------------|------------------|-------------|-------|
+| Light interactive work (R/Python/Stata) | 1–2 CPUs, 4–8 GB RAM | Medium General Purpose (2 CPU / 4 GB) | 💲 | Good for small datasets and exploration. |
+| Medium analysis (2–10 GB CSV) | 1 CPU, 16–32 GB RAM | Memory-Optimized Large (2 CPU / 16 GB) | 💲💲 | CSV expands significantly; convert to binary formats. |
+| Heavy analysis (10–30 GB CSV) | 1–2 CPUs, 32–64 GB RAM | Memory-Optimized XL (4 CPU / 32 GB) | 💲💲💲 | Suitable for large merges and joins. |
+| Large binary datasets (10–50 GB) | 1–2 CPUs, 16–32 GB RAM | Extra-Large General Purpose (8 CPU / 32 GB) | 💲💲💲 | Binary formats reduce RAM needs. |
+| Stata large merges | 1–2 CPUs, 16–32 GB RAM | Stata Large General Purpose (4 CPU / 16 GB) | 💲💲 | Stata benefits from modest multiprocessor usage. |
+| Parallel simulation | 2–8 CPUs, 8–16 GB RAM | Compute-Optimized Large (8 CPU / 16 GB) | 💲💲💲 | Only useful if your code is parallelized. |
+| Classical ML (sklearn/caret) | 2–4 CPUs, 8–16 GB RAM | Large General Purpose (2 CPU / 8 GB) | 💲💲 | Most classical ML does not need GPUs. |
+| Deep learning training | 4 CPU, 16–32 GB RAM, GPU | Accelerated ML Instance (4 CPU / 16 GB GPU) | 💲💲💲💲 | Recommended for neural networks. |
+| Heavy NLP (transformers) | 4–8 CPU, 16–64 GB RAM, GPU | ml.g4dn.xlarge or similar | 💲💲💲💲 | GPU strongly recommended. |
+| Enterprise-scale DL | 48 CPU, 192 GB RAM, GPU | g6extralarge GPU instance | 💲💲💲💲 | Only for extremely large workloads. |
+
+## Resource Chooser Flowchart
+```mermaid
+flowchart TD
+
+    %% Start
+    A[What type of work are you doing?] --> B[Data analysis]
+    A --> C[Simulation]
+    A --> D[Machine learning]
+
+    %% Data analysis branch
+    B --> B1[How big is your dataset?]
+
+    B1 --> B1a[< 2 GB]
+    B1 --> B1b[2–10 GB]
+    B1 --> B1c[10–30 GB]
+
+    B1a --> BA[RAM 4–8 GB, 1 CPU]
+    B1b --> BB[RAM 8–16 GB, 1 CPU]
+    B1c --> BC[RAM 32–64 GB, 1–2 CPUs]
+
+    BA --> BEnd[CSV needs 4–10x RAM; binary needs ~1.2x]
+    BB --> BEnd
+    BC --> BEnd
+
+    %% Simulation branch
+    C --> C1[Is your code parallel-aware?]
+
+    C1 --> C2a[Yes]
+    C1 --> C2b[No]
+
+    C2a --> CA[Use 2–8 CPUs, RAM 8–32 GB]
+    C2b --> CB[Use 1 CPU, RAM 4–16 GB]
+
+    CA --> CEnd[Only scale CPUs if you wrote parallel code]
+    CB --> CEnd
+
+    %% Machine learning branch
+    D --> D1[Using GPU-enabled libraries?]
+
+    D1 --> D1a[Yes]
+    D1 --> D1b[No]
+
+    D1a --> DA[Use GPU: RAM 16–64 GB]
+    D1b --> DB[Use CPU: RAM 8–32 GB]
+
+    DA --> DEnd[GPU recommended for NN and transformers]
+    DB --> DEnd
+
+    %% Final guidance
+    BEnd --> Z[1 CPU is enough unless your code is parallel]
+    CEnd --> Z
+    DEnd --> Z
+```
