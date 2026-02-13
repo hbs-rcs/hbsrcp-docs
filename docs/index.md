@@ -17,10 +17,10 @@ hide:
 
 ## What About Cloud Costs?
 
-  - All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement model. At the end of FY26, usage and outcomes will be evaluated, and a long-term cost-coverage strategy for the platform will be developed. Additional details will be shared as they become available.
+  - All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement model. After the initial rollout, cloud costs incurred on the platform will be covered through an automatic reimbursement process up to a limit, set to cover most faculty and usage.
   - To ensure cost transparency, Project Owners can view cloud usage and associated costs directly within the RCP.
   - As the platform is a shared institutional resource, we encourage the research community to act as responsible stewards by actively monitoring and managing usage and costs, and by using the platform efficiently. The RCP includes built-in cost management controls, such as faculty-level AWS subaccounts. RCS is also available to assist with code optimization and data management strategies to support efficient use of the platform.
-  - Through the remainder of FY25 and throughout FY26, cloud usage and cost data will be collected to inform the development of a sustainable budget model for the RCP.
+  - Through the remainder of FY26, cloud usage and cost data will be collected to inform the development of a sustainable budget model for the RCP.
   - To learn more about Cloud Costs on RCP, please see our [billing section](/hbsrcp-docs/billing/)
 
 
