@@ -3,9 +3,9 @@
 This tutorial walks through the complete workflow:
 
 1. Set up your RCP account  
-2. Join or create a project space  
+2. Create or join a project space  
 3. Upload a small CSV file from your laptop  
-4. Launch RStudio or Jupyter  
+4. Launch RStudio  
 5. Read and inspect the data  
 6. Properly stop your session to avoid charges  
 
@@ -17,31 +17,31 @@ If you do not yet have access to RCP:
 
 👉 Visit the [RCP Documentation Homepage](https://hbs-rcs.github.io/hbsrcp-docs/)
 
-- Request access to the HBS Research Computing Platform (RCP).
-- Log into RCP at least once before being added to a project.
+- Request access to the HBS Research Computing Platform (RCP). You will receive an email once your account has been provisioned.
+- Log into RCP at least once before requesting or being added to a project.
 
 Full onboarding and access documentation:  
-[Getting Started with RCP](https://hbs-rcs.github.io/hbsrcp-docs/)
+[Getting Started with RCP](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
-If you encounter issues, contact: research@hbs.edu
+If you encounter issues, contact: [research@hbs.edu](mailto:research@hbs.edu)
 
 ---
 
-# Step 2: Join or Create a Project Space
+# Step 2: Create or Join a Project Space
 
 All work in RCP happens inside a **project space**.
-- If will be the project owner, request a new project space.
-- If joining an existing project, ask the project owner to add you after your first login.
+- If you will be the project owner, [request a new project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new).
+- If joining an existing project, ask the project owner to add you after your first login by reaching out to [research@hbs.edu](mailto:research@hbs.edu).
 
 Project owners can:
-- Add/remove team members  
+- Authorize adding/removing team members  
 - Configure available launchers  
 - Monitor usage and costs  
 
 Project management documentation:  
 [Managing Projects](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
 
-Once you are added to a project, you can begin uploading data and launching sessions.
+Once your project space has been created or you are added to a project, you can begin uploading data and launching sessions.
 
 ---
 
@@ -57,7 +57,7 @@ File transfer documentation:
 ## For Small Files (Under 5GB)
 
 1. Log into RCP.
-2. Open your project **Workbench**.
+2. Click on your project.
 3. Click the **Files** tab.
 4. Click **Upload File**.
 5. Select `mydata.csv` from your laptop.
@@ -65,39 +65,20 @@ File transfer documentation:
 
 ## For Larger or Multiple Files
 
-- Compress files locally before upload, or  
-- Use **Globus** for reliable large file transfer.
-
-Globus documentation:  
-[Using Globus with RCP](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
+- [Compress](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) files locally before upload, or  
+- Use [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#transferring-files) for reliable large file transfer.
 
 ---
 
 # Step 4: Choose and Start a Launcher
 
-Launcher documentation:  
-[Launchers & Sessions Guide](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
-
-Choose the launcher based on your workflow:
-
-| Tool      | Best For |
-|-----------|----------|
-| RStudio   | R analysis |
-| Jupyter   | Python notebooks |
-| VSCode    | General scripting, git, editing |
-
-Available software and storage details:  
-[Storage and Available Software](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
-
 ## To Start a Launcher
 
-1. From your project Workbench, click the launcher tile.
-2. Select:
-   - Software image  
-   - Instance size (CPU/memory)
-3. Name your session.
-4. Click **Create**.
-5. Wait for provisioning.
+1. Click on the project Workbench. For this tutorial, we will use RStudio. Click on the RStudio launcher. 
+2. Name your session.
+3. Select the instance size (CPU/GPU/RAM) appropriate for your work.
+4. Click **Provision**.
+5. Wait for provisioning. Note that this can take 5-10 minutes.
 6. Click **Connect** when ready.
 
 ⚠ Running sessions incur compute charges.
@@ -109,28 +90,21 @@ When finished:
 Launcher management documentation:  
 [Managing Launchers and Sessions](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
 
+Available software and storage details:  
+[Storage and Available Software](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
+
 ---
 
 # Step 5: Read Your CSV
 
-Assume `mydata.csv` is in your project root.
+Files you have uploaded can be found in your home directory, inside of your project folder. This typically takes the form of "/home/ec2-user/studies/YourProjectName." Assume `mydata.csv` is in this project folder.
 
 ## In R (RStudio)
 
 ```r
-df <- read.csv("mydata.csv", stringsAsFactors = FALSE)
+df <- read.csv("/home/ec2-user/studies/YourProjectName/mydata.csv", stringsAsFactors = FALSE)
 head(df)
 summary(df)
-```
-
-## In Python (Jupyter or VSCode)
-
-```python
-import pandas as pd
-
-df = pd.read_csv("mydata.csv")
-print(df.head())
-df.describe()
 ```
 
 If you need information about available software or installing packages:  
@@ -147,8 +121,8 @@ To download outputs:
 3. Click **Download**.
 
 For large downloads:
-- Compress files first, or  
-- Use Globus.
+- [Compress](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) files first, or  
+- Use Globus [**Globus**](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#transferring-files).
 
 File transfer documentation:  
 [File Transfer Guide](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
@@ -174,7 +148,7 @@ Best practice:
 1. Request account and log in.  
    [RCP Homepage](https://hbs-rcs.github.io/hbsrcp-docs/)
 
-2. Join or create project space.  
+2. Create or join a project space.  
    [Managing Projects](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
 
 3. Upload CSV file.  
@@ -190,193 +164,6 @@ Best practice:
 
 ---
 
-For help: research@hbs.edu
-
----
-
-# HBS RCP Quick Start Checklist
-## Uploading and Analyzing a Small CSV File
-
----
-
-## Account Setup
-☐ Request RCP account  
-   👉 [RCP Documentation Homepage](https://hbs-rcs.github.io/hbsrcp-docs/)
-
-☐ Log into RCP at least once  
-
-☐ Get added to a project (or create one)  
-   👉 [Managing Projects Guide](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
-
-Support: research@hbs.edu
-
----
-
-## Upload Your Data
-☐ Log into RCP  
-
-☐ Open your project Workbench  
-
-☐ Click **Files** tab  
-
-☐ Click **Upload File**  
-
-☐ Select `mydata.csv`  
-
-☐ Confirm file appears in project storage  
-
-File transfer documentation:  
-👉 [Transferring & Syncing Files](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
-
-(If >5GB or many files → use Globus)
-
----
-
-## Start a Launcher
-☐ Choose launcher:
-   - ☐ RStudio (R)
-   - ☐ Jupyter (Python)
-   - ☐ VSCode (general use)
-
-Launcher documentation:  
-👉 [Launchers & Sessions Guide](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
-
-☐ Select instance size  
-
-☐ Name session  
-
-☐ Click **Create**  
-
-☐ Click **Connect**
-
-Available software details:  
-👉 [Storage & Software Guide](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
-
-⚠ Running sessions incur compute charges.
-
----
-
-## Read the Data
-
-### R
-```
-df <- read.csv("mydata.csv")
-head(df)
-```
-
-### Python
-```
-import pandas as pd
-df = pd.read_csv("mydata.csv")
-df.head()
-```
-
----
-
-## When Finished
-☐ Save results  
-
-☐ Download output files (Files tab)  
-   👉 [File Transfer Guide](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
-
-☐ STOP session  
-
-✔ Stopping avoids ongoing compute charges.
-
-Cost and billing details:  
-👉 [Billing & Pricing Guide](https://hbs-rcs.github.io/hbsrcp-docs/billing/)
-
----
-
-
-# 🚀 HBS Research Computing Platform (RCP)
-## From Laptop CSV to Live Analysis
-
----
-
-# STEP 1 — Get Access
-☐ Request RCP account  
-   🔗 https://hbs-rcs.github.io/hbsrcp-docs/
-
-☐ Log in at least once  
-
-☐ Join or create a project  
-   🔗 https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/
-
-Need help? research@hbs.edu
-
----
-
-# STEP 2 — Upload Your Data
-File: `mydata.csv`
-
-☐ Open Project Workbench  
-☐ Go to **Files** tab  
-☐ Click **Upload File**  
-☐ Confirm upload  
-
-File transfer guide:  
-🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/
-
-Tip: Large files? Use Globus.
-
----
-
-# STEP 3 — Launch Your Environment
-
-Choose your tool:
-
-| If you use… | Choose… |
-|-------------|----------|
-| R | RStudio |
-| Python | Jupyter |
-| Mixed / Git | VSCode |
-
-Launcher guide:  
-🔗 https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/
-
-☐ Select instance size  
-☐ Name session  
-☐ Click **Create**  
-☐ Click **Connect**
-
-Available software:  
-🔗 https://hbs-rcs.github.io/hbsrcp-docs/storage_software/
-
-⚠ Sessions cost money while running.
-
----
-
-# STEP 4 — Load the Data
-
-### R
-```
-df <- read.csv("mydata.csv")
-head(df)
-```
-
-### Python
-```
-import pandas as pd
-df = pd.read_csv("mydata.csv")
-df.head()
-```
-
----
-
-# STEP 5 — Shut Down Properly
-
-☐ Save your work  
-☐ Download outputs (Files tab)  
-☐ STOP session  
-
-Billing & cost monitoring:  
-🔗 https://hbs-rcs.github.io/hbsrcp-docs/billing/
-
-✔ Stopped sessions avoid ongoing compute charges.
-
----
-
-RCP Help: research@hbs.edu
+For help: [research@hbs.edu](mailto:research@hbs.edu)
 
 
