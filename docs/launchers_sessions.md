@@ -31,7 +31,7 @@ If you anticipate no longer needing a launcher, please **terminate** it. The Ter
 
 # Guidance on Choosing Resources
 
-Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **memory (RAM)**. Choosing the right configuration helps you balance performance and cost. Use the guidance below to choose settings that match your workload and budget.
+Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **memory (RAM)**. Choosing the right configuration helps you balance performance and cost. Use the guidance below to choose settings that match your workload and budget. **Please note that currently when a job on RCP runs out of memory, it stops but does not produce an error message to the user. RCS/IT is aware of this issue and working on improvements.**
 
 ## Memory (RAM)
 
