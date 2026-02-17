@@ -21,6 +21,7 @@ nav:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
       - Changelog: 'changelog.md'
+  - FAQs: 'FAQs.md'  
 
 theme:
   name: material
