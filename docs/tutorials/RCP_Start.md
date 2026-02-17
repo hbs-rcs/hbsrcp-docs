@@ -15,13 +15,13 @@ This tutorial walks through the complete workflow:
 
 If you do not yet have access to RCP:
 
-👉 Visit the [RCP Documentation Homepage](https://hbs-rcs.github.io/hbsrcp-docs/)
+👉 Check out our [Quick Start guide](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
 - Request access to the HBS Research Computing Platform (RCP). You will receive an email once your account has been provisioned.
 - Log into RCP at least once before requesting or being added to a project.
 
 Full onboarding and access documentation:  
-[Getting Started with RCP](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
+[Getting Started with RCP](https://hbs-rcs.github.io/hbsrcp-docs)
 
 If you encounter issues, contact: [research@hbs.edu](mailto:research@hbs.edu)
 
@@ -97,7 +97,7 @@ Available software and storage details:
 
 # Step 5: Read Your CSV
 
-Files you have uploaded can be found in your home directory, inside of your project folder. This typically takes the form of "/home/ec2-user/studies/YourProjectName." Assume `mydata.csv` is in this project folder.
+Files you have uploaded can be found in your project folder. This typically takes the form of "/home/ec2-user/studies/YourProjectName." Assume `mydata.csv` is in this project folder.
 
 ## In R (RStudio)
 
@@ -146,7 +146,7 @@ Best practice:
 # Quick Workflow Summary
 
 1. Request account and log in.  
-   [RCP Homepage](https://hbs-rcs.github.io/hbsrcp-docs/)
+   [RCP Homepage](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
 2. Create or join a project space.  
    [Managing Projects](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
