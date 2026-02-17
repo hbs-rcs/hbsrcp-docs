@@ -1,3 +1,15 @@
+---
+title: "RCP Quick Start Tutorial"
+author: "Melissa Velez"
+
+tags:
+  - quick start
+  - project space
+  - upload data
+  - launch session
+  - transfer data
+---
+
 # RCP Quick Start Tutorial: Uploading Data and Launching Your First Session
 
 This tutorial walks through the complete workflow:
