@@ -1,11 +1,7 @@
 # HBS Research Computing Platform (RCP) – Frequently Asked Questions
 
----
-
 <a id="access-project-setup"></a>
 # 🔐 Access & Project Setup
-
----
 
 <a id="how-do-i-get-access"></a>
 <details>
@@ -20,8 +16,6 @@ You must log into RCP at least once before being added to a project.
 If you need help, contact **research@hbs.edu**.
 
 </details>
-
----
 
 <a id="what-is-a-project-space"></a>
 <details>
@@ -44,8 +38,6 @@ Learn more:
 
 </details>
 
----
-
 <a id="who-can-add-me"></a>
 <details>
 <summary>Who can add me to a project?</summary>
@@ -55,8 +47,6 @@ Only the **Project Owner** can add users to a project.
 You must log into RCP at least once before they can add you.
 
 </details>
-
----
 
 <a id="no-projects-visible"></a>
 <details>
@@ -71,12 +61,8 @@ Contact your project owner or **research@hbs.edu**.
 
 </details>
 
----
-
 <a id="data-upload-storage"></a>
 # 💾 Data Upload & Storage
-
----
 
 <a id="upload-file"></a>
 <details>
@@ -92,8 +78,6 @@ File transfer guide:
 
 </details>
 
----
-
 <a id="file-size-limit"></a>
 <details>
 <summary>Is there a file size limit?</summary>
@@ -105,8 +89,6 @@ More details:
 🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/
 
 </details>
-
----
 
 <a id="where-is-my-data"></a>
 <details>
@@ -122,8 +104,6 @@ Storage documentation:
 
 </details>
 
----
-
 <a id="can-i-use-git"></a>
 <details>
 <summary>Can I use Git?</summary>
@@ -135,12 +115,8 @@ Documentation:
 
 </details>
 
----
-
 <a id="launchers-compute"></a>
 # 💻 Launchers & Compute Sessions
-
----
 
 <a id="what-is-a-launcher"></a>
 <details>
@@ -158,8 +134,6 @@ Launchers guide:
 
 </details>
 
----
-
 <a id="start-session"></a>
 <details>
 <summary>How do I start a session?</summary>
@@ -175,8 +149,6 @@ Detailed instructions:
 
 </details>
 
----
-
 <a id="stop-vs-terminate"></a>
 <details>
 <summary>What’s the difference between Stop and Terminate?</summary>
@@ -191,12 +163,8 @@ More details:
 
 </details>
 
----
-
 <a id="available-packages-tools"></a>
 # 📦 Available Software & Tools
-
----
 
 <a id="available-software-list"></a>
 <details>
@@ -217,8 +185,6 @@ For more details on software environments and storage:
 
 </details>
 
----
-
 <a id="install-packages"></a>
 <details>
 <summary>Can I install additional packages?</summary>
@@ -230,12 +196,8 @@ Installation guidance:
 
 </details>
 
----
-
 <a id="costs-billing"></a>
 # 💰 Costs & Billing
-
----
 
 <a id="when-am-i-charged"></a>
 <details>
@@ -250,8 +212,6 @@ Billing documentation:
 
 </details>
 
----
-
 <a id="monitor-spending"></a>
 <details>
 <summary>How can I monitor project spending?</summary>
@@ -262,8 +222,6 @@ More information:
 🔗 https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/
 
 </details>
-
----
 
 <a id="reduce-costs"></a>
 <details>
@@ -278,12 +236,8 @@ Billing guide:
 
 </details>
 
----
-
 <a id="security-classification"></a>
 # 🔒 Security & Data Classification
-
----
 
 <a id="supported-security-levels"></a>
 <details>
@@ -298,12 +252,8 @@ If you’re unsure about your data classification, consult your project owner or
 
 </details>
 
----
-
 <a id="troubleshooting-support"></a>
 # 🛠 Troubleshooting & Support
-
----
 
 <a id="session-wont-start"></a>
 <details>
@@ -316,8 +266,6 @@ If you’re unsure about your data classification, consult your project owner or
 If issues persist, contact **research@hbs.edu**.
 
 </details>
-
----
 
 <a id="contact-support"></a>
 <details>
