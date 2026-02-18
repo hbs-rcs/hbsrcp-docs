@@ -13,7 +13,7 @@ Visit the RCP documentation homepage and follow the access instructions:
 
 You must log into RCP at least once before being added to a project.
 
-If you need help, contact **research@hbs.edu**.
+If you need help, contact [**research@hbs.edu**](mailto:research@hbs.edu).
 
 </details>
 
@@ -21,15 +21,13 @@ If you need help, contact **research@hbs.edu**.
 <details>
 <summary>What is a project space?</summary>
 
-A project space is a shared workspace where your team’s:
+A project space is a shared workspace where the following are managed:
 
 - Data  
 - Compute sessions  
 - Storage  
 - Permissions  
 - Costs  
-
-are managed.
 
 All work in RCP happens inside a project space.
 
@@ -42,9 +40,9 @@ Learn more:
 <details>
 <summary>Who can add me to a project?</summary>
 
-Only the **Project Owner** can add users to a project.
+Only the **Project Owner** can add users to a project by reaching out to [**research@hbs.edu**](mailto:research@hbs.edu).
 
-You must log into RCP at least once before they can add you.
+You must log into RCP at least once before the Project Owner can add you.
 
 </details>
 
@@ -57,7 +55,7 @@ Most likely:
 - You have not been added to a project yet, or  
 - You have not logged in at least once before being added  
 
-Contact your project owner or **research@hbs.edu**.
+Contact your project owner or [**research@hbs.edu**](mailto:research@hbs.edu).
 
 </details>
 
@@ -83,7 +81,7 @@ File transfer guide:
 <summary>Is there a file size limit?</summary>
 
 - Web uploads support single files up to 5GB.  
-- For large or multiple files, use **Globus**.
+- For large or multiple files, use **Globus** or compress your files.
 
 More details:  
 🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/
@@ -111,7 +109,7 @@ Storage documentation:
 Yes. Git can be used within launchers such as VSCode or RStudio terminals.
 
 Documentation:  
-🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/
+🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#managing-source-code-syncing-to-git
 
 </details>
 
@@ -140,7 +138,7 @@ Launchers guide:
 
 1. Open your project Workbench.  
 2. Select a launcher.  
-3. Choose instance size.  
+3. Choose instance size and type.  
 4. Click **Create**.  
 5. Click **Connect** when ready.  
 
@@ -172,10 +170,11 @@ More details:
 
 RCS and IT are continually working to add functionality to the RCP. As of February 2026, the available software and tools include:
 
-- Amazon SageMaker Notebook  
+- Aurora Database 
 - JupyterLab  
 - RStudio  
-- SageMaker Canvas  
+- SageMaker Canvas
+- SageMaker Notebook
 - Spyder  
 - Stata  
 - VSCode  
@@ -216,7 +215,7 @@ Billing documentation:
 <details>
 <summary>How can I monitor project spending?</summary>
 
-Project owners can view usage and cost dashboards within the project.
+Project Owners can view usage and cost dashboards within the project.
 
 More information:  
 🔗 https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/
@@ -243,27 +242,17 @@ Billing guide:
 <details>
 <summary>What data security levels are supported?</summary>
 
-RCP supports research workloads aligned with Harvard’s data security classifications.
+RCP supports research workloads aligned with Harvard’s data security classification Levels 1 to 4.
 
 For official guidance:  
 🔗 https://privsec.harvard.edu/
 
-If you’re unsure about your data classification, consult your project owner or **research@hbs.edu**.
+If you’re unsure about your data classification, consult your Project Owner.
 
 </details>
 
 <a id="troubleshooting-support"></a>
 # 🛠 Troubleshooting & Support
-
-<a id="session-wont-start"></a>
-<details>
-<summary>My session won’t start. What should I do?</summary>
-
-- Confirm you are in the correct project  
-- Check whether the launcher is already running  
-- Try restarting the session  
-
-If issues persist, contact **research@hbs.edu**.
 
 </details>
 
@@ -271,7 +260,7 @@ If issues persist, contact **research@hbs.edu**.
 <details>
 <summary>Who do I contact for help?</summary>
 
-Email: **research@hbs.edu**
+Email: [**research@hbs.edu**](mailto:research@hbs.edu).
 
 This is the central support channel for:
 
