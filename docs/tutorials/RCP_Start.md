@@ -47,8 +47,8 @@ All work in RCP happens inside a **project space**.
 
 Project owners can:
 - Authorize adding/removing team members  
-- Configure available launchers  
-- Monitor usage and costs  
+- [Configure available launchers](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/#configure-services) 
+- [Monitor usage and costs](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/#view-costs)
 
 Project management documentation:  
 [Managing Projects](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
