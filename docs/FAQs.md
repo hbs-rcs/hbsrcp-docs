@@ -3,18 +3,16 @@
 🔐 Access & Project Setup
 
 <a id="how-do-i-get-access"></a>
-<details>
+
 ??? note How do I get access to RCP?
 
-Visit the RCP documentation homepage and follow the access instructions:
-
-🔗 https://hbs-rcs.github.io/hbsrcp-docs/
-
-You must log into RCP at least once before being added to a project.
-
-If you need help, contact [**research@hbs.edu**](mailto:research@hbs.edu).
-
-</details>
+    Visit the RCP documentation homepage and follow the access instructions:
+    
+    🔗 https://hbs-rcs.github.io/hbsrcp-docs/
+    
+    You must log into RCP at least once before being added to a project.
+    
+    If you need help, contact [**research@hbs.edu**](mailto:research@hbs.edu).
 
 <a id="what-is-a-project-space"></a>
 <details>
