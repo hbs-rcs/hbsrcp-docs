@@ -29,8 +29,6 @@ If you anticipate no longer needing a launcher, please **terminate** it. The Ter
 
 <img width="233" height="141" alt="image" src="https://github.com/user-attachments/assets/c1f3978d-934e-4566-adb0-f73a5131b3d7" />
 
-# Running Sessions
-
 ## Guidance on Choosing Resources
 
 Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **memory (RAM)**. Choosing the right configuration helps you balance performance and cost. Use the guidance below to choose settings that match your workload and budget. 
