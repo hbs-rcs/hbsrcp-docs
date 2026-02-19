@@ -198,6 +198,8 @@ Installation guidance:
 <a id="costs-billing"></a>
 # 💰 Costs & Billing
 
+All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement model.
+
 <a id="when-am-i-charged"></a>
 <details>
 <summary>When am I charged?</summary>
