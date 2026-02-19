@@ -35,9 +35,10 @@ Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **mem
 
 ### Memory (RAM)
 
-> [!WARNING]
-> **Please note that currently when a job on RCP runs out of memory, it stops but does not produce an error message to the user. RCS/IT is aware of this issue and working on improvements.**
-
+| :warning: WARNING                                                                        |
+|:-----------------------------------------------------------------------------------------|
+| **Please note that currently when a job on RCP runs out of memory, it stops but does not produce an error message to the user. RCS/IT is aware of this issue and working on improvements.**|
+    
 A helpful rule of thumb is:
 
 ### **Request RAM that is approximately 4–10× the size of your dataset.**
