@@ -25,7 +25,7 @@ hide:
 
 ## Quick Start
 
-!!! tip inline "💬 Try our chatbot!"
+!!! tip inline end "💬 Try our chatbot!"
     Ask questions and get instant answers. Note that this is **only** available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account. If you receive a 404 error when clicking the link, first log into ChatGPT:
     
     <div style="text-align: center; margin: 1em 0;">
