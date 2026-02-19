@@ -26,7 +26,7 @@ hide:
 ## Quick Start
 
 !!! tip inline end "💬 Try our chatbot!"
-    Ask questions and get instant answers. Note that this is **only** available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account. If you receive a 404 error when clicking the link, first log into ChatGPT:
+    You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?" 
     
     <div style="text-align: center; margin: 1em 0;">
       <a href="https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper">
@@ -37,7 +37,7 @@ hide:
       </a>
     </div>
 
-    You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?"
+    **This tool is only available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account.** If you receive a 404 error when clicking the link, log into ChatGPT and try again.
     
 1. To [request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts, please use one of the links below. HBS faculty, staff, doctoral students and their guest collaborators are eligible for RCP accounts. 
     - [HBS users](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) (For users with hbs.edu credentials)
