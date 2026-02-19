@@ -29,11 +29,13 @@ If you anticipate no longer needing a launcher, please **terminate** it. The Ter
 
 <img width="233" height="141" alt="image" src="https://github.com/user-attachments/assets/c1f3978d-934e-4566-adb0-f73a5131b3d7" />
 
-# Guidance on Choosing Resources
+# Running Sessions
+
+## Guidance on Choosing Resources
 
 Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **memory (RAM)**. Choosing the right configuration helps you balance performance and cost. Use the guidance below to choose settings that match your workload and budget. 
 
-## Memory (RAM)
+### Memory (RAM)
 
 > [!WARNING]
 > **Please note that currently when a job on RCP runs out of memory, it stops but does not produce an error message to the user. RCS/IT is aware of this issue and working on improvements.**
@@ -42,24 +44,24 @@ A helpful rule of thumb is:
 
 ### **Request RAM that is approximately 4–10× the size of your dataset.**
 
-### Why?
+#### Why?
 - Text files like CSVs expand significantly when loaded into memory — sometimes up to **10×** their on‑disk size.  
 - Binary formats (RDS, Parquet, Feather, Arrow, `.fst`) expand only **1.2–1.5×**.  
 - Best practices recommend avoiding both under‑ and over‑provisioning.
 
-### Practical Tips
+#### Practical Tips
 - If your workflow runs successfully on your local computer, start with a similar RAM or less (for example, if your laptop has 8GB of RAM, try asking for 8GB).
 - For CSVs, assume **10× expansion** when loaded into memory.  
 - For binary formats, assume **1.2–1.5× expansion**.  
 - Convert CSVs to binary formats to reduce RAM usage and improve load times.  
 - If you know your past memory usage, request that amount plus **20% overhead** to avoid crashes.
 
-## CPUs and GPUs
+### CPUs and GPUs
 
-### CPUs
+#### CPUs
 A **CPU** handles general-purpose computation. Most tools such as R, Python, Stata, Spyder, and MATLAB use **one CPU by default** unless explicitly parallelized.
 
-### GPUs
+#### GPUs
 A **GPU** accelerates massively parallel operations and is useful only when your code uses GPU-enabled libraries, such as:
 
 - TensorFlow, PyTorch, or JAX  
@@ -69,7 +71,7 @@ A **GPU** accelerates massively parallel operations and is useful only when your
 
 If your code is *not* GPU-enabled, a GPU instance will be **more expensive** and often **slower** than a CPU-only configuration.
 
-## Quick Tips for Choosing CPUs
+### Quick Tips for Choosing CPUs
 
 - **Use 1 CPU for almost all interactive work**, including R, Python, Stata, Spyder, and Jupyter notebooks.  
 - Choose **2+ CPUs only when your code is explicitly parallel-aware**, such as:
@@ -80,23 +82,23 @@ If your code is *not* GPU-enabled, a GPU instance will be **more expensive** and
 - More CPUs do **not** improve performance unless your code is parallelized.  
 - Large CPU allocations should be used for **short intensive jobs**, not long-running sessions sitting idle.
 
-## Quick Tips for Choosing GPUs
+### Quick Tips for Choosing GPUs
 
-### Use a GPU if:
+#### Use a GPU if:
 - You are training neural networks  
 - You are working with transformer-based NLP models  
 - You are performing large-scale tensor operations  
 - Your code uses CUDA or GPU-enabled libraries  
 
-### Do *not* use a GPU if:
+#### Do *not* use a GPU if:
 - You are performing regression, modeling, or typical statistical tasks  
 - You are cleaning data or visualizing  
 - You are working in R or Stata without GPU packages  
 - You are not intentionally using deep learning libraries  
 
-## Recommended Configurations (with Cost Impact)
+### Recommended Configurations (with Cost Impact)
 
-### Cost Impact Legend
+#### Cost Impact Legend
 
 - 💲 = Low cost  
 - 💲💲 = Moderate cost  
