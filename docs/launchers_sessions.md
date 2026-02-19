@@ -95,9 +95,9 @@ If your code is *not* GPU-enabled, a GPU instance will be **more expensive** and
 - You are working in R or Stata without GPU packages  
 - You are not intentionally using deep learning libraries  
 
-### Recommended Configurations (with Cost Impact)
+## Recommended Configurations (with Cost Impact)
 
-#### Cost Impact Legend
+### Cost Impact Legend
 
 - 💲 = Low cost  
 - 💲💲 = Moderate cost  
