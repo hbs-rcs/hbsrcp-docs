@@ -42,12 +42,12 @@ If you encounter issues, contact: [research@hbs.edu](mailto:research@hbs.edu)
 # Step 2: Create or Join a Project Space
 
 All work in RCP happens inside a **project space**.
-- If you will be the project owner, [request a new project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new).
+- If you will be the project owner, [request a new project space](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new). Once the space is provisioned, [configure your launchers](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/#configure-services) .
 - If joining an existing project, ask the project owner to add you after your first login by reaching out to [research@hbs.edu](mailto:research@hbs.edu).
 
 Project owners can:
 - Authorize adding/removing team members  
-- [Configure available launchers](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/#configure-services) 
+- Configure launchers
 - [Monitor usage and costs](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/#view-costs)
 
 Project management documentation:  
@@ -109,7 +109,7 @@ Available software and storage details:
 
 # Step 5: Read Your CSV
 
-Files you have uploaded can be found in your project folder. This typically takes the form of "/home/ec2-user/studies/YourProjectName." Assume `mydata.csv` is in this project folder.
+Files you have uploaded can be found in your project folder. This typically takes the form of ```"/home/ec2-user/studies/YourProjectName."``` Assume `mydata.csv` is in this project folder.
 
 ## In R (RStudio)
 
