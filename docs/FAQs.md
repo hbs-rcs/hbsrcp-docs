@@ -1,7 +1,6 @@
 # HBS Research Computing Platform (RCP) – Frequently Asked Questions
 
-<a id="access-project-setup"></a>
-# 🔐 Access & Project Setup
+??? 🔐 Access & Project Setup
 
 <a id="how-do-i-get-access"></a>
 <details>
