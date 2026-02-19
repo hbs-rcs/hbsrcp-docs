@@ -17,7 +17,7 @@ nav:
   - Tutorials: 
       - Topics: 'tutorials.md'
       - Compressing and Extracting Files: 'tutorials/compressextract.md'
-      - RCP Quick Start Tutorials: 'tutorials/RCP_Start.md'
+      - RCP Quick Start Tutorial: 'tutorials/RCP_Start.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
