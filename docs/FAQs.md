@@ -1,10 +1,10 @@
 # HBS Research Computing Platform (RCP) – Frequently Asked Questions
 
-??? 🔐 Access & Project Setup
+🔐 Access & Project Setup
 
 <a id="how-do-i-get-access"></a>
 <details>
-<summary>How do I get access to RCP?</summary>
+??? note How do I get access to RCP?
 
 Visit the RCP documentation homepage and follow the access instructions:
 
