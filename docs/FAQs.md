@@ -6,7 +6,7 @@
 
     Visit the RCP documentation homepage and follow the access instructions:
 
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/](https://hbs-rcs.github.io/hbsrcp-docs/)
 
     You must log into RCP at least once before being added to a project.
 
@@ -25,7 +25,7 @@
     All work in RCP happens inside a project space.
 
     Learn more:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
 
 ??? note "Who can add me to a project?"
 
@@ -52,7 +52,7 @@
     4. Select your file.  
 
     File transfer guide:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
 
 ??? note "Is there a file size limit?"
 
@@ -60,7 +60,7 @@
     - For large or multiple files, use **Globus** or compress your files.
 
     More details:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
 
 ??? note "Where is my data stored?"
 
@@ -70,14 +70,14 @@
     - Your launchers (RStudio, Jupyter, VSCode)
 
     Storage documentation:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/storage_software/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/storage_software/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
 
 ??? note "Can I use Git?"
 
     Yes. Git can be used within launchers such as VSCode or RStudio terminals.
 
     Documentation:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#managing-source-code-syncing-to-git
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#managing-source-code-syncing-to-git](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#managing-source-code-syncing-to-git)
 
 ## 💻 Launchers & Compute Sessions
 
@@ -91,7 +91,7 @@
     - SageMaker environments  
 
     Launchers guide:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
 
 ??? note "How do I start a session?"
 
@@ -102,7 +102,7 @@
     5. Click **Connect** when ready.  
 
     Detailed instructions:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
 
 ??? note "What’s the difference between Stop and Terminate?"
 
@@ -112,7 +112,7 @@
     Stopping prevents ongoing compute charges.
 
     More details:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
 
 ## 📦 Available Software & Tools
 
@@ -130,14 +130,14 @@
     - VSCode  
 
     For more details on software environments and storage:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/storage_software/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/storage_software/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
 
 ??? note "Can I install additional packages?"
 
     Yes. You can install R or Python packages within your launcher session.
 
     Installation guidance:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/storage_software/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/storage_software/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
 
 ## 💰 Costs & Billing
 
@@ -150,14 +150,14 @@ All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement 
     Stopped sessions incur minimal storage costs.
 
     Billing documentation:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/billing/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/billing/](https://hbs-rcs.github.io/hbsrcp-docs/billing/)
 
 ??? note "How can I monitor project spending?"
 
     Project Owners can view usage and cost dashboards within the project.
 
     More information:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
 
 ??? note "How do I reduce costs?"
 
@@ -166,7 +166,7 @@ All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement 
     - Terminate unused sessions  
 
     Billing guide:  
-    🔗 https://hbs-rcs.github.io/hbsrcp-docs/billing/
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/billing/](https://hbs-rcs.github.io/hbsrcp-docs/billing/)
 
 ## 🔒 Security & Data Classification
 
@@ -175,7 +175,7 @@ All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement 
     RCP supports research workloads aligned with Harvard’s data security classification Levels 1 to 4.
 
     For official guidance:  
-    🔗 https://privsec.harvard.edu/
+    🔗 [https://privsec.harvard.edu/](https://privsec.harvard.edu/)
 
     If you’re unsure about your data classification, consult your Project Owner.
 
