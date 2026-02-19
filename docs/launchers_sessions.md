@@ -33,10 +33,11 @@ If you anticipate no longer needing a launcher, please **terminate** it. The Ter
 
 Each launcher allows you to select a combination of **CPUs**/**GPUs**, and **memory (RAM)**. Choosing the right configuration helps you balance performance and cost. Use the guidance below to choose settings that match your workload and budget. 
 
+## Memory (RAM)
+
+
 > [!WARNING]
 > **Please note that currently when a job on RCP runs out of memory, it stops but does not produce an error message to the user. RCS/IT is aware of this issue and working on improvements.**
-
-## Memory (RAM)
 
 A helpful rule of thumb is:
 
