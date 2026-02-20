@@ -39,8 +39,7 @@ hide:
 
     **This tool is only available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account.** If you receive a 404 error when clicking the link, log into ChatGPT and try again.
 
-    **This tool is only available to individuals with an HBS login and you must be logged into ChatGPT with your HBS account.** If you receive a 404 error when clicking the link, log into ChatGPT and try again.
-    
+   
 1. To [request an account](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) and invite your team to request accounts, please use one of the links below. HBS faculty, staff, doctoral students and their guest collaborators are eligible for RCP accounts. 
     - [HBS users](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new) (For users with hbs.edu credentials)
     - [Guest collaborators](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new) (Only for users who **do not** have HBS credentials)  
