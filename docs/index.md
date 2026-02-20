@@ -29,7 +29,7 @@ hide:
     You can ask questions such as, "How do I obtain an RCP account?" or "How do I transfer data to the RCP?" 
     
     <div style="text-align: center; margin: 1em 0;">
-      <a href="https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper">
+      <a href="https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper"
          target="_blank"
          rel="noopener noreferrer">
         <img 
