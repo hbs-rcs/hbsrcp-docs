@@ -30,6 +30,8 @@ hide:
     
     <div style="text-align: center; margin: 1em 0;">
       <a href="https://chatgpt.com/g/g-69839e9d94cc819187f8a6594cb04827-rcp-helper">
+         target="_blank"
+         rel="noopener noreferrer">
         <img 
           src="https://img.shields.io/badge/Open%20Chatbot-007acc?style=for-the-badge&color=007acc&labelColor=007acc" 
           alt="Open Chatbot"
