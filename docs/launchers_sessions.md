@@ -99,6 +99,11 @@ If your code is *not* GPU-enabled, a GPU instance will be **more expensive** and
 
 ### Cost Impact Legend
 
+| :warning: WARNING                                                                        |
+|:-----------------------------------------------------------------------------------------|
+| **If you anticipate installing many packages in an RStudio launcher, please note that this can take a long time and stall when using the smallest configuration. Given this, if you will be installing many packages in RStudio, you may consider using a configuration one level larger than what is recommended below. RCS/IT is aware of this issue and working on improvements.**|
+    
+
 - 💲 = Low cost  
 - 💲💲 = Moderate cost  
 - 💲💲💲 = High cost  
