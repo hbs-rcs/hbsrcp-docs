@@ -135,9 +135,6 @@
     - SAS  
     - Batch processing capabilities
     - Parallel processing
-    - Spyder  
-    - Stata  
-    - VSCode  
 
     For more details on software environments and storage:  
     🔗 [https://hbs-rcs.github.io/hbsrcp-docs/storage_software/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
