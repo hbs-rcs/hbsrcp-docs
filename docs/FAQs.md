@@ -1,9 +1,9 @@
 # HBS Research Computing Platform (RCP) – Frequently Asked Questions
 
-## 🔄 Transition from HBSGrid to the RCP Transition from HBSGrid to the RCP
+## 🔄 Transition from HBSGrid to the RCP
 ??? note "Why is the HBS Research Grid being retired?"
 
-    HBS is transitioning to a more modern, scalable, and flexible research computing environment. The cloud-based Research Computing Platform (RCP) offers enhanced performance, greater elasticity, access to GPUs, and integrated data science tools that better support evolving research needs. Learn more about RCP  
+    HBS is transitioning to a more modern, scalable, and flexible research computing environment. The cloud-based Research Computing Platform (RCP) offers enhanced performance, greater elasticity, access to GPUs, and integrated data science tools that better support evolving research needs.  
 
 ??? note "Do I need to take action today? Will my current projects and home directory be affected right now?" 
 
@@ -11,7 +11,7 @@
 
 ??? note "What should I do if I am starting a new research project?"
 
-    Many new project spaces can be provisioned on the RCP. Please see the available software and tools [below](https://hbs-rcs.github.io/hbsrcp-docs/FAQs/#available-software-tools), or contact [research@hbs.edu](mailto:research@hbs.edu) with a description of your work if you'd like to discuss using the RCP. We’re happy to discuss your project requirements, or to answer any other questions you may have.
+    Many new project spaces can be provisioned on the RCP. Please see the available software and tools [below](https://hbs-rcs.github.io/hbsrcp-docs/FAQs/#available-software-tools), or contact [research@hbs.edu](mailto:research@hbs.edu) with a description of your work if you'd like to discuss using the platform. We’re happy to discuss your project requirements, or to answer any other questions you may have.
 
 ## 🔐 Access & Project Setup
 
