@@ -82,3 +82,11 @@ Each service will have its own configuration parameters
 For the Aurora Database Service, for example, it will require a name and a minimum and maximum capacity.
 
 Once a service is running, if there is information needed by the research team for the service, it will be available by selecting the "Service Credentials" within the workbench tab.  For the Aurora Database, for example, it will show a username, password and connect string, or endpoint, for the database.
+
+### Modify Services
+
+Once you have set up a launcher, you may want to modify the configurations. For example, you may have initially configured your launcher only with CPUs, but your work now requires a GPU. To modify an _existing_ launcher, navigate to the Project Management tab under the "launchers" section. Find the launchers you'd like to adjust and add additional configurations by clicking on the three dots next to the launcher name:
+
+<img width="1294" height="616" alt="image" src="https://github.com/user-attachments/assets/aa157d2c-08e6-4206-903b-d9e57cd52843" />
+
+
