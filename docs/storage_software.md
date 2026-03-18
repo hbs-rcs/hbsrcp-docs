@@ -36,7 +36,7 @@ import mysql.connector
 conn = mysql.connector.connect( 
     user = 'username', 
     password = 'password'', 
-    host = 'host', 
+    host = 'endpoint', 
     database = ''databasename')
 ```
 
