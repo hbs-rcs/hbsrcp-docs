@@ -23,9 +23,10 @@ The RCP offers database capabilities through a back-end connection to [Amazon Au
 
 <img width="596" height="200" alt="image" src="https://github.com/user-attachments/assets/d414855f-4162-4aa7-9796-bc4719667df4" />
 
+#### Connecting to an Existing Database
 See below for sample code to connect to your database using Python. If you prefer to use R, please contact RCS for customized instructions.
 
-#### Python
+##### Python
 
 Using the [mysql](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html) python package:
 
@@ -39,6 +40,37 @@ conn = mysql.connector.connect(
     database = ''databasename')
 ```
 
+#### Creating a New Database
+
+There are several ways to create a new database from a DataFrame, which may have been loaded from various file formats (such as CSV or Parquet). Below is sample Python code demonstrating one approach.
+
+##### Python
+
+Using the [sqlalchemy](https://www.sqlalchemy.org/) python package:
+
+```
+from sqlalchemy import create_engine, text
+
+# Define your Aurora cluster credentials and database name
+AURORA_ENDPOINT = "endpoint" #The endpoint from the Service Credentials 
+DB_USER = "username"
+DB_PASSWORD = "password"
+NEW_DB_NAME = "NewDatabase" #Database name of your choosing
+
+try:
+    # Create a SQLAlchemy engine
+    engine = create_engine(f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{AURORA_ENDPOINT}')
+
+    # Create the database
+    with engine.connect() as connection:
+        connection.execute(text(f"CREATE DATABASE IF NOT EXISTS {NEW_DB_NAME}"))
+
+    # Add the DataFrame to the database
+    df.to_sql(name='my_table', con=engine, schema=NEW_DB_NAME, if_exists='replace', index=False)
+
+except Exception as e:
+    print(f"An error occurred: {e}")
+```
 
 ## Available software and analysis tools
 
