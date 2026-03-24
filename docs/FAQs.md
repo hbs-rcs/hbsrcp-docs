@@ -196,7 +196,7 @@ All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement 
     Please note that Harvard provides access to many APIs, including AI APIs such as Gemini and OpenAI, which can be used securely for data up to Level 3. Information about how to request       an account and set up billing for these APIs through Harvard is available below.
 
     Harvard APIs:  
-    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/billing/](https://portal.apis.huit.harvard.edu/apis)](https://portal.apis.huit.harvard.edu/apis)
+    🔗 [https://hbs-rcs.github.io/hbsrcp-docs/billing/](https://portal.apis.huit.harvard.edu/apis)
 
 ## 🔒 Security & Data Classification
 
