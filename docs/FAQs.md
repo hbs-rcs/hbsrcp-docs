@@ -189,11 +189,11 @@ All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement 
     Billing guide:  
     🔗 [https://hbs-rcs.github.io/hbsrcp-docs/billing/](https://hbs-rcs.github.io/hbsrcp-docs/billing/)
 
-    ??? note "Does the RCP cover the cost of API keys (e.g., OpenAI, Gemini, external data services)?"
+??? note "Does the RCP cover the cost of API keys (e.g., OpenAI, Gemini, external data services)?"
 
-    No. The RCP covers platform-related cloud costs (compute, storage, and built-in services), but it does not cover costs associated with external APIs or     third-party services that you access from within the platform. These must be paid separately by your research budget. 
+    No. The RCP covers platform-related cloud costs (compute, storage, and built-in services), but it does not cover costs associated with external APIs or third-party services that you           access from within the platform. These must be paid separately by your research budget. 
 
-    Please note that Harvard provides access to many APIs, including AI APIs such as Gemini and OpenAI, which can be used securely for data up to Level 3.       Information about how to request an account and set up billing for these APIs through Harvard is available below.
+    Please note that Harvard provides access to many APIs, including AI APIs such as Gemini and OpenAI, which can be used securely for data up to Level 3. Information about how to request       an account and set up billing for these APIs through Harvard is available below.
 
     Harvard APIs:  
     🔗 [https://hbs-rcs.github.io/hbsrcp-docs/billing/](https://portal.apis.huit.harvard.edu/apis)](https://portal.apis.huit.harvard.edu/apis)
