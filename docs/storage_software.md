@@ -44,9 +44,13 @@ conn = mysql.connector.connect(
 
 There are several ways to create a new database from a DataFrame, which may have been loaded from various file formats (such as CSV or Parquet). Below is sample Python code demonstrating one approach.
 
+> [!IMPORTANT]
+> Your database name must start with a letter, and can only consist of letters, numbers, or underscores!
+
 ##### Python
 
 Using the [sqlalchemy](https://www.sqlalchemy.org/) python package:
+
 
 ```
 from sqlalchemy import create_engine, text
@@ -55,7 +59,7 @@ from sqlalchemy import create_engine, text
 AURORA_ENDPOINT = "endpoint" #The endpoint from the Service Credentials 
 DB_USER = "username"
 DB_PASSWORD = "password"
-NEW_DB_NAME = "NewDatabase" #Database name of your choosing
+NEW_DB_NAME = "NewDatabase" #Database name of your choosing. Please note that the database name must start with a letter, and can only consist of letters, numbers, or underscores
 
 try:
     # Create a SQLAlchemy engine
