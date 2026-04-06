@@ -44,8 +44,9 @@ conn = mysql.connector.connect(
 
 There are several ways to create a new database from a DataFrame, which may have been loaded from various file formats (such as CSV or Parquet). Below is sample Python code demonstrating one approach.
 
-> [!IMPORTANT]
-> Your database name must start with a letter, and can only consist of letters, numbers, or underscores!
+!!! info inline end "Database Naming Requirements"
+    
+    Your database name must start with a letter, and can only consist of letters, numbers, or underscores!
 
 ##### Python
 
