@@ -108,4 +108,19 @@ To update/upgrade a module already installed, include also the `--upgrade` optio
 pip install --upgrade some_module
 ```
 
+### Utility Launcher
+
+The RCP features a Utility Launcher that makes it even easier to access commonly used desktop applications directly within your research environment. Use the Utility Launcher to quickly open tools such as:
+
+* [LibreOffice](https://www.libreoffice.org/) for spreadsheets and documents
+* File and database browsers like [DBeaver](https://dbeaver.io/)
+* Data transfer tools like [FileZilla](https://filezilla-project.org/) and [rclone](https://rclone.org/)
+* Additional desktop applications, without any local installation or setup
+
+To see all available applications, first, click on the oval button in the upper left-hand side of the screen:<br></br>
+<img width="140" height="59" alt="image" src="https://github.com/user-attachments/assets/699f36fa-9d72-4ed3-a19c-8ff59cf15627" />
+<br></br>
+Second, click on the app grid to reveal the installed applications:
+
+<img width="607" height="323" alt="image" src="https://github.com/user-attachments/assets/3f672773-2164-4fd3-a147-36ef8b8b3418" />
 
