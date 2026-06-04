@@ -40,6 +40,23 @@ conn = mysql.connector.connect(
     database = ''databasename')
 ```
 
+#### DBeaver
+
+DBeaver can be found on the [Utility Launcher](storage_software.md/#utility-launcher). After opening it, connect to an existing database by clicking on "Connect to a Database," select SQL, MySQL, and then Next.
+
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/60ab33c0-9187-4570-97e9-776de38adb3b" />
+<br></br>
+
+Using the information in the [Service Credentials](storage_software.md/#database) found on the Workbench tab, paste the Endpoint into the Server Host box, and replace the Username and Password with your service credentials. Click on the + SSH, SSL, tab and select SSL.
+
+<img width="323" height="287" alt="image" src="https://github.com/user-attachments/assets/22e0f2cf-6e33-498c-bc6a-d8e5541b3de9" />
+<br></br>
+
+Unclick verify server certificate and click Finish.
+
+<img width="322" height="289" alt="image" src="https://github.com/user-attachments/assets/3582ec75-f429-472a-a30e-17700d94bd76" />
+
+
 #### Creating a New Database
 
 !!! info inline end "Database Naming Requirements"
