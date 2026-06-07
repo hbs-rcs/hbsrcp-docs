@@ -140,6 +140,7 @@
     - SageMaker Notebook
     - Spyder  
     - Stata  
+    - Utility Launcher (word processor, spreadsheet application, database GUI, internet browser, etc.)
     - VSCode  
 
     Coming Soon!
@@ -147,7 +148,6 @@
     - Mathematica 
     - MatLab 
     - SAS  
-    - Batch processing capabilities
     - Parallel processing
 
     For more details on software environments and storage:  
