@@ -143,7 +143,7 @@ Second, click on the app grid to reveal the installed applications:
 
 ## Running Background Jobs
 
-A background job lets you start a computation and walk away; it keeps running on the server even after you close your browser, and the results are waiting for you when you come back. There are several ways to run background jobs on RCP, and selecting which to use depends on your use case. For small to medium jobs that can leverage the CPUs in a software's launcher for parallelization (if needed), you can run the background jobs in that launcher. For larger, more complex jobs that require a scheduler and/or extensive parallelization and resources, we recommend using the terminal provided in the Parallel Computing Services (PCS) launcher. 
+A background job lets you start a computation and walk away; it keeps running on the server even after you close your browser, and the results are waiting for you when you come back. There are several ways to run background jobs on RCP, and selecting which to use depends on your use case. For small to medium jobs that can leverage the CPUs in a software's launcher for parallelization (if needed), you can run the background jobs in that launcher. For larger, more complex jobs that require a scheduler and/or extensive parallelization and resources, we recommend using the terminal provided in the [Parallel Computing Services (PCS)](storage_software.md#amazons-parallel-computing-services-pcs) launcher. 
 
 ### Research Software Launchers
 
