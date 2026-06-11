@@ -159,7 +159,9 @@ Within each research software launcher (e.g., VSCode, RStudio, etc.) there are t
 
 <summary>RStudio</summary>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZrOzN0P0D7M?si=Bi7UDYjCnxWjccvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video width="600" controls>
+  <source src="[https://raw.githubusercontent.com/hbs-rcs/hbsrcp-docs/MiscEdits_061126/docs/media/Rstudio_RCP.mp4](https://raw.githubusercontent.com/hbs-rcs/hbsrcp-docs/MiscEdits_061126/docs/media/Rstudio_RCP.mp4)" type="video/mp4">
+</video>
 
 </details>
 
