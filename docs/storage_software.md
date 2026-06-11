@@ -151,11 +151,13 @@ Within each research software launcher (e.g., VSCode, RStudio, etc.) there are t
 
 <details>
 <summary>Jupyter</summary>
+<div markdown="1">
 
 <video width="600" controls>
   <source src="https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4" type="video/mp4">
 </video>
 
+</div>
 </details>
 
 <details>
