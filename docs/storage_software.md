@@ -150,8 +150,11 @@ A background job lets you start a computation and walk away; it keeps running on
 Within each research software launcher (e.g., VSCode, RStudio, etc.) there are two ways to run background jobs. Below, we provide instructions and a video with additional information for each software:
 
 <details>
+<summary>Jupyter</summary>
 
-<summary>Jupyter Lab</summary>
+<video width="600" controls>
+  <source src="https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4" type="video/mp4">
+</video>
 
 </details>
 
@@ -160,7 +163,7 @@ Within each research software launcher (e.g., VSCode, RStudio, etc.) there are t
 <summary>RStudio</summary>
 
 <video width="600" controls>
-  <source src="[https://raw.githubusercontent.com/hbs-rcs/hbsrcp-docs/MiscEdits_061126/docs/media/Rstudio_RCP.mp4](https://raw.githubusercontent.com/hbs-rcs/hbsrcp-docs/MiscEdits_061126/docs/media/Rstudio_RCP.mp4)" type="video/mp4">
+  <source src="[https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4](https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4)" type="video/mp4">
 </video>
 
 </details>
