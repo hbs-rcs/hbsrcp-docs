@@ -141,3 +141,15 @@ Second, click on the app grid to reveal the installed applications:
 
 <img width="607" height="323" alt="image" src="https://github.com/user-attachments/assets/3f672773-2164-4fd3-a147-36ef8b8b3418" />
 
+## Running Background Jobs
+
+A background job lets you start a computation and walk away — it keeps running on the server even after you close your browser, and the results are waiting for you when you come back. There are several ways to run background jobs on RCP, and selecting which to use depends on your use case. For small to medium jobs that can leverage the CPUs in a software's launcher for parallelization (if needed), you can run the background jobs in that launcher. For larger, more complex jobs that require a scheduler and/or extensive parallelization and resources, we recommend using the terminal provided in the Parallel Computing Services (PCS) launcher. 
+
+### Using Research Software Launchers
+
+Within each research software launcher (e.g., VSCode, R, etc.) there are two ways to run background jobs. Below, we provide instructions and a video with additional information for each software:
+
+
+
+
+
