@@ -151,22 +151,16 @@ Within each research software launcher (e.g., VSCode, RStudio, etc.) there are t
 
 <details>
 <summary>Jupyter</summary>
-<div markdown="1">
-
-<video width="600" controls>
-  <source src="https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4" type="video/mp4">
-</video>
-
-</div>
+    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AQ60-MvZtQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   
 </details>
 
 <details>
 
 <summary>RStudio</summary>
 
-<video width="600" controls>
-  <source src="[https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4](https://github.com/hbs-rcs/hbsrcp-docs/releases/download/media/Jupyter_RCP.mp4)" type="video/mp4">
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BjQMP3xFh3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </details>
 
@@ -174,11 +168,16 @@ Within each research software launcher (e.g., VSCode, RStudio, etc.) there are t
 
 <summary>Stata</summary>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/43Kzsl1O8QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </details>
 
 <details>
 
 <summary>VSCode</summary>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O1TMGFwOKpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 </details>
 
