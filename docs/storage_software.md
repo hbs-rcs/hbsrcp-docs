@@ -314,8 +314,160 @@ pkill -f video_test.py
 
 <summary>RStudio</summary>
 
+
+## Overview
+
+This guide explains two ways to run long-running R jobs in the background using RStudio on the HBS Research Computing Platform (RCP). Background jobs allow your analysis to continue running on the server even after you close your browser tab.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BjQMP3xFh3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+---
+
+## Methods at a Glance
+
+| Method 1: Close the Browser Tab | Method 2: Terminal with nohup |
+|----------------------------------|-------------------------------|
+| Run your script in the RStudio console, then close the tab. The session keeps running. When you reconnect, your output will be waiting. <br></br>**Best for:** simple scripts you want to kick off quickly. | Use RStudio's built-in Terminal with the `nohup` command to launch a script that runs fully detached from the browser session.  <br></br>**Best for:** long jobs where you want monitoring and control. |
+
+---
+
+## Method 1: Close the Browser Tab
+
+### Step 1 — Create and Save a Test Script
+
+Open RStudio and create a new R script. This example script named `video_test.R` simulates a long-running analysis by printing a status message every 5 seconds for 60 iterations (5 minutes total).
+
+```r
+for (i in 1:60) {
+  print(paste("Step", i, "- still running"))
+  Sys.sleep(5)
+}
+print("Done!")
+```
+
+### Step 2 — Run the Script
+
+With your script open, click the **Run** button in RStudio (or press **Ctrl+Enter** / **Cmd+Enter**) to execute the code. You will see output appearing in the Console panel:
+
+```
+[1] "Step 1 - still running"
+[1] "Step 2 - still running"
+...
+```
+
+### Step 3 — Close the Browser Tab
+
+Once the script is running, close the RStudio browser tab. The R session will continue running on the server in the background.
+
+### Step 4 — Reconnect and View Results
+
+Navigate back to the HBS RCP and click **Connect** on your RStudio session. Scroll through the Console output to confirm the script continued running while the tab was closed.
+
+---
+
+## Method 2: Terminal with nohup
+
+### Step 1 — Open the Terminal
+
+In RStudio, click the **Terminal** tab at the bottom of the screen (next to the Console tab). A bash shell connected to the server will open.
+
+### Step 2 — Launch the Background Job
+
+In the Terminal, run the following command and press Enter:
+
+```bash
+nohup Rscript your_file_name.R > output.log 2>&1 &
+```
+
+**What each part means:**
+
+| Part | Description |
+|------|-------------|
+| `nohup` | Keeps the job running after you log out or close the browser |
+| `Rscript your_file_name.R` | Runs your R script from the command line |
+| `> output.log` | Redirects all printed output to a log file |
+| `2>&1` | Also captures error messages in the same log |
+| `&` | Sends the process to the background immediately |
+
+After pressing Enter, a process ID (PID) and job number will appear, for example:
+
+```
+[1] 17942
+```
+
+This number is your job identifier. Note it down in case you need to stop the job later. You can now close the browser tab — the job will keep running.
+
+### Step 3 — Monitor Job Progress
+
+To see the live output of your running job, reopen RStudio, go to the Terminal, and type:
+
+```bash
+tail -f output.log
+```
+
+New lines will appear in real time as Rscript runs. Press **Ctrl+C** to stop watching the log — this does **NOT** stop the job itself.
+
+### Step 4 — Check Whether the Job is Still Running
+
+To verify the job is running in the background, type:
+
+```bash
+jobs
+```
+
+You will see output like:
+
+```
+[1]+  Running    nohup Rscript your_file_name.R > output.log 2>&1 &
+```
+
+---
+
+## Stopping a Background Job
+
+If you discover a bug or need to cancel the job, there are three methods. All are run in the Terminal.
+
+### Method A — Kill by Job Number
+
+```bash
+kill 17942
+```
+
+Replace `17942` with the job number that was shown when you launched the job.
+
+### Method B — Kill by Process ID
+
+```bash
+kill %1
+```
+
+### Method C — Kill by Script Name
+
+```bash
+pkill -f your_file_name.R
+```
+
+Useful if you have lost track of the job number or PID.
+
+In all cases, confirm termination by running `jobs` again — you should see `Terminated` next to the job.
+
+---
+
+## Best Practices
+
+- Test your script on a small sample before launching a full long-running job.
+- Validate that outputs look correct on a subset before scaling up.
+- Monitor `output.log` regularly with `tail -f` to catch errors early.
+- Confirm that your script writes output files to the expected paths before starting.
+- Save your script before running — unsaved edits will not be picked up.
+
+---
+
+## Getting Help
+
+If you run into any issues with background jobs or anything else on the RCP, the HBS Research Computing team is here to help.
+
+📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
 </details>
 
 <details>
