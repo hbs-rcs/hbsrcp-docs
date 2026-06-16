@@ -631,7 +631,146 @@ In all cases, confirm termination by running `jobs` again — you should see `Te
 
 <summary>VSCode</summary>
 
+
+## Overview
+
+This guide explains two ways to run long-running Python jobs in the background using VSCode on the HBS Research Computing Platform (RCP).
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O1TMGFwOKpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Methods at a Glance
+
+| Method 1: Close the Browser Tab | Method 2: Terminal with nohup |
+|----------------------------------|-------------------------------|
+| Run your script using the VSCode play button, then close the tab. The session keeps running. <br></br>**Best for:** quick kick-off with no extra commands. | Open a bash terminal in VSCode and use `nohup` to run the script fully detached. <br></br>**Best for:** long jobs where you want monitoring and control. |
+
+---
+
+## Method 1: Close the Browser Tab
+
+### Step 1 — Create and Save a Test Script
+
+Open VSCode and create a new file. This example code is called `video_testing.py`:
+
+```python
+import time
+
+for i in range(60):
+    print(f"Step {i+1} - still running", flush=True)
+    time.sleep(5)
+
+print("Done!")
+```
+
+### Step 2 — Run the Script
+
+Click the **play button** (triangle) in the top-right corner of the editor. Output will appear in the Terminal panel at the bottom.
+
+### Step 3 — Stop an Interactive Job (if needed)
+
+To stop a script that is currently running interactively, click the **trash icon** next to the Python terminal entry in the terminal panel.
+
+### Step 4 — Close the Browser Tab
+
+Once the script is running, close the VSCode browser tab. The Python process continues on the server.
+
+### Step 5 — Reconnect and View Results
+
+Return to the HBS RCP and click **Connect** on your VSCode session. The terminal will reconnect and show any output produced while you were away.
+
+---
+
+## Method 2: Terminal with nohup
+
+### Step 1 — Open a Bash Terminal
+
+The `nohup` command must be run in a bash terminal — not the Python terminal used for interactive runs. Click the **+** dropdown in the Terminal panel and select **bash** to open a new bash shell.
+
+### Step 2 — Launch the Background Job
+
+In the bash terminal, run:
+
+```bash
+nohup python your_file_name.py > output.log 2>&1 &
+```
+
+**What each part means:**
+
+| Part | Description |
+|------|-------------|
+| `nohup` | Keeps the job running after logout |
+| `python your_file_name.py` | Runs your Python script |
+| `> output.log` | Redirects printed output to a log file |
+| `2>&1` | Also captures errors in the same file |
+| `&` | Sends the process to the background |
+
+A process number and job ID will appear (e.g., `[1] 41386`). Note this number. You can now close the browser — the job will continue running.
+
+### Step 3 — Monitor Job Progress
+
+```bash
+tail -f output.log
+```
+
+New lines appear in real time. Press **Ctrl+C** to stop watching without stopping the job.
+
+### Step 4 — Check Whether the Job is Still Running
+
+```bash
+jobs
+```
+
+You will see output like:
+
+```
+[1]+  Running    nohup python your_file_name.py > output.log 2>&1 &
+```
+
+---
+
+## Stopping a Background Job
+
+Run these commands in the bash terminal.
+
+### Method A — Kill by Job Number
+
+```bash
+kill 41386
+```
+
+Replace `41386` with the PID shown when you launched the job.
+
+### Method B — Kill by Process ID
+
+```bash
+kill %1
+```
+
+### Method C — Kill by Script Name
+
+```bash
+pkill -f your_file_name.py
+```
+
+Useful when you have lost track of the process ID or job number.
+
+---
+
+## Best Practices
+
+- Test on a small sample before launching a full run.
+- Validate output on a subset before scaling up.
+- Monitor `output.log` regularly with `tail -f`.
+- Confirm your script writes files to the expected paths before starting.
+
+---
+
+## Getting Help
+
+📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
+
 
 
 </details>
