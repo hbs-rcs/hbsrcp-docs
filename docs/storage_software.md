@@ -306,6 +306,8 @@ pkill -f video_test.py
 
 ## Getting Help
 
+If you run into any issues with background jobs or anything else on the RCP, the HBS Research Computing team is here to help.
+
 📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
    
 </details>
@@ -468,6 +470,7 @@ In all cases, confirm termination by running `jobs` again — you should see `Te
 If you run into any issues with background jobs or anything else on the RCP, the HBS Research Computing team is here to help.
 
 📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
+
 </details>
 
 <details>
@@ -622,6 +625,8 @@ In all cases, confirm termination by running `jobs` again — you should see `Te
 
 ## Getting Help
 
+If you run into any issues with background jobs or anything else on the RCP, the HBS Research Computing team is here to help.
+
 📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
 
 
@@ -768,6 +773,7 @@ Useful when you have lost track of the process ID or job number.
 ---
 
 ## Getting Help
+If you run into any issues with background jobs or anything else on the RCP, the HBS Research Computing team is here to help.
 
 📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
 
