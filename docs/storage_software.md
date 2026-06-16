@@ -778,6 +778,171 @@ If you run into any issues with background jobs or anything else on the RCP, the
 📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
 
 
+<details>
+<summary>VSCode</summary>
+
+<h2>Overview</h2>
+
+<p>This guide explains two ways to run long-running Python jobs in the background using VSCode on the HBS Research Computing Platform (RCP).</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O1TMGFwOKpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<hr>
+
+<h2>Methods at a Glance</h2>
+
+<table>
+<tr>
+<th>Method 1: Close the Browser Tab</th>
+<th>Method 2: Terminal with nohup</th>
+</tr>
+<tr>
+<td>Run your script using the VSCode play button, then close the tab. The session keeps running.<br><br><strong>Best for:</strong> quick kick-off with no extra commands.</td>
+<td>Open a bash terminal in VSCode and use <code>nohup</code> to run the script fully detached.<br><br><strong>Best for:</strong> long jobs where you want monitoring and control.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Method 1: Close the Browser Tab</h2>
+
+<h3>Step 1 — Create and Save a Test Script</h3>
+
+<p>Open VSCode and create a new file. This example code is called <code>video_testing.py</code>:</p>
+
+<pre><code class="language-python">import time
+
+for i in range(60):
+    print(f"Step {i+1} - still running", flush=True)
+    time.sleep(5)
+
+print("Done!")
+</code></pre>
+
+<h3>Step 2 — Run the Script</h3>
+
+<p>Click the <strong>play button</strong> (triangle) in the top-right corner of the editor. Output will appear in the Terminal panel at the bottom.</p>
+
+<h3>Step 3 — Stop an Interactive Job (if needed)</h3>
+
+<p>To stop a script that is currently running interactively, click the <strong>trash icon</strong> next to the Python terminal entry in the terminal panel.</p>
+
+<h3>Step 4 — Close the Browser Tab</h3>
+
+<p>Once the script is running, close the VSCode browser tab. The Python process continues on the server.</p>
+
+<h3>Step 5 — Reconnect and View Results</h3>
+
+<p>Return to the HBS RCP and click <strong>Connect</strong> on your VSCode session. The terminal will reconnect and show any output produced while you were away.</p>
+
+<hr>
+
+<h2>Method 2: Terminal with nohup</h2>
+
+<h3>Step 1 — Open a Bash Terminal</h3>
+
+<p>The <code>nohup</code> command must be run in a bash terminal — not the Python terminal used for interactive runs. Click the <strong>+</strong> dropdown in the Terminal panel and select <strong>bash</strong> to open a new bash shell.</p>
+
+<h3>Step 2 — Launch the Background Job</h3>
+
+<p>In the bash terminal, run:</p>
+
+<pre><code class="language-bash">nohup python your_file_name.py &gt; output.log 2&gt;&amp;1 &amp;
+</code></pre>
+
+<p><strong>What each part means:</strong></p>
+
+<table>
+<tr>
+<th>Part</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>nohup</code></td>
+<td>Keeps the job running after logout</td>
+</tr>
+<tr>
+<td><code>python your_file_name.py</code></td>
+<td>Runs your Python script</td>
+</tr>
+<tr>
+<td><code>&gt; output.log</code></td>
+<td>Redirects printed output to a log file</td>
+</tr>
+<tr>
+<td><code>2&gt;&amp;1</code></td>
+<td>Also captures errors in the same file</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>Sends the process to the background</td>
+</tr>
+</table>
+
+<p>A process number and job ID will appear (e.g., <code>[1] 41386</code>). Note this number. You can now close the browser — the job will continue running.</p>
+
+<h3>Step 3 — Monitor Job Progress</h3>
+
+<pre><code class="language-bash">tail -f output.log
+</code></pre>
+
+<p>New lines appear in real time. Press <strong>Ctrl+C</strong> to stop watching without stopping the job.</p>
+
+<h3>Step 4 — Check Whether the Job is Still Running</h3>
+
+<pre><code class="language-bash">jobs
+</code></pre>
+
+<p>You will see output like:</p>
+
+<pre><code>[1]+  Running    nohup python your_file_name.py &gt; output.log 2&gt;&amp;1 &amp;
+</code></pre>
+
+<hr>
+
+<h2>Stopping a Background Job</h2>
+
+<p>Run these commands in the bash terminal.</p>
+
+<h3>Method A — Kill by Job Number</h3>
+
+<pre><code class="language-bash">kill 41386
+</code></pre>
+
+<p>Replace <code>41386</code> with the PID shown when you launched the job.</p>
+
+<h3>Method B — Kill by Process ID</h3>
+
+<pre><code class="language-bash">kill %1
+</code></pre>
+
+<h3>Method C — Kill by Script Name</h3>
+
+<pre><code class="language-bash">pkill -f your_file_name.py
+</code></pre>
+
+<p>Useful when you have lost track of the process ID or job number.</p>
+
+<hr>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Test on a small sample before launching a full run.</li>
+<li>Validate output on a subset before scaling up.</li>
+<li>Monitor <code>output.log</code> regularly with <code>tail -f</code>.</li>
+<li>Confirm your script writes files to the expected paths before starting.</li>
+</ul>
+
+<hr>
+
+<h2>Getting Help</h2>
+
+<p>If you run into any issues with background jobs or anything else on the RCP, the HBS Research Computing team is here to help.</p>
+
+<p>📧 <strong>Email:</strong> <a href="mailto:research@hbs.edu">research@hbs.edu</a></p>
+
+</details>
 
 </details>
 
