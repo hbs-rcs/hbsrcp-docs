@@ -317,7 +317,7 @@ pkill -f video_test.py
 
 ## Overview
 
-This guide explains two ways to run long-running R jobs in the background using RStudio on the HBS Research Computing Platform (RCP). Background jobs allow your analysis to continue running on the server even after you close your browser tab.
+This guide explains two ways to run long-running R jobs in the background using RStudio on the HBS Research Computing Platform (RCP). 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BjQMP3xFh3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
