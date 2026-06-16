@@ -862,8 +862,7 @@ print("Done!")
 
 ### Amazon's Parallel Computing Services (PCS)
 
-> [!IMPORTANT]
-> To use PCS, please ensure that the project sponsor has [enabled the PCS launcher](manageprojects.md/#configure-services)
+> ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the PCS launcher](manageprojects.md/#configure-services)
 
 _Coming Soon!_
 
