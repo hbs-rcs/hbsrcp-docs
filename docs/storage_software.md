@@ -474,8 +474,155 @@ If you run into any issues with background jobs or anything else on the RCP, the
 
 <summary>Stata</summary>
 
+
+## Overview
+
+This guide explains two ways to run long-running Stata do-files in the background on the HBS Research Computing Platform (RCP).
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/43Kzsl1O8QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+---
+
+## Methods at a Glance
+
+| Method 1: Close the Browser Tab | Method 2: Terminal with nohup |
+|----------------------------------|-------------------------------|
+| Run your do-file from the Stata console, then close the browser tab. The session keeps running. <br></br>**Best for:** quick kick-off with no extra commands. | Open a Terminal via the Stata desktop app grid and use `nohup stata -b do` to run the do-file fully detached. <br></br>**Best for:** long jobs where you want monitoring and control. |
+
+---
+
+## Method 1: Close the Browser Tab
+
+### Step 1 — Create and Save a Test Do-File
+
+Open Stata, create a new do-file, and paste your code inside. This example code called `video_test.do` displays a message every 5 seconds (5000 milliseconds) for 60 iterations.
+
+```stata
+forvalues i = 1/60 {
+    display "Step `i' - still running"
+    sleep 5000
+}
+```
+
+### Step 2 — Run the Do-File
+
+You will see output appearing in the Results window:
+
+```
+Step 1 - still running
+Step 2 - still running
+...
+```
+
+### Step 3 — Close the Browser Tab
+
+While the do-file is still running, close the Stata browser tab. The Stata session will continue running on the server in the background.
+
+### Step 4 — Reconnect and View Results
+
+Return to the HBS RCP and click **Connect** on your Stata session. The Results window will show output produced while the tab was closed.
+
+---
+
+## Method 2: Terminal with nohup
+
+### Step 1 — Open Terminal
+
+Stata on RCP runs inside a Linux desktop environment. To open a terminal, follow these two steps:
+
+1. Click the **oval/grid button** in the top-left corner of the Stata desktop to open the application menu.
+2. In the app grid, find and click the **Terminal** icon to open a bash shell window.
+
+### Step 2 — Launch the Background Job
+
+In the terminal, run the following command and press Enter:
+
+```bash
+nohup stata -b do your_file_name.do > output.log 2>&1 &
+```
+
+**What each part means:**
+
+| Part | Description |
+|------|-------------|
+| `nohup` | Keeps the job running after logout or browser close |
+| `stata -b do` | Runs Stata in batch (non-interactive) mode, executing a do-file |
+| `your_file_name.do` | The do-file to run |
+| `> output.log` | Redirects console output to a log file |
+| `2>&1` | Also captures error messages |
+| `&` | Runs the process in the background |
+
+A process ID and job number will appear (e.g., `[1] 21449`). Note this number. You can now close the browser tab — the job continues running.
+
+> **Note:** Stata batch mode also automatically creates a `.log` file matching your do-file name (e.g., `video_test.log`) in the current directory. This log captures the full Stata output including all displayed results.
+
+### Step 3 — Monitor Job Progress
+
+To watch the live output from your Stata job, reopen the terminal and run:
+
+```bash
+tail -f your_file_name.log
+```
+
+New lines will appear in real time as Stata runs. Press **Ctrl+C** to stop watching the log — this does **NOT** stop the job itself.
+
+### Step 4 — Check Whether the Job is Still Running
+
+```bash
+jobs
+```
+
+You will see output like:
+
+```
+[1]+  Running    nohup stata -b do your_file_name.do > output.log 2>&1 &
+```
+
+---
+
+## Stopping a Background Job
+
+Run these commands in the terminal. If you noted the process ID and job number previously, you can use the first two methods.
+
+### Method A — Kill by Job Number
+
+```bash
+kill 21449
+```
+
+Replace `21449` with the job number that was shown when you launched the job.
+
+### Method B — Kill by Process ID
+
+```bash
+kill %1
+```
+
+### Method C — Kill by Do-File Name
+
+```bash
+pkill -f video_test.do
+```
+
+Useful if you have lost track of the job number or PID. Replace `video_test.do` with the name of your do-file.
+
+In all cases, confirm termination by running `jobs` again — you should see `Terminated` next to the job.
+
+---
+
+## Best Practices
+
+- Test your do-file on a small sample before launching a full long-running job.
+- Validate that outputs look correct on a subset before scaling up.
+- Monitor your log file with `tail -f` to catch errors early.
+- Confirm that your do-file writes datasets to the expected paths before starting.
+- Save your do-file before running — unsaved edits will not be picked up.
+
+---
+
+## Getting Help
+
+📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
 
 
 </details>
