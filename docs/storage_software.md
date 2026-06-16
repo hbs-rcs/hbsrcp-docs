@@ -149,12 +149,164 @@ There are several ways to run background jobs on RCP, and selecting which to use
 
 ### Research Software Launchers
 
-Within each research software launcher (e.g., VSCode, RStudio, etc.) there are two ways to run background jobs. Below, we provide instructions and a video with additional information for each software:
+Below, we provide detailed instructions and a video describing how to run long-running jobs in different launchers.
 
 <details>
 <summary>Jupyter</summary>
-    
+
+
+## Overview
+
+This guide explains two ways to run long-running Python jobs in the background using JupyterLab on the HBS Research Computing Platform (RCP). 
+
+> **Important:** JupyterLab behaves differently from RStudio and VSCode. When you reconnect to a notebook after closing the tab, the notebook cells will appear idle (showing `[ ]` instead of `[*]`). This is misleading — the kernel **IS** still running in the background. Always verify using the terminal command described in Step 3 of Method 1.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AQ60-MvZtQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+## Methods at a Glance
+
+| Method 1: Run Notebook & Close Tab | Method 2: Terminal with nohup |
+|------------------------------------|-------------------------------|
+| Run notebook cells, close the tab, and reconnect. The kernel continues running even though the notebook appears idle. <br></br>Verify progress via the terminal.  | Open a Terminal from the Launcher and use `nohup` to run a Python script fully detached. <br></br>**Best for:** jobs where you want live monitoring and full stop/start control.|
+
+
+---
+
+## Method 1: Run in Notebook & Close the Tab
+
+### Step 1 — Open a New Notebook
+
+In JupyterLab, click the **+** button or go to **File > New Launcher**. Under the **Notebook** section, click **Python 3 (ipykernel)** to create a new notebook.
+
+### Step 2 — Paste and Run the Script
+
+In the first cell, paste your code. This example is called `video_test.py`:
+
+```python
+import time
+from datetime import datetime
+
+with open("notebook_test.log", "w") as f:
+    for i in range(60):
+        msg = f"{datetime.now():%H:%M:%S} - Step {i+1} - still running"
+        print(msg)
+        f.write(msg + "\n")
+        f.flush()
+        time.sleep(5)
+
+print("Done!")
+```
+
+Click the **Run** button (or press **Shift+Enter**) to execute the cell. You will see timestamped output appearing in the cell output area. The script also writes progress to a log file in your home directory.
+
+### Step 3 — Close the Browser Tab
+
+While the cell is still running (shown by `[*]` next to it), close the JupyterLab browser tab. The kernel will continue executing in the background.
+
+### Step 4 — Reconnect and Verify
+
+Return to the HBS RCP and click **Connect** on your JupyterLab session. Open your notebook. You may notice that the cell now shows `[ ]` (empty brackets) instead of `[*]` — this indicates that the notebook's display has disconnected from the kernel output.
+
+> **The notebook appearing idle does NOT mean the job has stopped.** The kernel continues running on the server.
+
+To confirm the job is still running, open a new **Terminal** from the Launcher and run:
+
+```bash
+tail -f /your/home/directory/your_file_name.log
+```
+
+You should see new timestamped lines appearing, proving the notebook is still executing. Press **Ctrl+C** to stop watching the log.
+
+---
+
+## Method 2: Terminal with nohup
+
+### Step 1 — Open a Terminal from the Launcher
+
+In JupyterLab, open the Launcher (click the **+** button or **File > New Launcher**). Scroll down to the **Other** section and click the **Terminal** tile. A bash shell will open in a new tab.
+
+### Step 2 — Launch the Background Job
+
+In the terminal, run:
+
+```bash
+nohup python your_file_name.py > output.log 2>&1 &
+```
+
+**What each part means:**
+
+| Part | Description |
+|------|-------------|
+| `nohup` | Keeps the job running after logout |
+| `python your_file_name.py` | Runs your Python script |
+| `> output.log` | Captures all printed output |
+| `2>&1` | Also captures errors |
+| `&` | Runs the process in the background |
+
+A process ID will appear (e.g., `[1] 18079`). Note this number. You can now close the browser tab — the job continues running.
+
+### Step 3 — Monitor Job Progress
+
+```bash
+tail -f output.log
+```
+
+New lines appear in real time. Press **Ctrl+C** to stop watching without stopping the job.
+
+### Step 4 — Check Whether the Job is Still Running
+
+```bash
+jobs
+```
+
+You will see:
+
+```
+[1]+  Running    nohup python your_file_name.py > output.log 2>&1 &
+```
+
+---
+
+## Stopping a Background Job
+
+Run these commands in the JupyterLab terminal.
+
+### Method A — Kill by Job Number
+
+```bash
+kill 18079
+```
+
+Replace `18079` with the job number shown when you launched the job.
+
+### Method B — Kill by Process ID
+
+```bash
+kill %1
+```
+
+### Method C — Kill by Script Name
+
+```bash
+pkill -f video_test.py
+```
+
+---
+
+## Best Practices
+
+- Test on a small sample before launching a full run.
+- Use log files to monitor progress and catch errors.
+- Remember: a notebook showing `[ ]` does **not** mean the job has stopped — always verify with `tail -f`.
+- Confirm your script writes files to the expected paths before starting.
+
+---
+
+## Getting Help
+
+📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
    
 </details>
 
@@ -171,6 +323,8 @@ Within each research software launcher (e.g., VSCode, RStudio, etc.) there are t
 <summary>Stata</summary>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/43Kzsl1O8QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 
 </details>
 
