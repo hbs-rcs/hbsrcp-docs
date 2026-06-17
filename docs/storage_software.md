@@ -868,8 +868,6 @@ Launch a PCS session and connect to it.
 
 #### Open a Terminal 
 Once the browser has launched, open a Terminal. This Terminal will be used to execute jobs.
-<img width="1569" height="548" alt="image" src="https://github.com/user-attachments/assets/f6159bc7-0fa5-4b86-ae14-249a79a564f3" />
-<img width="1587" height="410" alt="image" src="https://github.com/user-attachments/assets/2185e92b-65e4-45e7-a3a6-20d48adb0b48" />
 
 > ⚠️ **Important:** AWS uses SLURM submission scripts (where as the HBSGrid used an LSF scheduler). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.  
 > 
@@ -892,40 +890,74 @@ Jobs in PCS are submitted using a [SLURM](https://slurm.schedmd.com/quickstart.h
    PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
    ```
    
-2. Create a SLURM Job Script
+3. Create a SLURM Job Script
    The example below is a simple SLURM job script that runs on a single node and writes output and error logs to files in your project space. While the SBATCH commands will depend on your use        case, **you must always include the `#SBATCH --partition=${PARTITION}` command to ensure that the job runs on the correct partition**. 
-
-   It is followed by a quick description of the commands used in the script.
 
    ```
    cat << EOF > job.sh
    #!/bin/bash
    #SBATCH -J single
-   #SBATCH -o single.%j.out
-   #SBATCH -e single.%j.err
+   #SBATCH -o /mnt/studies/RCS_Project-Storage-mf9/RCP_Testing/single.%j.out
+   #SBATCH -e /mnt/studies/RCS_Project-Storage-mf9/RCP_Testing/single.%j.err
    #SBATCH --partition=${PARTITION}
-        
+
    echo "This is job \${SLURM_JOB_NAME} [\${SLURM_JOB_ID}] running on \${SLURMD_NODENAME}, submitted from \${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
    EOF
    ```
 
-    | Component | What It Is | What It Does |
-    |---|---|---|
-    | `cat << EOF > job.sh` | Heredoc command | Creates a new file called `job.sh` and writes everything between the two `EOF` markers into it |
-    | `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
-    | `#SBATCH -J single` | SLURM directive | Sets the **job name** to `single` — this is what your job will be called in the queue |
-    | `#SBATCH -o single.%j.out` | SLURM directive | Sets the **output file** for normal messages — `%j` is automatically replaced with the job ID (e.g. `single.12345.out`) |
-    | `#SBATCH -e single.%j.err` | SLURM directive | Sets the **error file** for error messages — `%j` is automatically replaced with the job ID (e.g. `single.12345.err`) |
-    | `echo "This is job..."` | Bash command | Prints job details (name, ID, node, and submit host) to the output file when the job starts |
-    | `&&` | Bash operator | Chains commands together — the next command only runs if the previous one succeeded |
-    | `sleep 60` | Bash command | Pauses the job for **60 seconds** to simulate work being done |
-    | `echo "Job complete"` | Bash command | Prints a confirmation message once the job finishes |
-    | `${SLURM_JOB_NAME}` | SLURM variable | The name of your job — in this case `single` |
-    | `${SLURM_JOB_ID}` | SLURM variable | The unique ID that SLURM assigned to your job |
-    | `${SLURMD_NODENAME}` | SLURM variable | The name of the compute node your job is running on |
-    | `${SLURM_SUBMIT_HOST}` | SLURM variable | The machine you submitted the job from |
-    | `EOF` (closing) | Heredoc marker | Tells the system the file content is finished — everything above this gets written into `job.sh` |
+   Below is a quick overview of the components of the bash script above, but please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
 
-
+   | Component | What It Is | What It Does |
+   |---|---|---|
+   | `cat << EOF > job.sh` / `EOF` | Heredoc marker | Creates `job.sh` and writes everything between the two `EOF` markers into it — the closing `EOF` signals where the file content ends |
+   | `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
+   | `#SBATCH -J single` | SLURM directive | Sets the **job name** to `single` — this is what your job will be called in the queue |
+   | `#SBATCH -o` / `-e` | SLURM directive | Sets the **output** (`-o`) and **error** (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `single.12345.out` / `single.12345.err`) |
+   | `#SBATCH --partition=${PARTITION}` | SLURM directive | Sets the **partition** the job will run on — `${PARTITION}` is replaced with the partition name captured dynamically before the script was created (e.g. `--partition=ondemand`) |
+   | `echo ... && sleep 60 && echo "Job complete"` | Job body | Prints job details on start, waits **60 seconds** to simulate work, then prints a completion message — `&&` ensures each command only runs if the previous one succeeded |
+   | `${SLURM_JOB_NAME}` `${SLURM_JOB_ID}` `${SLURMD_NODENAME}` `${SLURM_SUBMIT_HOST}` | SLURM variables | Automatically populated by SLURM at runtime — prints the job **name**, **ID**, **compute node**, and **submit host** inside the echo message |
  
+4. Submit the Job to SLURM
+   Submit the job script to the SLURM scheduler.
 
+   ```
+   sbatch job.sh
+   ```
+   <img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/0c31df9b-9899-4926-a66b-e4835f21a48f" />
+
+5. Monitor Job Status
+
+   Use the job ID returned by `sbatch` to monitor the job using the `squeue` command.
+
+   ```
+   squeue --job <job-id>
+   ```
+
+   Example:
+   ```
+   squeue --job 1
+   ```
+   Continue checking until the job reaches the R (running) state.
+   
+   <img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/bbf79322-06af-434a-9341-9d6ed4af92ca" />
+
+   The job is complete when `squeue` no longer returns any output for the job ID.
+
+   <img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/beb812b4-95ea-425b-bb62-cc8d331c8f62" />
+
+6. Review Job Output Files
+
+   Once the job completes, inspect the contents of your project space to view the generated output and error files. Confirm the location of the files:
+
+   ```
+   ls
+   ```
+
+   View the contents of your output file:
+
+   ```
+   cat output.log
+   ```
+
+   
+   
