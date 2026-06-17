@@ -864,15 +864,15 @@ print("Done!")
 
 > ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the PCS launcher](manageprojects.md/#configure-services)
 
+> ⚠️ **Important:** AWS uses SLURM submission scripts (where as the HBSGrid used an LSF scheduler). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.  
+
 Launch a PCS session and connect to it. 
 
 #### Open a Terminal 
 Once the browser has launched, open a Terminal. This Terminal will be used to execute jobs.
 
-> ⚠️ **Important:** AWS uses SLURM submission scripts (where as the HBSGrid used an LSF scheduler). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.  
-> 
 #### Running a Single-Node Job
-Jobs in PCS are submitted using a [SLURM](https://slurm.schedmd.com/quickstart.html) submission script and executed on compute nodes. The workflow uses a shared file system so that both login and compute nodes can access the same job scripts and output files.
+Jobs in PCS are submitted using a [SLURM](https://slurm.schedmd.com/quickstart.html) submission script and executed on compute nodes. 
 
 1. Navigate to your project space folder where your jobs scripts and outputs will be stored.
 
