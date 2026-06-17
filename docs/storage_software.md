@@ -864,6 +864,68 @@ print("Done!")
 
 > ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the PCS launcher](manageprojects.md/#configure-services)
 
-_Coming Soon!_
+Launch a PCS session and connect to it. 
 
+#### Open a Terminal 
+Once the browser has launched, open a Terminal. This Terminal will be used to execute jobs.
+<img width="1569" height="548" alt="image" src="https://github.com/user-attachments/assets/f6159bc7-0fa5-4b86-ae14-249a79a564f3" />
+<img width="1587" height="410" alt="image" src="https://github.com/user-attachments/assets/2185e92b-65e4-45e7-a3a6-20d48adb0b48" />
+
+> ⚠️ **Important:** AWS uses SLURM submission scripts (where as the HBSGrid used an LSF scheduler). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.  
+> 
+#### Running a Single-Node Job
+Jobs in PCS are submitted using a [SLURM](https://slurm.schedmd.com/quickstart.html) submission script and executed on compute nodes. The workflow uses a shared file system so that both login and compute nodes can access the same job scripts and output files.
+
+1. Navigate to your project space folder where your jobs scripts and outputs will be stored.
+
+   > ⚠️ **Important:** Your project folder can be found within the `/mnt` folder.
+
+   ```
+   cd mnt/studies/yourprojectspacename
+   ```
+
+2. Identify and store the partition name
+
+   In the Terminal, run this command to store the name of the partition you are working on. This will be used in the next step and is necessary to run the job.
+    
+   ```
+   PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
+   ```
+   
+2. Create a SLURM Job Script
+   The example below is a simple SLURM job script that runs on a single node and writes output and error logs to files in your project space. While the SBATCH commands will depend on your use        case, **you must always include the `#SBATCH --partition=${PARTITION}` command to ensure that the job runs on the correct partition**. 
+
+   It is followed by a quick description of the commands used in the script.
+
+   ```
+   cat << EOF > job.sh
+   #!/bin/bash
+   #SBATCH -J single
+   #SBATCH -o single.%j.out
+   #SBATCH -e single.%j.err
+   #SBATCH --partition=${PARTITION}
+        
+   echo "This is job \${SLURM_JOB_NAME} [\${SLURM_JOB_ID}] running on \${SLURMD_NODENAME}, submitted from \${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
+   EOF
+   ```
+
+    | Component | What It Is | What It Does |
+    |---|---|---|
+    | `cat << EOF > job.sh` | Heredoc command | Creates a new file called `job.sh` and writes everything between the two `EOF` markers into it |
+    | `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
+    | `#SBATCH -J single` | SLURM directive | Sets the **job name** to `single` — this is what your job will be called in the queue |
+    | `#SBATCH -o single.%j.out` | SLURM directive | Sets the **output file** for normal messages — `%j` is automatically replaced with the job ID (e.g. `single.12345.out`) |
+    | `#SBATCH -e single.%j.err` | SLURM directive | Sets the **error file** for error messages — `%j` is automatically replaced with the job ID (e.g. `single.12345.err`) |
+    | `echo "This is job..."` | Bash command | Prints job details (name, ID, node, and submit host) to the output file when the job starts |
+    | `&&` | Bash operator | Chains commands together — the next command only runs if the previous one succeeded |
+    | `sleep 60` | Bash command | Pauses the job for **60 seconds** to simulate work being done |
+    | `echo "Job complete"` | Bash command | Prints a confirmation message once the job finishes |
+    | `${SLURM_JOB_NAME}` | SLURM variable | The name of your job — in this case `single` |
+    | `${SLURM_JOB_ID}` | SLURM variable | The unique ID that SLURM assigned to your job |
+    | `${SLURMD_NODENAME}` | SLURM variable | The name of the compute node your job is running on |
+    | `${SLURM_SUBMIT_HOST}` | SLURM variable | The machine you submitted the job from |
+    | `EOF` (closing) | Heredoc marker | Tells the system the file content is finished — everything above this gets written into `job.sh` |
+
+
+ 
 
