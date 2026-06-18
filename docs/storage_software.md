@@ -874,7 +874,11 @@ Once the browser has launched, open a Terminal. This Terminal will be used to ex
 #### Running a Single-Node Job
 Jobs in PCS are submitted using a [SLURM](https://slurm.schedmd.com/quickstart.html) submission script and executed on compute nodes. 
 
-**1\. Navigate to your project space folder where your jobs scripts and outputs will be stored.**
+**1\. Move the relevant folders from S3 to the PCS EFS volume.**
+
+EFS volume is more performant.
+
+**2\. Navigate to the folder on the EFS volume where your jobs scripts and outputs will be stored.**
 
 > ⚠️ **Important:** Your project folder can be found within the `/mnt` folder.
 
@@ -900,7 +904,6 @@ cat << EOF > job.sh
 #SBATCH -J single
 #SBATCH -o /mnt/studies/RCS_Project-Storage-mf9/RCP_Testing/single.%j.out
 #SBATCH -e /mnt/studies/RCS_Project-Storage-mf9/RCP_Testing/single.%j.err
-#SBATCH --partition=${PARTITION}
 
 echo "This is job \${SLURM_JOB_NAME} [\${SLURM_JOB_ID}] running on \${SLURMD_NODENAME}, submitted from \${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
 EOF
@@ -922,7 +925,7 @@ Below is a quick overview of the components of the bash script above, but please
 Submit the job script to the SLURM scheduler.
 
 ```
-sbatch job.sh
+sbatch --partition=$PARTITION job.sh
 ```
 <img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/0c31df9b-9899-4926-a66b-e4835f21a48f" />
 
