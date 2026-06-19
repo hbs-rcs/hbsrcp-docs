@@ -862,19 +862,17 @@ print("Done!")
 
 ### Amazon's Parallel Computing Services (PCS)
 
-> ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the EFS service and the PCS launcher](manageprojects.md/#configure-services)
+> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the EFS service and the PCS launcher](manageprojects.md/#configure-services)
 
-Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large cluster of computers in the cloud. THe service allows you to submit computational jobs that run across hundreds or thousands of CPUs simultaneously thus dramatically reducing the time it takes to complete large or complex analyses. You only pay for the computing time you actually use, and Amazon handles all the underlying infrastructure for you.
+Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large cluster of computers in the cloud. The service allows you to submit computational jobs using a submission script that run across hundreds or thousands of CPUs simultaneously thus dramatically reducing the time it takes to complete large or complex analyses. You only pay for the computing time you actually use, and Amazon handles all the underlying infrastructure for you. 
 
-**Note:** AWS uses SLURM submission scripts (versus the LSF scheduler on the HBSGrid).  
-If you are moving from the HBSGrid to RCP please note that your batch submission scripts  
-will need to be altered slightly.
+**Note:** AWS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts (versus the LSF scheduler on the HBSGrid). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.
 
 #### Understanding PCS Storage Options
 
-**To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files from your S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and you cannot write streaming error or output files to the S3 bucket, which can result in unexpected errors.
+**To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
 
-For single-node, single-stream work, recommend using the EFS volume:
+For single-node, single-stream work, we recommend using the EFS volume:
 
 ```
 cd home/CREATEANEWFOLDER
@@ -890,17 +888,19 @@ To facilitate copying or moving files from your S3 bucket to either of these vol
 ```
 cd mnt/studies/yourprojectspacename
 ```
+##### Moving/Copying Files from S3 to PCS Storage
 
+Below is sample code to move relevant files from your project's S3 storage to the EFS storage system.
 
+```
+placholder, get sample code from Paul
+```
 
+#### Running a Single-Node Job
 
-Launch a PCS session and connect to it. 
 
 #### Open a Terminal 
 Once the browser has launched, open a Terminal. This Terminal will be used to execute jobs.
-
-#### Running a Single-Node Job
-Jobs in PCS are submitted using a [SLURM](https://slurm.schedmd.com/quickstart.html) submission script and executed on compute nodes. 
 
 **1\. Move the relevant folders from S3 to the PCS EFS volume.**
 
