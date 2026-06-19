@@ -879,7 +879,7 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 **To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors and job failure may arise as you cannot write streaming error or output files to the S3 bucket.
 
 ##### EFS: Recommended for single‑node, single‑stream work
-For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir yourfolder` command.
+For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
 
 **Note: the `/home/ec2-user` directory is visible to all users in your project and persists across PCS sessions.**
 
@@ -888,7 +888,7 @@ cd /home/ec2-user/<yourfolder>
 ```
 
 ##### Lustre: Recommended for parallel, multi‑node work
-For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir yourfolder` command.
+For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
 
 ```
 cd /shared/<yourfolder>
@@ -920,7 +920,7 @@ cd /home/ec2-user/<yourfolder>
 
 **2\. Create a SLURM Job Script**
 
-The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from. Save the script above as job.sh in your working directory.
+The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
 
 ```
 #!/bin/bash
