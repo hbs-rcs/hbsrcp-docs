@@ -135,6 +135,7 @@
 
     - Aurora Database 
     - JupyterLab  
+    - MatLab 
     - RStudio  
     - SageMaker Canvas
     - SageMaker Notebook
@@ -146,7 +147,6 @@
     Coming Soon!
     
     - Mathematica 
-    - MatLab 
     - SAS  
     - Parallel processing
 
