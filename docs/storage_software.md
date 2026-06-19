@@ -860,7 +860,7 @@ print("Done!")
 
 </details>
 
-### AWS Parallel Computing Services (PCS)
+### AWS Parallel Computing Service (PCS)
 
 > ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
@@ -898,7 +898,7 @@ cd /shared/<yourfolder>
 To facilitate copying or moving files from your project space's S3 bucket to EFS or Lustre, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
 
 ```
-cd /mnt/studies/yourprojectspacename
+cd /mnt/studies/<yourprojectspacename>
 MV NOTE: WE ASKED FOR A SYM LINK FOR THIS IN OUR LAST MTG WITH RL.
 ```
 ##### Moving/Copying Files from S3 to PCS Storage
@@ -920,7 +920,7 @@ cd /home/ec2-user/<yourfolder>
 
 **2\. Create a SLURM Job Script**
 
-The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from.
+The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from. Save the script above as job.sh in your working directory.
 
 ```
 #!/bin/bash
@@ -944,7 +944,7 @@ Below is a quick overview of the components of the bash script above; please see
 
 **3\.  Determine the SLURM partition**
 
-In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM to find the on-demand partition name and stores it in the variable $PARTITION. It is needed because the partition name may change between PCS sessions, and will be used in the next step. (Alternatively, you can hard-code this into your SLURM script, but it may change for each session)
+In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in $PARTITION, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script. 
     
 ```
 PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
