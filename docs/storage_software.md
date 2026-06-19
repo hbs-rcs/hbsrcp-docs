@@ -860,11 +860,11 @@ print("Done!")
 
 </details>
 
-### Amazon's Parallel Computing Services (PCS)
+### AWS's Parallel Computing Services (PCS)
 
 > ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
-Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure
+AWS [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure
 
 **Note:** PCS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts, whereas the HBSGrid uses an LSF scheduler. If you are moving from the HBSGrid to PCS, your batch submission scripts will need to be updated accordingly.
 
@@ -876,7 +876,7 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 
 #### Understanding PCS Storage Options
 
-**To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
+**To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
 
 ##### EFS: Recommended for single‑node, single‑stream work
 For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
@@ -899,7 +899,7 @@ To facilitate copying or moving files from your project space's S3 bucket to EFS
 
 ```
 cd /mnt/studies/yourprojectspacename
-MV NOTE: WE ASKED FOR A SIM LINK FOR THIS IN OUR LAST MTG WITH RL.
+MV NOTE: WE ASKED FOR A SYM LINK FOR THIS IN OUR LAST MTG WITH RL.
 ```
 ##### Moving/Copying Files from S3 to PCS Storage
 
@@ -944,7 +944,7 @@ Below is a quick overview of the components of the bash script above; please see
 
 **3\.  Determine the SLURM partition**
 
-In the Terminal, run this command to store the name of the partition you are working on. This will be used in the next step and is necessary to run the job. (Alternatively, you can hard-code this into your SLURM script, but it may change for each session)
+In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM to find the on-demand partition name and stores it in the variable $PARTITION. It is needed because the partition name may change between PCS sessions, and will be used in the next step. (Alternatively, you can hard-code this into your SLURM script, but it may change for each session)
     
 ```
 PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
