@@ -862,9 +862,37 @@ print("Done!")
 
 ### Amazon's Parallel Computing Services (PCS)
 
-> ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the PCS launcher](manageprojects.md/#configure-services)
+> ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the EFS service and the PCS launcher](manageprojects.md/#configure-services)
 
-> ⚠️ **Important:** AWS uses SLURM submission scripts (where as the HBSGrid used an LSF scheduler). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.  
+Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large cluster of computers in the cloud. THe service allows you to submit computational jobs that run across hundreds or thousands of CPUs simultaneously thus dramatically reducing the time it takes to complete large or complex analyses. You only pay for the computing time you actually use, and Amazon handles all the underlying infrastructure for you.
+
+**Note:** AWS uses SLURM submission scripts (versus the LSF scheduler on the HBSGrid).  
+If you are moving from the HBSGrid to RCP please note that your batch submission scripts  
+will need to be altered slightly.
+
+#### Understanding PCS Storage Options
+
+**To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files from your S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and you cannot write streaming error or output files to the S3 bucket, which can result in unexpected errors.
+
+For single-node, single-stream work, recommend using the EFS volume:
+
+```
+cd home/CREATEANEWFOLDER
+```
+For parallel, multi-node work, we recommend using the Lustre volume:
+
+```
+cd shared/CREATEANEWFOLDER
+```
+
+To facilitate copying or moving files from your S3 bucket to either of these volumes, the `studies` folder is visible from the PCS launcher here:
+
+```
+cd mnt/studies/yourprojectspacename
+```
+
+
+
 
 Launch a PCS session and connect to it. 
 
