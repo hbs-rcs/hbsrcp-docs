@@ -870,28 +870,28 @@ AWS [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/us
 
 #### Accessing the PCS Launcher
 
-Activate a PCS session and connect to it. Once the browser is connected, click on the oval in the upper left hand corner, select the Grid app at the bottom of the screen, then open the Terminal:
+Activate a PCS session and connect to it. Once the browser is connected, click on the oval in the upper left hand corner, select the app grid at the bottom of the screen, then open the Terminal:
 
 <img width="576" height="448" alt="image" src="https://github.com/user-attachments/assets/28ba27f2-c4cd-4be1-ac63-baced5397b3f" />
 
 #### Understanding PCS Storage Options
 
-**To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
+**To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors and job failure may arise as you cannot write streaming error or output files to the S3 bucket.
 
 ##### EFS: Recommended for single‑node, single‑stream work
-For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
+For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir yourfolder` command.
 
 **Note: the `/home/ec2-user` directory is visible to all users in your project and persists across PCS sessions.**
 
 ```
-cd /home/ec2-user/NEWFOLDERNAME
+cd /home/ec2-user/<yourfolder>
 ```
 
 ##### Lustre: Recommended for parallel, multi‑node work
-For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
+For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir yourfolder` command.
 
 ```
-cd /shared/NEWFOLDERNAME
+cd /shared/<yourfolder>
 ```
 
 ##### Project Space (studies)
@@ -915,7 +915,7 @@ placholder, get sample code from Paul (Samah mentioned he has sample code)
 
 For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
 ```
-cd /home/ec2-user/yourfolder
+cd /home/ec2-user/<yourfolder>
 ```
 
 **2\. Create a SLURM Job Script**
@@ -976,7 +976,7 @@ squeue --job 1
 
 Continue checking until the job reaches the R (running) state.
 
-   
+
 <img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
 
 
