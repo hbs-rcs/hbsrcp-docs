@@ -878,15 +878,17 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 
 **To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
 
-For single-node, single-stream work, we recommend using the EFS volume:
+For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a new Terminal this is the default folder. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
+
+**Note: the `home` directory is visible to all users in the project folder.**
 
 ```
-cd home/CREATEANEWFOLDER
+cd home/ec2-user/NEWFOLDERNAME
 ```
-For parallel, multi-node work, we recommend using the Lustre volume:
+For parallel, multi-node work, we recommend using the Lustre volume. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
 ```
-cd shared/CREATEANEWFOLDER
+cd shared/NEWFOLDERNAME
 ```
 
 To facilitate copying or moving files from your S3 bucket to either of these volumes, the `studies` folder is visible from the PCS launcher here:
@@ -906,15 +908,11 @@ placholder, get sample code from Paul
 
 Please note that the instructions below assume you have already moved your relevant files into the PCS storage system. 
 
-**1\. Activate the PCS launcher, connect, and open a Terminal** 
+**1\. Open the terminal and navigate to the folder on the EFS volume where your jobs scripts and outputs will be stored.**
 
-
-
-**2\. Navigate to the folder on the EFS volume where your jobs scripts and outputs will be stored.**
-
-For single-node jobs, we recommend using the EFS storage in the `/home` directory:
+For single-node jobs, we recommend using the EFS storage in the `/home/ec2-user` directory:
 ```
-cd home/yourfolder
+cd home/ec2-user/yourfolder
 ```
 
 **2\. Identify and store the partition name**
