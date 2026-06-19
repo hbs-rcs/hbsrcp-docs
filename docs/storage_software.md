@@ -914,49 +914,42 @@ For single-node jobs, we recommend using the EFS storage in the `/home/ec2-user`
 ```
 cd home/ec2-user/yourfolder
 ```
+**2\. Create a SLURM Job Script**
 
-**2\. Identify and store the partition name**
-
-In the Terminal, run this command to store the name of the partition you are working on. This will be used in the next step and is necessary to run the job.
-    
-```
-PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
-```
-   
-**3\. Create a SLURM Job Script**
-
-The example below is a simple SLURM job script that runs on a single node and writes output and error logs to files in your project space. While the SBATCH commands will depend on your use        case, **you must always include the `#SBATCH --partition=${PARTITION}` command to ensure that the job runs on the correct partition**. 
+The example below is a simple SLURM job script that runs on a single node and writes output and error logs to files in your project space.
 
 ```
-cat << EOF > job.sh
 #!/bin/bash
 #SBATCH -J single
-#SBATCH -o /mnt/studies/RCS_Project-Storage-mf9/RCP_Testing/single.%j.out
-#SBATCH -e /mnt/studies/RCS_Project-Storage-mf9/RCP_Testing/single.%j.err
+#SBATCH -o single.%j.out
+#SBATCH -e single.%j.err
 
-echo "This is job \${SLURM_JOB_NAME} [\${SLURM_JOB_ID}] running on \${SLURMD_NODENAME}, submitted from \${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
-EOF
+echo "This is job ${SLURM_JOB_NAME} [${SLURM_JOB_ID}] running on ${SLURMD_NODENAME}, submitted from ${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
+
 ```
 
 Below is a quick overview of the components of the bash script above, but please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
 
 | Component | What It Is | What It Does |
 |---|---|---|
-| `cat << EOF > job.sh` / `EOF` | Heredoc marker | Creates `job.sh` and writes everything between the two `EOF` markers into it — the closing `EOF` signals where the file content ends |
 | `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
 | `#SBATCH -J single` | SLURM directive | Sets the **job name** to `single` — this is what your job will be called in the queue |
 | `#SBATCH -o` / `-e` | SLURM directive | Sets the **output** (`-o`) and **error** (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `single.12345.out` / `single.12345.err`) |
-| `#SBATCH --partition=${PARTITION}` | SLURM directive | Sets the **partition** the job will run on — `${PARTITION}` is replaced with the partition name captured dynamically before the script was created (e.g. `--partition=ondemand`) |
 | `echo ... && sleep 60 && echo "Job complete"` | Job body | Prints job details on start, waits **60 seconds** to simulate work, then prints a completion message — `&&` ensures each command only runs if the previous one succeeded |
 | `${SLURM_JOB_NAME}` `${SLURM_JOB_ID}` `${SLURMD_NODENAME}` `${SLURM_SUBMIT_HOST}` | SLURM variables | Automatically populated by SLURM at runtime — prints the job **name**, **ID**, **compute node**, and **submit host** inside the echo message |
- 
-**4\. Submit the Job to SLURM**
+
+**3\. Submit the Job to SLURM**
+
+In the Terminal, run this command to store the name of the partition you are working on. This will be used in the next step and is necessary to run the job. (Alternatively, you can hard-code this into your SLURM script, but it may change for each session)
+    
+```
+PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
+```
 Submit the job script to the SLURM scheduler.
 
 ```
 sbatch --partition=$PARTITION job.sh
 ```
-<img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/0c31df9b-9899-4926-a66b-e4835f21a48f" />
 
 **5\. Monitor Job Status**
 
@@ -970,26 +963,39 @@ Example:
 ```
 squeue --job 1
 ```
+<img width="773" height="60" alt="image" src="https://github.com/user-attachments/assets/3f67ac38-f1a8-4efa-a1e6-5092925e65a2" />
+
 Continue checking until the job reaches the R (running) state.
    
-<img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/bbf79322-06af-434a-9341-9d6ed4af92ca" />
+<img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
 
 The job is complete when `squeue` no longer returns any output for the job ID.
 
-<img width="461" height="38" alt="image" src="https://github.com/user-attachments/assets/beb812b4-95ea-425b-bb62-cc8d331c8f62" />
+<img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
+
 
 **6\. Review Job Output Files**
 
-Once the job completes, inspect the contents of your project space to view the generated output and error files. Confirm the location of the files:
+Once the job completes, inspect the contents of your folder to view the generated output and error files:
 
 ```
 ls
 ```
 
+<img width="323" height="41" alt="image" src="https://github.com/user-attachments/assets/ca85b054-9c49-428c-b03f-c018b4c3a984" />
+
+
 View the contents of your output file:
 
 ```
 cat output.log
+```
+
+It should read something like:
+
+```
+This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
+Job complete
 ```
 
    
