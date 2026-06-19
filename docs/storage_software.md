@@ -862,7 +862,7 @@ print("Done!")
 
 ### Amazon's Parallel Computing Services (PCS)
 
-> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the EFS service and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
+> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, along with the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
 Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large cluster of computers in the cloud. The service allows you to submit computational jobs using a submission script that run across hundreds or thousands of CPUs simultaneously thus dramatically reducing the time it takes to complete large or complex analyses. You only pay for the computing time you actually use, and Amazon handles all the underlying infrastructure for you. 
 
@@ -880,7 +880,7 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 
 For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a new Terminal this is the default folder. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
-**Note: the `home/ec2-user` directory is visible to all users in the project folder.**
+**Note: the `home/ec2-user` directory is visible to all users in the project folder and is persistent across PCS sessions.**
 
 ```
 cd home/ec2-user/NEWFOLDERNAME
