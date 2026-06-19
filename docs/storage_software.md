@@ -876,7 +876,7 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 
 #### Understanding PCS Storage Options
 
-**To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors and job failure may arise as you cannot write streaming error or output files to the S3 bucket.
+**To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors and job failures may occur as you cannot write streaming error or output files to the S3 bucket.
 
 ##### EFS: Recommended for single‑node, single‑stream work
 For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
