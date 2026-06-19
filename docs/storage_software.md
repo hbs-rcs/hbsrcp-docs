@@ -862,11 +862,17 @@ print("Done!")
 
 ### Amazon's Parallel Computing Services (PCS)
 
-> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the EFS service and the PCS launcher](manageprojects.md/#configure-services)
+> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the EFS service and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
 Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large cluster of computers in the cloud. The service allows you to submit computational jobs using a submission script that run across hundreds or thousands of CPUs simultaneously thus dramatically reducing the time it takes to complete large or complex analyses. You only pay for the computing time you actually use, and Amazon handles all the underlying infrastructure for you. 
 
 **Note:** AWS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts (versus the LSF scheduler on the HBSGrid). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.
+
+#### Accessing the PCS Launcher
+
+Activate a PCS session and connect to it. Once the browser is connected, click on the oval in the upper left hand corner, then select the Grid app at the bottom of the screen, then the Terminal:
+
+<img width="576" height="448" alt="image" src="https://github.com/user-attachments/assets/28ba27f2-c4cd-4be1-ac63-baced5397b3f" />
 
 #### Understanding PCS Storage Options
 
@@ -898,20 +904,17 @@ placholder, get sample code from Paul
 
 #### Running a Single-Node Job
 
+Please note that the instructions below assume you have already moved your relevant files into the PCS storage system. 
 
-#### Open a Terminal 
-Once the browser has launched, open a Terminal. This Terminal will be used to execute jobs.
+**1\. Activate the PCS launcher, connect, and open a Terminal** 
 
-**1\. Move the relevant folders from S3 to the PCS EFS volume.**
 
-EFS volume is more performant.
 
 **2\. Navigate to the folder on the EFS volume where your jobs scripts and outputs will be stored.**
 
-> ⚠️ **Important:** Your project folder can be found within the `/mnt` folder.
-
+For single-node jobs, we recommend using the EFS storage in the `/home` directory:
 ```
-cd mnt/studies/yourprojectspacename
+cd home/yourfolder
 ```
 
 **2\. Identify and store the partition name**
