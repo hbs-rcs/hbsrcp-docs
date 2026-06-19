@@ -880,7 +880,7 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 
 For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a new Terminal this is the default folder. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
-**Note: the `home` directory is visible to all users in the project folder.**
+**Note: the `home/ec2-user` directory is visible to all users in the project folder.**
 
 ```
 cd home/ec2-user/NEWFOLDERNAME
@@ -891,7 +891,7 @@ For parallel, multi-node work, we recommend using the Lustre volume. If you woul
 cd shared/NEWFOLDERNAME
 ```
 
-To facilitate copying or moving files from your S3 bucket to either of these volumes, the `studies` folder is visible from the PCS launcher here:
+To facilitate copying or moving files from your S3 bucket to either of these volumes, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
 
 ```
 cd mnt/studies/yourprojectspacename
@@ -906,17 +906,16 @@ placholder, get sample code from Paul
 
 #### Running a Single-Node Job
 
-Please note that the instructions below assume you have already moved your relevant files into the PCS storage system. 
-
-**1\. Open the terminal and navigate to the folder on the EFS volume where your jobs scripts and outputs will be stored.**
+**1\. Open the terminal and navigate to the folder on the EFS volume where you want to store your files.**
 
 For single-node jobs, we recommend using the EFS storage in the `/home/ec2-user` directory:
 ```
 cd home/ec2-user/yourfolder
 ```
+
 **2\. Create a SLURM Job Script**
 
-The example below is a simple SLURM job script that runs on a single node and writes output and error logs to files in your project space.
+The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from.
 
 ```
 #!/bin/bash
@@ -928,7 +927,7 @@ echo "This is job ${SLURM_JOB_NAME} [${SLURM_JOB_ID}] running on ${SLURMD_NODENA
 
 ```
 
-Below is a quick overview of the components of the bash script above, but please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
+Below is a quick overview of the components of the bash script above; please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
 
 | Component | What It Is | What It Does |
 |---|---|---|
@@ -963,11 +962,15 @@ Example:
 ```
 squeue --job 1
 ```
+
 <img width="773" height="60" alt="image" src="https://github.com/user-attachments/assets/3f67ac38-f1a8-4efa-a1e6-5092925e65a2" />
 
+
 Continue checking until the job reaches the R (running) state.
+
    
 <img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
+
 
 The job is complete when `squeue` no longer returns any output for the job ID.
 
@@ -997,6 +1000,10 @@ It should read something like:
 This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
 Job complete
 ```
+
+#### Running a Multi-Node Job
+
+_Coming Soon!_
 
    
    
