@@ -131,7 +131,7 @@
 
 ??? note "Available Packages and Tools"
 
-    RCS and IT are continually working to add functionality to the RCP. As of February 2026, the available software and tools include:
+    RCS and IT are continually working to add functionality to the RCP. As of June 2026, the available software and tools include:
 
     - Aurora Database 
     - JupyterLab  
