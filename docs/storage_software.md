@@ -950,7 +950,7 @@ In the Terminal, run this command to store the name of the partition you are wor
 PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
 ```
 
-**3\. Submit the Job to SLURM**
+**4\. Submit the Job to SLURM**
 
 Submit the job script to the SLURM scheduler. SLURM will return a job ID.
 
@@ -999,7 +999,7 @@ ls
 View the contents of your output file:
 
 ```
-cat output.log
+cat single.1.log
 ```
 
 It should read something similar to:
