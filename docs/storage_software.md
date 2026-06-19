@@ -881,24 +881,24 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 ##### EFS: Recommended for single‑node, single‑stream work
 For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
-**Note: the `home/ec2-user` directory is visible to all users in the project folder and is persistent across PCS sessions.**
+**Note: the `/home/ec2-user` directory is visible to all users in the project folder and is persistent across PCS sessions.**
 
 ```
-cd home/ec2-user/NEWFOLDERNAME
+cd /home/ec2-user/NEWFOLDERNAME
 ```
 
 ##### Lustre: Recommended for parallel, multi‑node work
 For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
 ```
-cd shared/NEWFOLDERNAME
+cd /shared/NEWFOLDERNAME
 ```
 
 ##### Project Space (studies)
 To facilitate copying or moving files from your project space's S3 bucket to EFS or Lustre, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
 
 ```
-cd mnt/studies/yourprojectspacename
+cd /mnt/studies/yourprojectspacename
 MV NOTE: WE ASKED FOR A SIM LINK FOR THIS IN OUR LAST MTG WITH RL.
 ```
 ##### Moving/Copying Files from S3 to PCS Storage
@@ -915,7 +915,7 @@ placholder, get sample code from Paul (Samah mentioned he has sample code)
 
 For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
 ```
-cd home/ec2-user/yourfolder
+cd /home/ec2-user/yourfolder
 ```
 
 **2\. Create a SLURM Job Script**
