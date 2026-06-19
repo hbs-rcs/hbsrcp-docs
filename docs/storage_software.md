@@ -860,6 +860,8 @@ print("Done!")
 
 </details>
 
+---
+
 ### AWS Parallel Computing Service (PCS)
 
 > ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
