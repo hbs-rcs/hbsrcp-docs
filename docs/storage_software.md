@@ -895,13 +895,14 @@ To facilitate copying or moving files from your S3 bucket to either of these vol
 
 ```
 cd mnt/studies/yourprojectspacename
+MV NOTE: WE ASKED FOR A SIM LINK FOR THIS IN OUR LAST MTG WITH RL.
 ```
 ##### Moving/Copying Files from S3 to PCS Storage
 
 Below is sample code to move relevant files from your project's S3 storage to the EFS storage system.
 
 ```
-placholder, get sample code from Paul
+placholder, get sample code from Paul (Samah mentioned he has sample code)
 ```
 
 #### Running a Single-Node Job
