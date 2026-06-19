@@ -864,7 +864,7 @@ print("Done!")
 
 > ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
-AWS [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure.
+AWS [Parallel Computing Service (PCS)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure.
 
 **Note:** PCS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts, whereas the HBSGrid uses an LSF scheduler. If you are moving from the HBSGrid to PCS, your batch submission scripts will need to be updated accordingly.
 
@@ -973,13 +973,13 @@ squeue --job 1
 
 <img width="773" height="60" alt="image" src="https://github.com/user-attachments/assets/3f67ac38-f1a8-4efa-a1e6-5092925e65a2" />
 
-
+<br></br>
 Continue checking until the job reaches the R (running) state.
 
 
 <img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
 
-
+<br></br>
 The job is complete when `squeue` no longer returns any output for the job ID.
 
 <img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
@@ -995,7 +995,7 @@ ls
 
 <img width="323" height="41" alt="image" src="https://github.com/user-attachments/assets/ca85b054-9c49-428c-b03f-c018b4c3a984" />
 
-
+<br></br>
 View the contents of your output file:
 
 ```
