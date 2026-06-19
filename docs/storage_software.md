@@ -862,36 +862,40 @@ print("Done!")
 
 ### Amazon's Parallel Computing Services (PCS)
 
-> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, along with the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
+> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
-Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large cluster of computers in the cloud. The service allows you to submit computational jobs using a submission script that run across hundreds or thousands of CPUs simultaneously thus dramatically reducing the time it takes to complete large or complex analyses. You only pay for the computing time you actually use, and Amazon handles all the underlying infrastructure for you. 
+Amazon [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure
 
-**Note:** AWS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts (versus the LSF scheduler on the HBSGrid). If you are moving from the HBSGrid to RCP please note that your batch submission scripts will need to be altered slightly.
+**Note:** PCS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts, whereas the HBSGrid uses an LSF scheduler. If you are moving from the HBSGrid to PCS, your batch submission scripts will need to be updated accordingly.
 
 #### Accessing the PCS Launcher
 
-Activate a PCS session and connect to it. Once the browser is connected, click on the oval in the upper left hand corner, then select the Grid app at the bottom of the screen, then the Terminal:
+Activate a PCS session and connect to it. Once the browser is connected, click on the oval in the upper left hand corner, select the Grid app at the bottom of the screen, then open the Terminal:
 
 <img width="576" height="448" alt="image" src="https://github.com/user-attachments/assets/28ba27f2-c4cd-4be1-ac63-baced5397b3f" />
 
 #### Understanding PCS Storage Options
 
-**To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
+**To take full advantage of the high-performant storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors may arise as you cannot write streaming error or output files to the S3 bucket.
 
-For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a new Terminal this is the default folder. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
+##### EFS: Recommended for single‑node, single‑stream work
+For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
 **Note: the `home/ec2-user` directory is visible to all users in the project folder and is persistent across PCS sessions.**
 
 ```
 cd home/ec2-user/NEWFOLDERNAME
 ```
-For parallel, multi-node work, we recommend using the Lustre volume. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
+
+##### Lustre: Recommended for parallel, multi‑node work
+For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
 ```
 cd shared/NEWFOLDERNAME
 ```
 
-To facilitate copying or moving files from your S3 bucket to either of these volumes, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
+##### Project Space (studies)
+To facilitate copying or moving files from your project space's S3 bucket to EFS or Lustre, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
 
 ```
 cd mnt/studies/yourprojectspacename
@@ -899,7 +903,7 @@ MV NOTE: WE ASKED FOR A SIM LINK FOR THIS IN OUR LAST MTG WITH RL.
 ```
 ##### Moving/Copying Files from S3 to PCS Storage
 
-Below is sample code to move relevant files from your project's S3 storage to the EFS storage system.
+Below is sample code to move relevant files from your project's S3 storage to the PCS storage system.
 
 ```
 placholder, get sample code from Paul (Samah mentioned he has sample code)
@@ -907,9 +911,9 @@ placholder, get sample code from Paul (Samah mentioned he has sample code)
 
 #### Running a Single-Node Job
 
-**1\. Open the terminal and navigate to the folder on the EFS volume where you want to store your files.**
+**1\. Open the terminal and navigate to your working folder**
 
-For single-node jobs, we recommend using the EFS storage in the `/home/ec2-user` directory:
+For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
 ```
 cd home/ec2-user/yourfolder
 ```
@@ -938,14 +942,17 @@ Below is a quick overview of the components of the bash script above; please see
 | `echo ... && sleep 60 && echo "Job complete"` | Job body | Prints job details on start, waits **60 seconds** to simulate work, then prints a completion message — `&&` ensures each command only runs if the previous one succeeded |
 | `${SLURM_JOB_NAME}` `${SLURM_JOB_ID}` `${SLURMD_NODENAME}` `${SLURM_SUBMIT_HOST}` | SLURM variables | Automatically populated by SLURM at runtime — prints the job **name**, **ID**, **compute node**, and **submit host** inside the echo message |
 
-**3\. Submit the Job to SLURM**
+**3\.  Determine the SLURM partition**
 
 In the Terminal, run this command to store the name of the partition you are working on. This will be used in the next step and is necessary to run the job. (Alternatively, you can hard-code this into your SLURM script, but it may change for each session)
     
 ```
 PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
 ```
-Submit the job script to the SLURM scheduler.
+
+**3\. Submit the Job to SLURM**
+
+Submit the job script to the SLURM scheduler. SLURM will return a job ID.
 
 ```
 sbatch --partition=$PARTITION job.sh
@@ -995,7 +1002,7 @@ View the contents of your output file:
 cat output.log
 ```
 
-It should read something like:
+It should read something similar to:
 
 ```
 This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
