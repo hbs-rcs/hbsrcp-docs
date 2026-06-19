@@ -860,11 +860,11 @@ print("Done!")
 
 </details>
 
-### AWS's Parallel Computing Services (PCS)
+### AWS Parallel Computing Services (PCS)
 
 > ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
 
-AWS [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure
+AWS [PCS (Parallel Computing Service)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure.
 
 **Note:** PCS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts, whereas the HBSGrid uses an LSF scheduler. If you are moving from the HBSGrid to PCS, your batch submission scripts will need to be updated accordingly.
 
@@ -881,7 +881,7 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 ##### EFS: Recommended for single‑node, single‑stream work
 For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir NEWFOLDERNAME` command.
 
-**Note: the `/home/ec2-user` directory is visible to all users in the project folder and is persistent across PCS sessions.**
+**Note: the `/home/ec2-user` directory is visible to all users in your project and persists across PCS sessions.**
 
 ```
 cd /home/ec2-user/NEWFOLDERNAME
@@ -999,7 +999,7 @@ ls
 View the contents of your output file:
 
 ```
-cat single.1.log
+cat single.1.out
 ```
 
 It should read something similar to:
