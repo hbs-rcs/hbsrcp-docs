@@ -1012,9 +1012,14 @@ This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102
 Job complete
 ```
 </details>
-#### Running a Multi-Node Job
 
-_Coming Soon!_
+<details>
+    <summary>Running a Multi-Node Job</summary>
+
+    _Coming Soon!_
+</details>
+
+
 
    
    
