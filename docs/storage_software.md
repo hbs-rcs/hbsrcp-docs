@@ -1056,7 +1056,7 @@ if rank == 0:
 
 The example below is a simple SLURM job script that runs two tasks per node on two nodes, and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
 
-**Note: Please ensure that you have included the IFACE code below. "This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.**
+**Note: Please ensure that you have included the IFACE code below. This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.**
 
 ```
 #!/bin/bash
