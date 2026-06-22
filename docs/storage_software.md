@@ -1056,8 +1056,6 @@ if rank == 0:
 
 The example below requests two nodes and runs two MPI tasks per node (4 total tasks). It writes output and error logs to your current working directory. Save the script below as `job.sh`.
 
-The example below is a simple SLURM job script that runs two tasks per node on two nodes, and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
-
 **Note: Please ensure that you have included the IFACE code below. This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.**
 
 ```
@@ -1079,7 +1077,7 @@ Below is a quick overview of the components of the bash script above; please see
 | `#SBATCH -J multi` | SLURM directive | Sets the job name to `multi` |
 | `#SBATCH -o / -e` | SLURM directive | Sets the output (`-o`) and error (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `multi.12345.out` / `multi.12345.err`) |
 | `#SBATCH -N 2` | SLURM directive | Requests 2 compute nodes |
-| `#SBATCH --ntasks-per-node=2` | SLURM directive | Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes |
+| `#SBATCH --ntasks-per-node=2` | SLURM directive | Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes. |
 | `IFACE=$(ip link show \| awk '/state UP/ && !/LOOPBACK/{print $2}' \| tr -d ':')` | Shell variable | Queries the active non-loopback network interface at runtime and stores it in `$IFACE` — preferred over hardcoding in case the interface name varies |
 | `mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py` | Job body | Starts the MPI job restricted to the detected network interface and runs the Python script across all allocated tasks and nodes |
 
