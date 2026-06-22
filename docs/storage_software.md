@@ -914,7 +914,7 @@ placholder, get sample code from Paul (Samah mentioned he has sample code)
 <details>
 <summary>Running a Single-Node Job</summary>
 
-**1\. Open the terminal and navigate to your working folder**
+**1\. Open the Terminal and navigate to your working folder**
 
 For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
 ```
@@ -1018,7 +1018,7 @@ Job complete
 
 **Note: This example uses the `mpi4py` package in Python, but you can run a similar job using, e.g., `Rmpi` in R.**
 
-**1\. Open the terminal and navigate to your working folder**
+**1\. Open the Terminal and navigate to your working folder**
 
 For multi-node jobs, we recommend using the Lustre volume mounted on `/shared`:
 ```
@@ -1056,7 +1056,7 @@ if rank == 0:
 
 The example below is a simple SLURM job script that runs two tasks per node on two nodes, and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
 
-**Note: Please ensure that you have included the IFACE code below. This identifies the network you are on and places it in the submission. It is necessary for the script to run successfully**
+**Note: Please ensure that you have included the IFACE code below. "This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.**
 
 ```
 #!/bin/bash
@@ -1078,7 +1078,7 @@ Below is a quick overview of the components of the bash script above; please see
 | `#SBATCH -o / -e` | SLURM directive | Sets the output (`-o`) and error (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `multi.12345.out` / `multi.12345.err`) |
 | `#SBATCH -N 2` | SLURM directive | Requests 2 compute nodes |
 | `#SBATCH --ntasks-per-node=2` | SLURM directive | Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes |
-| `IFACE=$(ip link show | awk '/state UP/ && !/LOOPBACK/{print $2}' | tr -d ':')` | Shell variable | Queries the active non-loopback network interface at runtime and stores it in `$IFACE` — preferred over hardcoding in case the interface name varies |
+| `IFACE=$(ip link show \| awk '/state UP/ && !/LOOPBACK/{print $2}' \| tr -d ':')` | Shell variable | Queries the active non-loopback network interface at runtime and stores it in `$IFACE` — preferred over hardcoding in case the interface name varies |
 | `mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py` | Job body | Starts the MPI job restricted to the detected network interface and runs the Python script across all allocated tasks and nodes |
 
 **5\.  Determine the SLURM partition**
@@ -1133,6 +1133,8 @@ cat multi.1.out
 ```
 
 It should read something similar to:
+
+**Note: Because all 4 processes run in parallel, the order of the rank lines may vary between runs — this is normal. The PASSED line will always appear last.**
 
 ```
 Hello from rank 2 of 4 on ip-10-0-19-72.ec2.internal
