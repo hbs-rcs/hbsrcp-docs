@@ -1086,7 +1086,56 @@ Submit the job script to the SLURM scheduler. SLURM will return a job ID.
 sbatch --partition=$PARTITION job.sh
 ```
 
+**7\. Monitor Job Status**
 
+Use the job ID returned by `sbatch` to monitor the job using the `squeue` command.
+
+```
+squeue --job <job-id>
+```
+
+Example:
+```
+squeue --job 1
+```
+
+<img width="931" height="66" alt="image" src="https://github.com/user-attachments/assets/ed43de81-5259-4af5-8e62-c9ae9ad66916" />
+
+
+<br></br>
+Continue checking until the job reaches the R (running) state.
+
+
+<img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
+
+<br></br>
+The job is complete when `squeue` no longer returns any output for the job ID.
+
+<img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
+
+**8\. Review Job Output Files**
+
+Once the job completes, inspect the contents of your folder to view the generated output and error files:
+
+```
+ls
+```
+
+<img width="323" height="41" alt="image" src="https://github.com/user-attachments/assets/ca85b054-9c49-428c-b03f-c018b4c3a984" />
+
+<br></br>
+View the contents of your output file:
+
+```
+cat multi.1.out
+```
+
+It should read something similar to:
+
+```
+This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
+Job complete
+```
 </details>
 
 
