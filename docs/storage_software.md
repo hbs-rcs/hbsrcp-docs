@@ -1016,7 +1016,42 @@ Job complete
 <details>
     <summary>Running a Multi-Node Job</summary>
 
-    _Coming Soon!_
+**Note: This example uses the `mpi4py` package in Python, but you can run a similar job using, e.g., `Rmpi` in R.
+
+**1\. Open the terminal and navigate to your working folder**
+
+For multi-node jobs, we recommend using the Lustre volume mounted on `/shared`:
+```
+cd /shared/<yourfolder>
+```
+**2\. Install the mpi4py package**
+
+In the Terminal:
+```
+pip install mpi4py
+```
+**3\. Create a Python MPI Script**
+
+Save the script below as `hello_mpi.py` in your working directory. Each MPI task runs its own copy of this script and reports its rank and hostname.
+
+```python
+from mpi4py import MPI
+import socket
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
+hostname = socket.gethostname()
+
+print(f"Hello from rank {rank} of {size} on {hostname}", flush=True)
+
+all_hostnames = comm.gather(hostname, root=0)
+if rank == 0:
+    unique_nodes = set(all_hostnames)
+    assert len(unique_nodes) > 1, f"FAILED — all ranks landed on the same node: {unique_nodes}"
+    print(f"PASSED — job ran across {len(unique_nodes)} nodes: {unique_nodes}")
+```
+   
 </details>
 
 
