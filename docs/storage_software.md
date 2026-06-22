@@ -1016,7 +1016,7 @@ Job complete
 <details>
     <summary>Running a Multi-Node Job</summary>
 
-**Note: This example uses the `mpi4py` package in Python, but you can run a similar job using, e.g., `Rmpi` in R.
+**Note: This example uses the `mpi4py` package in Python, but you can run a similar job using, e.g., `Rmpi` in R.**
 
 **1\. Open the terminal and navigate to your working folder**
 
@@ -1032,7 +1032,7 @@ pip install mpi4py
 ```
 **3\. Create a Python MPI Script**
 
-Save the script below as `hello_mpi.py` in your working directory. Each MPI task runs its own copy of this script and reports its rank and hostname.
+Save the script below as `hello_mpi.py` in your working directory. 
 
 ```python
 from mpi4py import MPI
@@ -1051,7 +1051,42 @@ if rank == 0:
     assert len(unique_nodes) > 1, f"FAILED — all ranks landed on the same node: {unique_nodes}"
     print(f"PASSED — job ran across {len(unique_nodes)} nodes: {unique_nodes}")
 ```
-   
+
+**4\. Create a SLURM Job Script**
+
+The example below is a simple SLURM job script that runs two tasks per node on two nodes, and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
+
+**Note: Please ensure that you have included the IFACE code below. This identifies the network you are on and places it in the submission. It is necessary for the script to run successfully**
+
+```
+#!/bin/bash
+#SBATCH -J multi
+#SBATCH -o multi.%j.out
+#SBATCH -e multi.%j.err
+#SBATCH -N 2
+#SBATCH --ntasks-per-node=2
+
+IFACE=$(ip link show | awk '/state UP/ && !/LOOPBACK/{print $2}' | tr -d ':')
+mpirun --mca btl_tcp_if_include $IFACE python3 mpi_test1.py
+```
+
+**5\.  Determine the SLURM partition**
+
+In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in $PARTITION, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script. 
+    
+```
+PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
+```
+
+**6\. Submit the Job to SLURM**
+
+Submit the job script to the SLURM scheduler. SLURM will return a job ID.
+
+```
+sbatch --partition=$PARTITION job.sh
+```
+
+
 </details>
 
 
