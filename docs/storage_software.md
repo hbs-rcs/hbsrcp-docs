@@ -910,10 +910,9 @@ Below is sample code to move relevant files from your project's S3 storage to th
 ```
 placholder, get sample code from Paul (Samah mentioned he has sample code)
 ```
-
-<a id="single-node-job"></a>
+#### Running a Single-Node Job
 <details>
-<summary>Running a Single-Node Job</summary>
+<summary>Click to expand</summary>
 
 **1\. Open the Terminal and navigate to your working folder**
 
@@ -1013,9 +1012,9 @@ Job complete
 ```
 </details>
 
-<a id="multi-node-job"></a>
+#### Running a Multi-Node Job
 <details>
-    <summary>Running a Multi-Node Job</summary>
+    <summary>Click to expand</summary>
 
 
 **Note: This example uses the mpi4py package in Python, but you can run a similar multi-node job using other MPI wrappers (for example, MPI packages in R).**
