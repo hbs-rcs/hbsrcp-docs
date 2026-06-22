@@ -911,7 +911,8 @@ Below is sample code to move relevant files from your project's S3 storage to th
 placholder, get sample code from Paul (Samah mentioned he has sample code)
 ```
 
-#### Running a Single-Node Job
+<details>
+<summary>Running a Single-Node Job</summary>
 
 **1\. Open the terminal and navigate to your working folder**
 
@@ -1010,7 +1011,7 @@ It should read something similar to:
 This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
 Job complete
 ```
-
+</details>
 #### Running a Multi-Node Job
 
 _Coming Soon!_
