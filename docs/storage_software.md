@@ -987,7 +987,6 @@ The job is complete when `squeue` no longer returns any output for the job ID.
 
 <img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
 
-
 **6\. Review Job Output Files**
 
 Once the job completes, inspect the contents of your folder to view the generated output and error files:
@@ -1015,6 +1014,7 @@ Job complete
 
 <details>
     <summary>Running a Multi-Node Job</summary>
+
 
 **Note: This example uses the `mpi4py` package in Python, but you can run a similar job using, e.g., `Rmpi` in R.**
 
@@ -1067,8 +1067,19 @@ The example below is a simple SLURM job script that runs two tasks per node on t
 #SBATCH --ntasks-per-node=2
 
 IFACE=$(ip link show | awk '/state UP/ && !/LOOPBACK/{print $2}' | tr -d ':')
-mpirun --mca btl_tcp_if_include $IFACE python3 mpi_test1.py
+mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py
 ```
+Below is a quick overview of the components of the bash script above; please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
+
+| Component | What It Is | What It Does |
+|---|---|---|
+| `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
+| `#SBATCH -J multi` | SLURM directive | Sets the job name to `multi` |
+| `#SBATCH -o / -e` | SLURM directive | Sets the output (`-o`) and error (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `multi.12345.out` / `multi.12345.err`) |
+| `#SBATCH -N 2` | SLURM directive | Requests 2 compute nodes |
+| `#SBATCH --ntasks-per-node=2` | SLURM directive | Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes |
+| `IFACE=$(ip link show | awk '/state UP/ && !/LOOPBACK/{print $2}' | tr -d ':')` | Shell variable | Queries the active non-loopback network interface at runtime and stores it in `$IFACE` — preferred over hardcoding in case the interface name varies |
+| `mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py` | Job body | Starts the MPI job restricted to the detected network interface and runs the Python script across all allocated tasks and nodes |
 
 **5\.  Determine the SLURM partition**
 
@@ -1101,17 +1112,10 @@ squeue --job 1
 
 <img width="931" height="66" alt="image" src="https://github.com/user-attachments/assets/ed43de81-5259-4af5-8e62-c9ae9ad66916" />
 
-
 <br></br>
-Continue checking until the job reaches the R (running) state.
+Continue checking until the job reaches the R (running) state. The job is complete when `squeue` no longer returns any output for the job ID.
 
-
-<img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
-
-<br></br>
-The job is complete when `squeue` no longer returns any output for the job ID.
-
-<img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
+<img width="905" height="49" alt="image" src="https://github.com/user-attachments/assets/7bb8c729-0daa-43d2-a04c-c73d0d02d3a4" />
 
 **8\. Review Job Output Files**
 
@@ -1120,10 +1124,8 @@ Once the job completes, inspect the contents of your folder to view the generate
 ```
 ls
 ```
+<img width="495" height="51" alt="image" src="https://github.com/user-attachments/assets/2e1e79b5-b8c0-4ec9-9545-0429fa60b167" />
 
-<img width="323" height="41" alt="image" src="https://github.com/user-attachments/assets/ca85b054-9c49-428c-b03f-c018b4c3a984" />
-
-<br></br>
 View the contents of your output file:
 
 ```
@@ -1133,8 +1135,11 @@ cat multi.1.out
 It should read something similar to:
 
 ```
-This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
-Job complete
+Hello from rank 2 of 4 on ip-10-0-19-72.ec2.internal
+Hello from rank 3 of 4 on ip-10-0-19-72.ec2.internal
+Hello from rank 0 of 4 on ip-10-0-20-146.ec2.internal
+Hello from rank 1 of 4 on ip-10-0-20-146.ec2.internal
+PASSED — job ran across 2 nodes: {'ip-10-0-19-72.ec2.internal', 'ip-10-0-20-146.ec2.internal'}
 ```
 </details>
 
