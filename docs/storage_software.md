@@ -1001,7 +1001,7 @@ ls
 View the contents of your output file:
 
 ```
-cat single.1.out
+cat single.<job-id>.out
 ```
 
 It should read something similar to:
@@ -1016,7 +1016,7 @@ Job complete
     <summary>Running a Multi-Node Job</summary>
 
 
-**Note: This example uses the `mpi4py` package in Python, but you can run a similar job using, e.g., `Rmpi` in R.**
+**Note: This example uses the mpi4py package in Python, but you can run a similar multi-node job using other MPI wrappers (for example, MPI packages in R).**
 
 **1\. Open the Terminal and navigate to your working folder**
 
@@ -1053,6 +1053,8 @@ if rank == 0:
 ```
 
 **4\. Create a SLURM Job Script**
+
+The example below requests two nodes and runs two MPI tasks per node (4 total tasks). It writes output and error logs to your current working directory. Save the script below as `job.sh`.
 
 The example below is a simple SLURM job script that runs two tasks per node on two nodes, and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
 
@@ -1129,7 +1131,7 @@ ls
 View the contents of your output file:
 
 ```
-cat multi.1.out
+cat multi.<job-id>.out
 ```
 
 It should read something similar to:
