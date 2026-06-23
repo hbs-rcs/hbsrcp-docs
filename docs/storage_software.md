@@ -908,7 +908,29 @@ MV NOTE: WE ASKED FOR A SYM LINK FOR THIS IN OUR LAST MTG WITH RL.
 Below is sample code to move relevant files from your project's S3 storage to the PCS storage system.
 
 ```
-placholder, get sample code from Paul (Samah mentioned he has sample code)
+#!/bin/bash
+#
+# Batch File Location:  PATH_TO_SUBMISSION_SCRIPT/submission.sh
+# This is a sample submission script that copies code and data from the project folder to the /shared directory for execution and
+# then deletes it after the results have been copied back to the project directory.
+OUTPUT_PATH="PATH_TO_OUTPUT_DIRECTORY/output"
+DATA_INPUT_PATH="PATH_TO_DATA_DIRECTORY/data"
+CODE_PATH="PATH_TO_CODE_DIRECTORY/R-Code"
+EXECUTE_PATH="/shared"
+#
+#SBATCH --partition=awsPcs-0e04-ondemand             # Specify the partition (queue)
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=1                          # Number of tasks per node
+#SBATCH --cpus-per-task=8                            # Number of CPU cores per task
+#SBATCH -o submission.out
+#SBATCH -e submission.err
+cp $CODE_PATH/myCode.R $EXECUTE_PATH/myCode.R
+cp $DATA_INPUT_PATH/* $EXECUTE_PATH/data/
+R < $EXECUTE_PATH/myCode.R --no-save "--args batch"
+cp $EXECUTE_PATH/output/* $OUTPUT_PATH/
+rm $EXECUTE_PATH/data/*
+rm $EXECUTE_PATH/myCode.R
+
 ```
 #### Running a Single-Node Job
 <details>
