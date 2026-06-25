@@ -901,46 +901,17 @@ To facilitate copying or moving files from your project space's S3 bucket to EFS
 
 ```
 cd /mnt/studies/<yourprojectspacename>
-MV NOTE: WE ASKED FOR A SYM LINK FOR THIS IN OUR LAST MTG WITH RL.
 ```
 ##### Moving/Copying Files from S3 to PCS Storage
 
-Below is sample code to move relevant files from your project's S3 storage to the PCS storage system.
+Below is sample code to move a folder containing your relevant code/files from your project's S3 storage to the PCS storage system using the Terminal.
 
 ```
-#!/bin/bash
-#
-# Batch File Location:  PATH_TO_SUBMISSION_SCRIPT/submission.sh
-# This is a sample submission script that copies code and data from the project folder to the /shared directory for execution and
-# then deletes it after the results have been copied back to the project directory.
-OUTPUT_PATH="PATH_TO_OUTPUT_DIRECTORY/output"
-DATA_INPUT_PATH="PATH_TO_DATA_DIRECTORY/data"
-CODE_PATH="PATH_TO_CODE_DIRECTORY/R-Code"
-EXECUTE_PATH="/shared"
-#
-#SBATCH --partition=awsPcs-0e04-ondemand             # Specify the partition (queue)
-#SBATCH --nodes=1 
-#SBATCH --ntasks-per-node=1                          # Number of tasks per node
-#SBATCH --cpus-per-task=8                            # Number of CPU cores per task
-#SBATCH -o submission.out
-#SBATCH -e submission.err
-cp $CODE_PATH/myCode.R $EXECUTE_PATH/myCode.R
-cp $DATA_INPUT_PATH/* $EXECUTE_PATH/data/
-R < $EXECUTE_PATH/myCode.R --no-save "--args batch"
-cp $EXECUTE_PATH/output/* $OUTPUT_PATH/
-rm $EXECUTE_PATH/data/*
-rm $EXECUTE_PATH/myCode.R
+# Copy into the EFS volume (note that using the -r flag ensures that all files inside the folder, including subfolders, are copied)
+cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /home/ec2-user/<yourfolder> 
 
-```
-#### Running a Single-Node Job
-<details>
-<summary>Click to expand</summary>
-
-**1\. Open the Terminal and navigate to your working folder**
-
-For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
-```
-cd /home/ec2-user/<yourfolder>
+# Copy into the Lustre volume (note that using the -r flag ensures that all files inside the folder, including subfolders, are copied)
+cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /shared/<yourfolder>
 ```
 
 **2\. Create a SLURM Job Script**
