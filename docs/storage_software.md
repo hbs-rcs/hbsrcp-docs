@@ -880,38 +880,54 @@ Activate a PCS session and connect to it. Once the browser is connected, click o
 
 **To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors and job failures may occur as you cannot write streaming error or output files to the S3 bucket.
 
-##### EFS: Recommended for single‑node, single‑stream work
-For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
+_Note: the EFS and Lustre volumes are visible to all users in your project and persist across PCS sessions until you Terminate the launcher._
 
-**Note: the `/home/ec2-user` directory is visible to all users in your project and persists across PCS sessions.**
+**EFS: Recommended for single‑node, single‑stream work**
+
+For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
 
 ```
 cd /home/ec2-user/<yourfolder>
 ```
+**Lustre: Recommended for parallel, multi‑node work**
 
-##### Lustre: Recommended for parallel, multi‑node work
 For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
 
 ```
 cd /shared/<yourfolder>
 ```
 
-##### Project Space (studies)
+**Project Space (studies)**
+
 To facilitate copying or moving files from your project space's S3 bucket to EFS or Lustre, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
 
 ```
 cd /mnt/studies/<yourprojectspacename>
 ```
-##### Moving/Copying Files from S3 to PCS Storage
+#### Copying Files from S3 to PCS Storage
+Below is sample code to copy a folder containing your relevant code/files from your project's S3 storage to the PCS storage system using the Terminal.
 
-Below is sample code to move a folder containing your relevant code/files from your project's S3 storage to the PCS storage system using the Terminal.
+Note that using the `-r` flag ensures that all files inside the folder, including subfolders, are copied.
+
+**Copy to the EFS volume**
+```
+cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /home/ec2-user/<yourfolder> 
+```
+
+**Copy to the Lustre volume**
 
 ```
-# Copy into the EFS volume (note that using the -r flag ensures that all files inside the folder, including subfolders, are copied)
-cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /home/ec2-user/<yourfolder> 
-
-# Copy into the Lustre volume (note that using the -r flag ensures that all files inside the folder, including subfolders, are copied)
 cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /shared/<yourfolder>
+```
+#### Running a Single-Node Job
+<details>
+<summary>Click to expand</summary>
+
+**1\. Open the Terminal and navigate to your working folder**
+
+For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
+```
+cd /home/ec2-user/<yourfolder>
 ```
 
 **2\. Create a SLURM Job Script**
