@@ -923,129 +923,143 @@ cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /shared/<yourfolder>
 <details>
 <summary>Click to expand</summary>
 
-**1\. Open the Terminal and navigate to your working folder**
+<p><strong>1. Open the Terminal and navigate to your working folder</strong></p>
 
-For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
-```
-cd /home/ec2-user/<yourfolder>
-```
+<p>For single-node jobs, we recommend using the EFS volume under <code>/home/ec2-user</code>:</p>
 
-**2\. Create a SLURM Job Script**
+<pre><code>cd /home/ec2-user/&lt;yourfolder&gt;</code></pre>
 
-The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
+<p><strong>2. Create a SLURM Job Script</strong></p>
 
-```
-#!/bin/bash
+<p>The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from. Save the script below as <code>job.sh</code> in your working directory.</p>
+
+<pre><code>#!/bin/bash
 #SBATCH -J single
 #SBATCH -o single.%j.out
 #SBATCH -e single.%j.err
 
-echo "This is job ${SLURM_JOB_NAME} [${SLURM_JOB_ID}] running on ${SLURMD_NODENAME}, submitted from ${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
+echo "This is job ${SLURM_JOB_NAME} [${SLURM_JOB_ID}] running on ${SLURMD_NODENAME}, submitted from ${SLURM_SUBMIT_HOST}" &amp;&amp; sleep 60 &amp;&amp; echo "Job complete"
+</code></pre>
 
-```
+<p>Below is a quick overview of the components of the bash script above; please see the <a href="https://slurm.schedmd.com/documentation.html">SLURM</a> documentation for additional detail.</p>
 
-Below is a quick overview of the components of the bash script above; please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>What It Is</th>
+      <th>What It Does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>#!/bin/bash</code></td>
+      <td>Shebang line</td>
+      <td>Tells the system to run this script using the Bash shell — must always be the first line</td>
+    </tr>
+    <tr>
+      <td><code>#SBATCH -J single</code></td>
+      <td>SLURM directive</td>
+      <td>Sets the <strong>job name</strong> to <code>single</code> — this is what your job will be called in the queue</td>
+    </tr>
+    <tr>
+      <td><code>#SBATCH -o</code> / <code>-e</code></td>
+      <td>SLURM directive</td>
+      <td>Sets the <strong>output</strong> (<code>-o</code>) and <strong>error</strong> (<code>-e</code>) log files — <code>%j</code> is replaced with the job ID at runtime (e.g. <code>single.12345.out</code> / <code>single.12345.err</code>)</td>
+    </tr>
+    <tr>
+      <td><code>echo ... &amp;&amp; sleep 60 &amp;&amp; echo "Job complete"</code></td>
+      <td>Job body</td>
+      <td>Prints job details on start, waits <strong>60 seconds</strong> to simulate work, then prints a completion message — <code>&amp;&amp;</code> ensures each command only runs if the previous one succeeded</td>
+    </tr>
+    <tr>
+      <td><code>${SLURM_JOB_NAME}</code> <code>${SLURM_JOB_ID}</code> <code>${SLURMD_NODENAME}</code> <code>${SLURM_SUBMIT_HOST}</code></td>
+      <td>SLURM variables</td>
+      <td>Automatically populated by SLURM at runtime — prints the job <strong>name</strong>, <strong>ID</strong>, <strong>compute node</strong>, and <strong>submit host</strong> inside the echo message</td>
+    </tr>
+  </tbody>
+</table>
 
-| Component | What It Is | What It Does |
-|---|---|---|
-| `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
-| `#SBATCH -J single` | SLURM directive | Sets the **job name** to `single` — this is what your job will be called in the queue |
-| `#SBATCH -o` / `-e` | SLURM directive | Sets the **output** (`-o`) and **error** (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `single.12345.out` / `single.12345.err`) |
-| `echo ... && sleep 60 && echo "Job complete"` | Job body | Prints job details on start, waits **60 seconds** to simulate work, then prints a completion message — `&&` ensures each command only runs if the previous one succeeded |
-| `${SLURM_JOB_NAME}` `${SLURM_JOB_ID}` `${SLURMD_NODENAME}` `${SLURM_SUBMIT_HOST}` | SLURM variables | Automatically populated by SLURM at runtime — prints the job **name**, **ID**, **compute node**, and **submit host** inside the echo message |
+<p><strong>3. Determine the SLURM partition</strong></p>
 
-**3\.  Determine the SLURM partition**
+<p>In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in <code>$PARTITION</code>, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script.</p>
 
-In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in $PARTITION, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script. 
-    
-```
-PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
-```
+<pre><code>PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')</code></pre>
 
-**4\. Submit the Job to SLURM**
+<p><strong>4. Submit the Job to SLURM</strong></p>
 
-Submit the job script to the SLURM scheduler. SLURM will return a job ID.
+<p>Submit the job script to the SLURM scheduler. SLURM will return a job ID.</p>
 
-```
-sbatch --partition=$PARTITION job.sh
-```
+<pre><code>sbatch --partition=$PARTITION job.sh</code></pre>
 
-**5\. Monitor Job Status**
+<p><strong>5. Monitor Job Status</strong></p>
 
-Use the job ID returned by `sbatch` to monitor the job using the `squeue` command.
+<p>Use the job ID returned by <code>sbatch</code> to monitor the job using the <code>squeue</code> command.</p>
 
-```
-squeue --job <job-id>
-```
+<pre><code>squeue --job &lt;job-id&gt;</code></pre>
 
-Example:
-```
-squeue --job 1
-```
+<p>Example:</p>
+
+<pre><code>squeue --job 1</code></pre>
 
 <img width="773" height="60" alt="image" src="https://github.com/user-attachments/assets/3f67ac38-f1a8-4efa-a1e6-5092925e65a2" />
 
-<br></br>
-Continue checking until the job reaches the R (running) state.
+<br>
 
+<p>Continue checking until the job reaches the R (running) state.</p>
 
 <img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
 
-<br></br>
-The job is complete when `squeue` no longer returns any output for the job ID.
+<br>
+
+<p>The job is complete when <code>squeue</code> no longer returns any output for the job ID.</p>
 
 <img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
 
-**6\. Review Job Output Files**
+<p><strong>6. Review Job Output Files</strong></p>
 
-Once the job completes, inspect the contents of your folder to view the generated output and error files:
+<p>Once the job completes, inspect the contents of your folder to view the generated output and error files:</p>
 
-```
-ls
-```
+<pre><code>ls</code></pre>
 
 <img width="323" height="41" alt="image" src="https://github.com/user-attachments/assets/ca85b054-9c49-428c-b03f-c018b4c3a984" />
 
-<br></br>
-View the contents of your output file:
+<br>
 
-```
-cat single.<job-id>.out
-```
+<p>View the contents of your output file:</p>
 
-It should read something similar to:
+<pre><code>cat single.&lt;job-id&gt;.out</code></pre>
 
-```
-This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
-Job complete
-```
+<p>It should read something similar to:</p>
+
+<pre><code>This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
+Job complete</code></pre>
+
 </details>
 
 #### Running a Multi-Node Job
 <details>
-    <summary>Click to expand</summary>
+<summary>Click to expand</summary>
 
+<p><strong>Note: This example uses the mpi4py package in Python, but you can run a similar multi-node job using other MPI wrappers (for example, MPI packages in R).</strong></p>
 
-**Note: This example uses the mpi4py package in Python, but you can run a similar multi-node job using other MPI wrappers (for example, MPI packages in R).**
+<p><strong>1. Open the Terminal and navigate to your working folder</strong></p>
 
-**1\. Open the Terminal and navigate to your working folder**
+<p>For multi-node jobs, we recommend using the Lustre volume mounted on <code>/shared</code>:</p>
 
-For multi-node jobs, we recommend using the Lustre volume mounted on `/shared`:
-```
-cd /shared/<yourfolder>
-```
-**2\. Install the mpi4py package**
+<pre><code>cd /shared/&lt;yourfolder&gt;</code></pre>
 
-In the Terminal:
-```
-pip install mpi4py
-```
-**3\. Create a Python MPI Script**
+<p><strong>2. Install the mpi4py package</strong></p>
 
-Save the script below as `hello_mpi.py` in your working directory. 
+<p>In the Terminal:</p>
 
-```python
-from mpi4py import MPI
+<pre><code>pip install mpi4py</code></pre>
+
+<p><strong>3. Create a Python MPI Script</strong></p>
+
+<p>Save the script below as <code>hello_mpi.py</code> in your working directory.</p>
+
+<pre><code>from mpi4py import MPI
 import socket
 
 comm = MPI.COMM_WORLD
@@ -1058,101 +1072,129 @@ print(f"Hello from rank {rank} of {size} on {hostname}", flush=True)
 all_hostnames = comm.gather(hostname, root=0)
 if rank == 0:
     unique_nodes = set(all_hostnames)
-    assert len(unique_nodes) > 1, f"FAILED — all ranks landed on the same node: {unique_nodes}"
+    assert len(unique_nodes) &gt; 1, f"FAILED — all ranks landed on the same node: {unique_nodes}"
     print(f"PASSED — job ran across {len(unique_nodes)} nodes: {unique_nodes}")
-```
+</code></pre>
 
-**4\. Create a SLURM Job Script**
+<p><strong>4. Create a SLURM Job Script</strong></p>
 
-The example below requests two nodes and runs two MPI tasks per node (4 total tasks). It writes output and error logs to your current working directory. Save the script below as `job.sh`.
+<p>The example below requests two nodes and runs two MPI tasks per node (4 total tasks). It writes output and error logs to your current working directory. Save the script below as <code>job.sh</code>.</p>
 
-**Note: Please ensure that you have included the IFACE code below. This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.**
+<p><strong>Note: Please ensure that you have included the IFACE code below. This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.</strong></p>
 
-```
-#!/bin/bash
+<pre><code>#!/bin/bash
 #SBATCH -J multi
 #SBATCH -o multi.%j.out
 #SBATCH -e multi.%j.err
 #SBATCH -N 2
 #SBATCH --ntasks-per-node=2
 
-IFACE=$(ip link show | awk '/state UP/ && !/LOOPBACK/{print $2}' | tr -d ':')
+IFACE=$(ip link show | awk '/state UP/ &amp;&amp; !/LOOPBACK/{print $2}' | tr -d ':')
 mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py
-```
-Below is a quick overview of the components of the bash script above; please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
+</code></pre>
 
-| Component | What It Is | What It Does |
-|---|---|---|
-| `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
-| `#SBATCH -J multi` | SLURM directive | Sets the job name to `multi` |
-| `#SBATCH -o / -e` | SLURM directive | Sets the output (`-o`) and error (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `multi.12345.out` / `multi.12345.err`) |
-| `#SBATCH -N 2` | SLURM directive | Requests 2 compute nodes |
-| `#SBATCH --ntasks-per-node=2` | SLURM directive | Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes. |
-| `IFACE=$(ip link show \| awk '/state UP/ && !/LOOPBACK/{print $2}' \| tr -d ':')` | Shell variable | Queries the active non-loopback network interface at runtime and stores it in `$IFACE` — preferred over hardcoding in case the interface name varies |
-| `mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py` | Job body | Starts the MPI job restricted to the detected network interface and runs the Python script across all allocated tasks and nodes |
+<p>Below is a quick overview of the components of the bash script above; please see the <a href="https://slurm.schedmd.com/documentation.html">SLURM</a> documentation for additional detail.</p>
 
-**5\.  Determine the SLURM partition**
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>What It Is</th>
+      <th>What It Does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>#!/bin/bash</code></td>
+      <td>Shebang line</td>
+      <td>Tells the system to run this script using the Bash shell — must always be the first line</td>
+    </tr>
+    <tr>
+      <td><code>#SBATCH -J multi</code></td>
+      <td>SLURM directive</td>
+      <td>Sets the job name to <code>multi</code></td>
+    </tr>
+    <tr>
+      <td><code>#SBATCH -o</code> / <code>-e</code></td>
+      <td>SLURM directive</td>
+      <td>Sets the output (<code>-o</code>) and error (<code>-e</code>) log files — <code>%j</code> is replaced with the job ID at runtime (e.g. <code>multi.12345.out</code> / <code>multi.12345.err</code>)</td>
+    </tr>
+    <tr>
+      <td><code>#SBATCH -N 2</code></td>
+      <td>SLURM directive</td>
+      <td>Requests 2 compute nodes</td>
+    </tr>
+    <tr>
+      <td><code>#SBATCH --ntasks-per-node=2</code></td>
+      <td>SLURM directive</td>
+      <td>Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes</td>
+    </tr>
+    <tr>
+      <td><code>IFACE=$(ip link show | awk '/state UP/ &amp;&amp; !/LOOPBACK/{print $2}' | tr -d ':')</code></td>
+      <td>Shell variable</td>
+      <td>Queries the active non-loopback network interface at runtime and stores it in <code>$IFACE</code> — preferred over hardcoding in case the interface name varies</td>
+    </tr>
+    <tr>
+      <td><code>mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py</code></td>
+      <td>Job body</td>
+      <td>Starts the MPI job restricted to the detected network interface and runs the Python script across all allocated tasks and nodes</td>
+    </tr>
+  </tbody>
+</table>
 
-In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in $PARTITION, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script. 
-    
-```
-PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
-```
+<p><strong>5. Determine the SLURM partition</strong></p>
 
-**6\. Submit the Job to SLURM**
+<p>In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in <code>$PARTITION</code>, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script.</p>
 
-Submit the job script to the SLURM scheduler. SLURM will return a job ID.
+<pre><code>PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')</code></pre>
 
-```
-sbatch --partition=$PARTITION job.sh
-```
+<p><strong>6. Submit the Job to SLURM</strong></p>
 
-**7\. Monitor Job Status**
+<p>Submit the job script to the SLURM scheduler. SLURM will return a job ID.</p>
 
-Use the job ID returned by `sbatch` to monitor the job using the `squeue` command.
+<pre><code>sbatch --partition=$PARTITION job.sh</code></pre>
 
-```
-squeue --job <job-id>
-```
+<p><strong>7. Monitor Job Status</strong></p>
 
-Example:
-```
-squeue --job 1
-```
+<p>Use the job ID returned by <code>sbatch</code> to monitor the job using the <code>squeue</code> command.</p>
+
+<pre><code>squeue --job &lt;job-id&gt;</code></pre>
+
+<p>Example:</p>
+
+<pre><code>squeue --job 1</code></pre>
 
 <img width="931" height="66" alt="image" src="https://github.com/user-attachments/assets/ed43de81-5259-4af5-8e62-c9ae9ad66916" />
 
-<br></br>
-Continue checking until the job reaches the R (running) state. The job is complete when `squeue` no longer returns any output for the job ID.
+<br>
+
+<p>Continue checking until the job reaches the R (running) state. The job is complete when <code>squeue</code> no longer returns any output for the job ID.</p>
 
 <img width="905" height="49" alt="image" src="https://github.com/user-attachments/assets/7bb8c729-0daa-43d2-a04c-c73d0d02d3a4" />
 
-**8\. Review Job Output Files**
+<p><strong>8. Review Job Output Files</strong></p>
 
-Once the job completes, inspect the contents of your folder to view the generated output and error files:
+<p>Once the job completes, inspect the contents of your folder to view the generated output and error files:</p>
 
-```
-ls
-```
+<pre><code>ls</code></pre>
+
 <img width="495" height="51" alt="image" src="https://github.com/user-attachments/assets/2e1e79b5-b8c0-4ec9-9545-0429fa60b167" />
 
-View the contents of your output file:
+<p>View the contents of your output file:</p>
 
-```
-cat multi.<job-id>.out
-```
+<pre><code>cat multi.&lt;job-id&gt;.out</code></pre>
 
-It should read something similar to:
+<p>It should read something similar to:</p>
 
-**Note: Because all 4 processes run in parallel, the order of the rank lines may vary between runs — this is normal. The PASSED line will always appear last.**
+<p><strong>Note: Because all 4 processes run in parallel, the order of the rank lines may vary between runs — this is normal. The PASSED line will always appear last.</strong></p>
 
-```
-Hello from rank 2 of 4 on ip-10-0-19-72.ec2.internal
+<pre><code>Hello from rank 2 of 4 on ip-10-0-19-72.ec2.internal
 Hello from rank 3 of 4 on ip-10-0-19-72.ec2.internal
 Hello from rank 0 of 4 on ip-10-0-20-146.ec2.internal
 Hello from rank 1 of 4 on ip-10-0-20-146.ec2.internal
 PASSED — job ran across 2 nodes: {'ip-10-0-19-72.ec2.internal', 'ip-10-0-20-146.ec2.internal'}
-```
+</code></pre>
+
 </details>
 
 
