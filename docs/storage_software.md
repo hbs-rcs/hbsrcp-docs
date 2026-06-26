@@ -860,10 +860,302 @@ print("Done!")
 
 </details>
 
-### Amazon's Parallel Computing Services (PCS)
+---
 
-> ⚠️ **Important:** To use PCS, please ensure that the project sponsor has [enabled the PCS launcher](manageprojects.md/#configure-services)
+### AWS Parallel Computing Service (PCS)
 
-_Coming Soon!_
+> ⚠️ **Important:** To use PCS, please ensure that the project owner has [enabled the Private Networking and EFS services, and the PCS launcher](manageprojects.md/#configure-services). The first time you launch PCS, it will take about 15 minutes to provision.
+
+AWS [Parallel Computing Service (PCS)](https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html) is a fully managed service that gives you access to a large compute cluster in the cloud. PCS allows you to submit computational jobs via submission scripts that can run across hundreds or thousands of CPUs simultaneously, dramatically reducing the time needed for large or complex analyses. You only pay for the computing time you use; AWS manages the underlying infrastructure.
+
+**Note:** PCS uses [SLURM](https://slurm.schedmd.com/quickstart.html) submission scripts, whereas the HBSGrid uses an LSF scheduler. If you are moving from the HBSGrid to PCS, your batch submission scripts will need to be updated accordingly.
+
+#### Accessing the PCS Launcher
+
+Activate a PCS session and connect to it. Once the browser is connected, click on the oval in the upper left hand corner, select the app grid at the bottom of the screen, then open the Terminal:
+
+<img width="576" height="448" alt="image" src="https://github.com/user-attachments/assets/28ba27f2-c4cd-4be1-ac63-baced5397b3f" />
+
+#### Understanding PCS Storage Options
+
+**To take full advantage of the high-performance storage in the PCS launcher (EFS and Lustre), please copy or move relevant files (code/data) from your project space's S3 bucket to the PCS storage system** (see instructions below). While you can technically work from files in your S3 bucket, you will not take advantage of the full power of the PCS system, and unexpected errors and job failures may occur as you cannot write streaming error or output files to the S3 bucket.
+
+_Note: the EFS and Lustre volumes are visible to all users in your project and persist across PCS sessions until you Terminate the launcher._
+
+**EFS: Recommended for single‑node, single‑stream work**
+
+For single-node, single-stream work, we recommend using the EFS volume. When you log into PCS and open a Terminal, your default working directory is on EFS. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
+
+```
+cd /home/ec2-user/<yourfolder>
+```
+**Lustre: Recommended for parallel, multi‑node work**
+
+For high‑throughput, multi‑node workloads, use the Lustre volume mounted at `/shared`. If you would like to create a new folder within it, you can use the `mkdir <yourfolder>` command.
+
+```
+cd /shared/<yourfolder>
+```
+
+**Project Space (studies)**
+
+To facilitate copying or moving files from your project space's S3 bucket to EFS or Lustre, the `studies` folder (i.e., your project space folder) is visible from the PCS launcher here:
+
+```
+cd /mnt/studies/<yourprojectspacename>
+```
+#### Copying Files from S3 to PCS Storage
+Below is sample code to copy a folder containing your relevant code/files from your project's S3 storage to the PCS storage system using the Terminal.
+
+Note that using the `-r` flag ensures that all files inside the folder, including subfolders, are copied.
+
+**Copy to the EFS volume**
+```
+cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /home/ec2-user/<yourfolder> 
+```
+
+**Copy to the Lustre volume**
+
+```
+cp -r /mnt/studies/<yourprojectspacename>/<folderwithfiles> /shared/<yourfolder>
+```
+#### Running a Single-Node Job
+<details>
+<summary>Click to expand</summary>
+
+**1\. Open the Terminal and navigate to your working folder**
+
+For single-node jobs, we recommend using the EFS volume under `/home/ec2-user`:
+```
+cd /home/ec2-user/<yourfolder>
+```
+
+**2\. Create a SLURM Job Script**
+
+The example below is a simple SLURM job script that runs on a single node and writes output and error files to the folder you are working from. Save the script below as job.sh in your working directory.
+
+```
+#!/bin/bash
+#SBATCH -J single
+#SBATCH -o single.%j.out
+#SBATCH -e single.%j.err
+
+echo "This is job ${SLURM_JOB_NAME} [${SLURM_JOB_ID}] running on ${SLURMD_NODENAME}, submitted from ${SLURM_SUBMIT_HOST}" && sleep 60 && echo "Job complete"
+
+```
+
+Below is a quick overview of the components of the bash script above; please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
+
+| Component | What It Is | What It Does |
+|---|---|---|
+| `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
+| `#SBATCH -J single` | SLURM directive | Sets the **job name** to `single` — this is what your job will be called in the queue |
+| `#SBATCH -o` / `-e` | SLURM directive | Sets the **output** (`-o`) and **error** (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `single.12345.out` / `single.12345.err`) |
+| `echo ... && sleep 60 && echo "Job complete"` | Job body | Prints job details on start, waits **60 seconds** to simulate work, then prints a completion message — `&&` ensures each command only runs if the previous one succeeded |
+| `${SLURM_JOB_NAME}` `${SLURM_JOB_ID}` `${SLURMD_NODENAME}` `${SLURM_SUBMIT_HOST}` | SLURM variables | Automatically populated by SLURM at runtime — prints the job **name**, **ID**, **compute node**, and **submit host** inside the echo message |
+
+**3\.  Determine the SLURM partition**
+
+In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in $PARTITION, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script. 
+    
+```
+PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
+```
+
+**4\. Submit the Job to SLURM**
+
+Submit the job script to the SLURM scheduler. SLURM will return a job ID.
+
+```
+sbatch --partition=$PARTITION job.sh
+```
+
+**5\. Monitor Job Status**
+
+Use the job ID returned by `sbatch` to monitor the job using the `squeue` command.
+
+```
+squeue --job <job-id>
+```
+
+Example:
+```
+squeue --job 1
+```
+
+<img width="773" height="60" alt="image" src="https://github.com/user-attachments/assets/3f67ac38-f1a8-4efa-a1e6-5092925e65a2" />
+
+<br></br>
+Continue checking until the job reaches the R (running) state.
 
 
+<img width="767" height="46" alt="image" src="https://github.com/user-attachments/assets/dc3512eb-1e2d-424b-b284-eb71509e1d8f" />
+
+<br></br>
+The job is complete when `squeue` no longer returns any output for the job ID.
+
+<img width="769" height="44" alt="image" src="https://github.com/user-attachments/assets/675d3ee1-84ee-4a6c-9cff-757e650e3b41" />
+
+**6\. Review Job Output Files**
+
+Once the job completes, inspect the contents of your folder to view the generated output and error files:
+
+```
+ls
+```
+
+<img width="323" height="41" alt="image" src="https://github.com/user-attachments/assets/ca85b054-9c49-428c-b03f-c018b4c3a984" />
+
+<br></br>
+View the contents of your output file:
+
+```
+cat single.<job-id>.out
+```
+
+It should read something similar to:
+
+```
+This is job single [1] running on awsPcs-7bce-od-1, submitted from ip-10-0-5-102.ec2.internal
+Job complete
+```
+</details>
+
+#### Running a Multi-Node Job
+<details>
+    <summary>Click to expand</summary>
+
+
+**Note: This example uses the mpi4py package in Python, but you can run a similar multi-node job using other MPI wrappers (for example, MPI packages in R).**
+
+**1\. Open the Terminal and navigate to your working folder**
+
+For multi-node jobs, we recommend using the Lustre volume mounted on `/shared`:
+```
+cd /shared/<yourfolder>
+```
+**2\. Install the mpi4py package**
+
+In the Terminal:
+```
+pip install mpi4py
+```
+**3\. Create a Python MPI Script**
+
+Save the script below as `hello_mpi.py` in your working directory. 
+
+```python
+from mpi4py import MPI
+import socket
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
+hostname = socket.gethostname()
+
+print(f"Hello from rank {rank} of {size} on {hostname}", flush=True)
+
+all_hostnames = comm.gather(hostname, root=0)
+if rank == 0:
+    unique_nodes = set(all_hostnames)
+    assert len(unique_nodes) > 1, f"FAILED — all ranks landed on the same node: {unique_nodes}"
+    print(f"PASSED — job ran across {len(unique_nodes)} nodes: {unique_nodes}")
+```
+
+**4\. Create a SLURM Job Script**
+
+The example below requests two nodes and runs two MPI tasks per node (4 total tasks). It writes output and error logs to your current working directory. Save the script below as `job.sh`.
+
+**Note: Please ensure that you have included the IFACE code below. This detects the active network interface at runtime and directs MPI to use it for inter-node communication. Without it, MPI will not be able to communicate between nodes.**
+
+```
+#!/bin/bash
+#SBATCH -J multi
+#SBATCH -o multi.%j.out
+#SBATCH -e multi.%j.err
+#SBATCH -N 2
+#SBATCH --ntasks-per-node=2
+
+IFACE=$(ip link show | awk '/state UP/ && !/LOOPBACK/{print $2}' | tr -d ':')
+mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py
+```
+Below is a quick overview of the components of the bash script above; please see the [SLURM](https://slurm.schedmd.com/documentation.html) documentation for additional detail.
+
+| Component | What It Is | What It Does |
+|---|---|---|
+| `#!/bin/bash` | Shebang line | Tells the system to run this script using the Bash shell — must always be the first line |
+| `#SBATCH -J multi` | SLURM directive | Sets the job name to `multi` |
+| `#SBATCH -o / -e` | SLURM directive | Sets the output (`-o`) and error (`-e`) log files — `%j` is replaced with the job ID at runtime (e.g. `multi.12345.out` / `multi.12345.err`) |
+| `#SBATCH -N 2` | SLURM directive | Requests 2 compute nodes |
+| `#SBATCH --ntasks-per-node=2` | SLURM directive | Launches 2 MPI tasks on each node — 4 tasks total across the 2 nodes. |
+| `IFACE=$(ip link show \| awk '/state UP/ && !/LOOPBACK/{print $2}' \| tr -d ':')` | Shell variable | Queries the active non-loopback network interface at runtime and stores it in `$IFACE` — preferred over hardcoding in case the interface name varies |
+| `mpirun --mca btl_tcp_if_include $IFACE python3 hello_mpi.py` | Job body | Starts the MPI job restricted to the detected network interface and runs the Python script across all allocated tasks and nodes |
+
+**5\.  Determine the SLURM partition**
+
+In the Terminal, run this command to store the name of the partition you are working on. This command queries SLURM for the on-demand partition name and stores it in $PARTITION, which is used in the next step. The partition name can change between sessions, so this approach is preferred over hard-coding it in your script. 
+    
+```
+PARTITION=$(sinfo -h -o "%P" | grep ondemand | tr -d '*')
+```
+
+**6\. Submit the Job to SLURM**
+
+Submit the job script to the SLURM scheduler. SLURM will return a job ID.
+
+```
+sbatch --partition=$PARTITION job.sh
+```
+
+**7\. Monitor Job Status**
+
+Use the job ID returned by `sbatch` to monitor the job using the `squeue` command.
+
+```
+squeue --job <job-id>
+```
+
+Example:
+```
+squeue --job 1
+```
+
+<img width="931" height="66" alt="image" src="https://github.com/user-attachments/assets/ed43de81-5259-4af5-8e62-c9ae9ad66916" />
+
+<br></br>
+Continue checking until the job reaches the R (running) state. The job is complete when `squeue` no longer returns any output for the job ID.
+
+<img width="905" height="49" alt="image" src="https://github.com/user-attachments/assets/7bb8c729-0daa-43d2-a04c-c73d0d02d3a4" />
+
+**8\. Review Job Output Files**
+
+Once the job completes, inspect the contents of your folder to view the generated output and error files:
+
+```
+ls
+```
+<img width="495" height="51" alt="image" src="https://github.com/user-attachments/assets/2e1e79b5-b8c0-4ec9-9545-0429fa60b167" />
+
+View the contents of your output file:
+
+```
+cat multi.<job-id>.out
+```
+
+It should read something similar to:
+
+**Note: Because all 4 processes run in parallel, the order of the rank lines may vary between runs — this is normal. The PASSED line will always appear last.**
+
+```
+Hello from rank 2 of 4 on ip-10-0-19-72.ec2.internal
+Hello from rank 3 of 4 on ip-10-0-19-72.ec2.internal
+Hello from rank 0 of 4 on ip-10-0-20-146.ec2.internal
+Hello from rank 1 of 4 on ip-10-0-20-146.ec2.internal
+PASSED — job ran across 2 nodes: {'ip-10-0-19-72.ec2.internal', 'ip-10-0-20-146.ec2.internal'}
+```
+</details>
+
+
+
+   
+   
