@@ -12,10 +12,15 @@ tags:
 
 ## Overview
 
-Claude Code is Anthropic's command-line AI coding assistant. On the HBS Research Computing Platform (RCP), Claude Code runs inside a Linux desktop session and is launched from a Terminal window. This guide walks through finding the ClaudeCode app, opening a terminal, and starting a Claude Code session.
+Claude Code is Anthropic's command-line AI coding assistant. On the HBS Research Computing Platform (RCP), Claude Code runs inside a Linux desktop session and is launched from a Terminal window. This guide walks through finding the ClaudeCode launcher, opening a Terminal, and starting a Claude Code session.
 
 > **⚠️ Important: Claude Code usage is billed separately to your HBS or personal account**
-> Every Claude Code session you run is tied to your Claude account, whether that's through HBS or a personal account. Usage is metered by **tokens** (the units of text Claude reads and writes), and costs can add up quickly on long sessions, large codebases, or big files. Please be mindful of usage and follow the [best practices](#best-practices-for-responsible-use) at the end of this guide before starting long or repeated sessions.
+> Every Claude Code session you run is tied to your Claude Code account, whether that's through HBS or a personal account. Usage is metered by **tokens** (the units of text Claude reads and writes), and costs can add up quickly on long sessions, large codebases, or big files. Please be mindful of usage and follow the [best practices](#best-practices-for-responsible-use) at the end of this guide before starting long or repeated sessions.
+
+## Benefits of Running Claude Code on RCP
+
+A benefit of using Claude Code on the RCP is that it runs entirely within your project space. This means that if Claude Code does something unintended — overwrites a file, runs a bad script — the damage is contained to that environment rather than your local machine or personal filesystem. Claude Code can only read and write within that space, which also reduces the risk of data leaking to unintended destinations.
+
 
 ---
 
@@ -24,6 +29,7 @@ Claude Code is Anthropic's command-line AI coding assistant. On the HBS Research
 > **⚠️ Important: To use Claude, please ensure that the project owner has [enabled the Claude launcher](manageprojects.md/#configure-services). The first time you launch Claude, it will take about 10-15 minutes to provision.
 
 From the HBS Research Computing Platform, start a new session and look for the **ClaudeCode** app tile among the available software options.
+<img width="734" height="458" alt="image" src="https://github.com/user-attachments/assets/024e7dde-6ed4-4690-b803-734680da968a" />
 
 
 Select **ClaudeCode** and launch a new session as you would for any other RCP application.
@@ -33,6 +39,7 @@ Select **ClaudeCode** and launch a new session as you would for any other RCP ap
 ## Step 2 — Connect to Your Session
 
 Once your session has started, go to the **Workbench** tab and click **Connect** on your ClaudeCode session card.
+<img width="630" height="492" alt="image" src="https://github.com/user-attachments/assets/f9b40ac7-f793-459c-bfad-c1af41c0b49d" />
 
 
 > **💡 Tip:** Keep an eye on the **Cost to Date** field on your session card. This reflects compute costs for the session and is separate from Claude Code's own token usage, which is billed independently.
@@ -46,21 +53,26 @@ ClaudeCode runs inside a Linux desktop environment. To open a terminal window, f
 1. Click the **oval/grid button** in the top-left corner of the desktop to open the application menu.
 2. In the app grid at the bottom right of the screen, find and click the **Terminal** icon to open a shell window.
 
+<img width="900" height="400" alt="image" src="https://github.com/user-attachments/assets/4b9e01d3-3c92-4431-ad2a-2eaaee559ac4" />
+
+<img width="600" height="442" alt="image" src="https://github.com/user-attachments/assets/13811b66-9f1f-4756-899f-6cb868deb64c" />
+
 ---
 
 ## Step 4 — Launch Claude Code
 
 In the terminal window, type `claude` and press **Enter** to launch Claude Code:
 
-```bash
-claude
-```
+<img width="900" height="383" alt="image" src="https://github.com/user-attachments/assets/961b501e-8653-41f6-8f8b-61fa324d0b01" />
 
 ---
 
 ## Step 5 — Start Using Claude Code
 
 Claude Code will start up and display a welcome screen with the model name, your account, and the working directory. You can then type requests directly at the prompt.
+
+<img width="900" height="513" alt="image" src="https://github.com/user-attachments/assets/51875e94-e488-491b-934e-7a95823845c0" />
+
 
 You can now use Claude Code to:
 
@@ -74,7 +86,7 @@ You can now use Claude Code to:
 
 ## Token Usage and Billing — Please Read
 
-Claude Code usage on the RCP is tied to your HBS account and **billed to Harvard Business School**.
+Claude Code usage on the RCP is tied to your Claude account (HBS or personal) and **billed to that account rather than the RCP**.
 
 Unlike a fixed-cost license, Claude Code usage is **metered by tokens** — the more you read, write, and ask Claude to process, the more it costs. Large files, long conversations, and repeated runs over big codebases all increase usage. Please use Claude Code thoughtfully and avoid leaving sessions open unnecessarily.
 
@@ -93,7 +105,7 @@ Unlike a fixed-cost license, Claude Code usage is **metered by tokens** — the 
 
 ## Getting Help
 
-If you have questions about Claude Code, your usage, or billing on the RCP, the HBS Research Computing team is here to help.
+If you have questions about Claude Code or the RCP, the HBS Research Computing team is here to help.
 
 📧 **Email:** [research@hbs.edu](mailto:research@hbs.edu)
  
