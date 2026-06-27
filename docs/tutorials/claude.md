@@ -12,7 +12,7 @@ tags:
 
 ## Overview
 
-Claude Code is Anthropic's command-line AI coding assistant. On the HBS Research Computing Platform (RCP), Claude Code runs inside a Linux desktop session and is launched from a Terminal window. This guide walks through finding the ClaudeCode launcher, opening a Terminal, and starting a Claude Code session.
+Claude Code is Anthropic's command-line AI coding assistant. On the HBS Research Computing Platform (RCP), Claude Code runs inside a launcher from a Terminal window. This guide walks through finding the ClaudeCode launcher, opening a Terminal, and starting a Claude Code session.
 
 > **⚠️ Important: Claude Code usage is billed separately to your HBS or personal account**
 > Every Claude Code session you run is tied to your Claude Code account, whether that's through HBS or a personal account. Usage is metered by **tokens** (the units of text Claude reads and writes), and costs can add up quickly on long sessions, large codebases, or big files. Please be mindful of usage and follow the [best practices](#best-practices-for-responsible-use) at the end of this guide before starting long or repeated sessions.
