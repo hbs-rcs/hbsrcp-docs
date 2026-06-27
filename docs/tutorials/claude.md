@@ -25,7 +25,7 @@ A benefit of using Claude Code on the RCP is that it runs entirely within your p
 
 ## Step 1 — Find ClaudeCode on the RCP
 
-> **⚠️ Important: To use Claude Code, please ensure that the project owner has [enabled the ClaudeCode launcher](manageprojects.md/#configure-services).** The _first_ time you launch Claude Code, it will take about 10 minutes to provision.
+> **⚠️ Important: To use Claude Code, please ensure that the project owner has [enabled the ClaudeCode launcher](manageprojects.md/#configure-services).** The _first_ time you launch a Claude Code session, it will take about 10 minutes to provision.
 
 Inside RCP, go to the **Workbench** tab and look for the **ClaudeCode** launcher among the available software options.
 <img width="734" height="458" alt="image" src="https://github.com/user-attachments/assets/024e7dde-6ed4-4690-b803-734680da968a" />
@@ -80,7 +80,7 @@ Claude Code will start up and display a welcome screen with the model name, your
 <img width="900" height="513" alt="image" src="https://github.com/user-attachments/assets/51875e94-e488-491b-934e-7a95823845c0" />
 
 
-You can now use Claude Code to do all from within this terminal session:
+You can now use Claude Code to do all of the following from within this terminal session:
 
 - Read, write, and edit files
 - Run and debug code
@@ -103,7 +103,7 @@ Unlike a fixed-cost license, Claude Code usage is **metered by tokens** — the 
 - **Avoid pasting very large files or datasets** directly into the conversation unless necessary; point Claude Code to the file path instead.
 - **Break large tasks into smaller steps** rather than asking for an entire project to be generated at once.
 - If you are working on a long-running task, **periodically check in** and confirm progress rather than letting the session run unattended for hours.
-- **Consider using Git** for version control. Because Claude Code can make changes across multiple files quickly, Git version control gives you a reliable safety net to track, review, and roll back anything unintended.
+- **Consider using Git** for version control. Because Claude Code can make changes across multiple files quickly, Git provides a safety net to track, review, and roll back unintended edits.
 
 ---
 
