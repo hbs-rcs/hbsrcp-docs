@@ -59,17 +59,17 @@ Claude Code runs inside a Linux environment. To open a Terminal window, follow t
 
 ## Step 4 — Launch Claude Code
 
-If you would like Claude Code to access and save to your project space storage, navigate to that folder so it can be used as your working directory. In the Terminal:
+If you would like your project's storage space to be Claude Code's working directory, navigate to that folder. In the Terminal:
 
 ```
-cd /mnt/studies/<yourprojectspacename>
+cd /studies/<yourprojectspacename>
 ```
 
-In the Terminal window, type `claude` and press **Enter** to launch Claude Code:
+Once you are in your working directory, type `claude` and press **Enter** to launch Claude Code:
 
 <img width="900" height="383" alt="image" src="https://github.com/user-attachments/assets/961b501e-8653-41f6-8f8b-61fa324d0b01" />
 
-> **💡 Tip:** The first time you launch Claude Code, you will be asked to select a color pallette preference. Following that, you will be prompted to log into your Claude Code account. Follow the instructions in the Terminal to sign in. You will only need to do this once for as long as you do not Terminate the launcher.
+> **💡 Tip:** The first time you launch Claude Code, you will be asked to select your text color preference and then how you would like to log in. Most users will select (1) if using an HBS or personal subscription. Selecting this will open a browser where you can log in with your credentials, and then paste the token back into the Claude Code Terminal if prompted.
 
 ---
 
@@ -92,7 +92,7 @@ You can now use Claude Code to:
 
 ## Token Usage and Billing — Please Read
 
-Claude Code usage on the RCP is tied to your Claude account (HBS or personal) and **billed to that account and not within the RCP**.
+Claude Code usage on the RCP is tied to your Claude account (HBS or personal) and **billed separately to that account**.
 
 Unlike a fixed-cost license, Claude Code usage is **metered by tokens** — the more you read, write, and ask Claude to process, the more it costs. Large files, long conversations, and repeated runs over big codebases all increase usage.
 
