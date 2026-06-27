@@ -25,7 +25,7 @@ A benefit of using Claude Code on the RCP is that it runs entirely within your p
 
 ## Step 1 — Find ClaudeCode on the RCP
 
-> **⚠️ Important: To use Claude Code, please ensure that the project owner has [enabled the ClaudeCode launcher](manageprojects.md/#configure-services). The first time you launch Claude Code, it will take about 10-15 minutes to provision.
+> **⚠️ Important: To use Claude Code, please ensure that the project owner has [enabled the ClaudeCode launcher](manageprojects.md/#configure-services).** The _first_ time you launch Claude Code, it will take about 10 minutes to provision.
 
 Inside RCP, go to the **Workbench** tab and look for the **ClaudeCode** launcher among the available software options.
 <img width="734" height="458" alt="image" src="https://github.com/user-attachments/assets/024e7dde-6ed4-4690-b803-734680da968a" />
@@ -69,7 +69,7 @@ Once you are in your working directory, type `claude` and press **Enter** to lau
 
 <img width="900" height="383" alt="image" src="https://github.com/user-attachments/assets/961b501e-8653-41f6-8f8b-61fa324d0b01" />
 
-> **💡 Tip:** The first time you launch Claude Code, you will be asked to select your text color preference and then how you would like to log in. Most users will select (1) if using an HBS or personal subscription. Selecting this will open a browser where you can log in with your credentials, and then paste the token back into the Claude Code Terminal if prompted.
+> **💡 Tip:** The first time you run the `claude` command, you will be asked to select your text color preference and then how you would like to log in. Most users will select option 1 if using an HBS or personal subscription. Selecting this will open a browser where you can log in with your credentials, and then paste the token back into the Claude Code Terminal if prompted.
 
 ---
 
@@ -80,13 +80,11 @@ Claude Code will start up and display a welcome screen with the model name, your
 <img width="900" height="513" alt="image" src="https://github.com/user-attachments/assets/51875e94-e488-491b-934e-7a95823845c0" />
 
 
-You can now use Claude Code to:
+You can now use Claude Code to do all from within this terminal session:
 
 - Read, write, and edit files
 - Run and debug code
 - Answer questions about your project
-
-— all from within this terminal session.
 
 ---
 
