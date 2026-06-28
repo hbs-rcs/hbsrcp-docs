@@ -23,13 +23,12 @@ A benefit of using Claude Code on the RCP is that it runs entirely within your p
 
 ---
 
-## Step 1 — Find ClaudeCode on the RCP
+## Step 1 — Find Claude Code on the RCP
  
 > **⚠️ Important: To use Claude Code, please ensure that the project owner has [enabled the Claude Code launcher](manageprojects.md/#configure-services).** The _first_ time you launch a Claude Code session, it will take about 10 minutes to provision.
 
 Inside RCP, go to the **Workbench** tab and look for the **Claude Code** launcher among the available software options.
 <img width="734" height="458" alt="image" src="https://github.com/user-attachments/assets/024e7dde-6ed4-4690-b803-734680da968a" />
-
 
 Select **Claude Code** and launch a new session as you would for any other RCP launcher.
 
@@ -78,8 +77,9 @@ Claude Code will start up and display a welcome screen with the model name, your
 
 <img width="900" height="513" alt="image" src="https://github.com/user-attachments/assets/51875e94-e488-491b-934e-7a95823845c0" />
 
+The Claude Code launcher has Python installed by default, but you can install other software such as R by asking Claude Code to install it for you. Everything you have customized and installed will persist across sessions as long as you **Stop** rather than **Terminate** your session — terminating will reset the environment and remove any changes you have made.
 
-You can now use Claude Code to do all of the following from within this terminal session:
+You can now use Claude Code to do all of the following from within this Terminal session:
 
 - Read, write, and edit files
 - Run and debug code
