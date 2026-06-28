@@ -66,6 +66,7 @@ cd /studies/<yourprojectspacename>
 Once you are in your working directory, type `claude` and press **Enter** to launch Claude Code:
 
 <img width="900" height="383" alt="image" src="https://github.com/user-attachments/assets/961b501e-8653-41f6-8f8b-61fa324d0b01" />
+<br></br>
 
 > **💡 Tip:** The first time you run the `claude` command, you will be asked to select your text color preference and then how you would like to log in. Most users will select option 1 if using an HBS or personal subscription. Selecting this will open a browser where you can log in with your credentials, and then paste a token back into the Claude Code Terminal if prompted.
 
@@ -77,7 +78,8 @@ Claude Code will start up and display a welcome screen with the model name, your
 
 <img width="900" height="513" alt="image" src="https://github.com/user-attachments/assets/51875e94-e488-491b-934e-7a95823845c0" />
 
-The Claude Code launcher has Python installed by default, but you can install other software such as R by asking Claude Code to install it for you. Everything you have customized and installed will persist across sessions as long as you **Stop** rather than **Terminate** your session — terminating will reset the environment and remove any changes you have made.
+<br></br>
+**The Claude Code launcher has Python installed by default**, but you can install other software such as R by asking Claude Code to install it for you. Everything you have customized and installed will persist across sessions as long as you **Stop** rather than **Terminate** your session — terminating will reset the environment and remove any changes you have made.
 
 You can now use Claude Code to do all of the following from within this Terminal session:
 
