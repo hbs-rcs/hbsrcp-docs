@@ -133,9 +133,11 @@
 
     RCS and IT are continually working to add functionality to the RCP. As of June 2026, the available software and tools include:
 
-    - Aurora Database 
+    - Aurora Database
+    - Claude Code
     - JupyterLab  
     - MatLab 
+    - Parallel Computing Services
     - RStudio  
     - SageMaker Canvas
     - SageMaker Notebook
@@ -148,7 +150,6 @@
     
     - Mathematica 
     - SAS  
-    - Parallel processing
 
     For more details on software environments and storage:  
     🔗 [https://hbs-rcs.github.io/hbsrcp-docs/storage_software/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
