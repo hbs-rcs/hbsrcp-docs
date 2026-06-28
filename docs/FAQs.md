@@ -163,7 +163,7 @@
 
 ## 💰 Costs & Billing
 
-All costs will be covered by DRFD and HBS IT through FY26 using a reimbursement model.
+All costs will be covered by DRFD and HBS IT through FY27 using a reimbursement model. Project sponsors will receive monthly bills for transparency, but are not being charged.
 
 ??? note "When am I charged?"
 
