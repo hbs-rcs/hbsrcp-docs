@@ -9,8 +9,6 @@ tags:
 
 # Claude Code on the HBS Research Computing Platform {#claude} 
 
-## Overview
-
 [Claude Code](https://code.claude.com/docs/en/overview) is Anthropic's command-line AI coding assistant. On the HBS Research Computing Platform (RCP), Claude Code runs inside a launcher from a Terminal window. This guide walks through finding the Claude Code launcher, opening a Terminal, and starting a Claude Code session.
 
 > **⚠️ Important: Claude Code usage is billed separately to your HBS or personal account**
