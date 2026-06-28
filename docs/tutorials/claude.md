@@ -8,7 +8,6 @@ tags:
 ---
 
 # Claude Code on the HBS Research Computing Platform {#claude} 
-================
 
 ## Overview
 
