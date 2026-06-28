@@ -102,6 +102,7 @@ Unlike a fixed-cost license, Claude Code usage is **metered by tokens** — the 
 - **Break large tasks into smaller steps** rather than asking for an entire project to be generated at once.
 - If you are working on a long-running task, **periodically check in** and confirm progress rather than letting the session run unattended for hours.
 - **Consider using Git** for version control. Because Claude Code can make changes across multiple files quickly, Git provides a safety net to track, review, and roll back unintended edits.
+- If you are not using an HBS Claude Code Enterprise account, avoid sharing confidential, sensitive, or restricted information.
 
 ---
 
