@@ -18,6 +18,7 @@ nav:
       - Topics: 'tutorials.md'
       - Compressing and Extracting Files: 'tutorials/compressextract.md'
       - RCP Quick Start Tutorial: 'tutorials/RCP_Start.md'
+      - Claude Code on RCP: 'tutorials/claude.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
