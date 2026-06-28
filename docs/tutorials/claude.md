@@ -1,5 +1,5 @@
 ---
-title: "Using Claude Code on the RCP"
+title: "Claude Code on the RCP"
 author: "Liz Kernan and Melissa Velez"
 
 tags:
