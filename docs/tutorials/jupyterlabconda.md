@@ -1,3 +1,14 @@
+---
+title: "Creating and Activating a Custom Conda Environment in JupyterLab"
+author: "Melissa Velez"
+
+tags:
+  - JupyterLab
+  - Notebook
+  - conda
+  - custom
+  - environment
+---
 # Creating and Activating a Custom Conda Environment in JupyterLab
 
 This tutorial walks you through creating a new conda environment and making it available as a selectable kernel in JupyterLab.
