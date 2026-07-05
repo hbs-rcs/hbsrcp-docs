@@ -46,7 +46,7 @@ conda create -n myenv python=3.11
 conda activate myenv
 ```
 
-Your terminal prompt should update to reflect the active environment, e.g. `(myenv)`.
+Your terminal prompt should update to reflect the active environment, e.g., `(myenv)`.
 
 <img width="180" height="30" alt="image" src="https://github.com/user-attachments/assets/2bbdbdb1-fd39-46aa-9a54-87a6347a81f3" />
 
@@ -55,11 +55,13 @@ Your terminal prompt should update to reflect the active environment, e.g. `(mye
 
 ## Step 4: Install `ipykernel` and Other Packages
 
-With the environment active, install the `ipykernel` package (necessary) along with any other packages needed in your conda environment:
+With the environment active, install the `ipykernel` package (required) along with any other packages needed in your conda environment:
 
 ```bash
 pip install ipykernel numpy pandas matplotlib
 ```
+
+> 💡 **Tip:** Whenever you need to install additional packages into this environment in the future, open a **Terminal** in JupyterLab, activate the environment with `conda activate myenv`, and then run your `pip install` or `conda install` command.
 
 ---
 
