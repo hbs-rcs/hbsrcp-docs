@@ -19,7 +19,7 @@ nav:
       - Compressing and Extracting Files: 'tutorials/compressextract.md'
       - RCP Quick Start Tutorial: 'tutorials/RCP_Start.md'
       - Claude Code on RCP: 'tutorials/claude.md'
-      - Creating and Activating a Custom Conda Environment in JupyterLab: 'tutorials/jupyterlabconda.md'
+      - Custom Conda Environment in JupyterLab: 'tutorials/jupyterlabconda.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
