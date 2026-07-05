@@ -55,7 +55,7 @@ Your terminal prompt should update to reflect the active environment, e.g., `(my
 
 ## Step 4: Install `ipykernel` and Other Packages
 
-With the environment active, install the `ipykernel` package (required) along with any other packages needed in your conda environment:
+With the environment active, install the `ipykernel` package (required) along with any other packages needed in your conda environment, replacing the example packages below with whatever your project requires:
 
 ```bash
 pip install ipykernel numpy pandas matplotlib
@@ -106,3 +106,10 @@ python -m ipykernel install --user --name myenv --display-name "Python(myenv)"
 ```
 
 Once registered, your environment will persist as a kernel option in JupyterLab until you explicitly remove it.
+
+**To install additional packages in the future:**
+
+```
+conda activate myenv
+pip install package_name
+```
