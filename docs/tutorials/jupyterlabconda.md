@@ -6,7 +6,7 @@ This tutorial walks you through creating a new conda environment and making it a
 
 ## Step 1: Start a JupyterLab Session and Open a Terminal
 
-Start your JupyterLab session (note: this assumes you have already launched JupyterLab).
+Start your JupyterLab session.
 
 <img width="219" height="137" alt="image" src="https://github.com/user-attachments/assets/d9d62a7d-35d7-4c67-b155-d7e9e2fcc715" />
 
@@ -47,7 +47,7 @@ Your terminal prompt should update to reflect the active environment, e.g. `(mye
 With the environment active, install the `ipykernel` package (necessary) along with any other packages needed in your conda environment:
 
 ```bash
-pip install ipykernel
+pip install ipykernel numpy pandas matplotlib
 ```
 
 ---
@@ -68,27 +68,18 @@ python -m ipykernel install --user --name myenv --display-name "Python(myenv)"
 
 ---
 
-## Step 6: Verify the Kernel Appears in JupyterLab
+## Step 6: Select Your Kernel and Start Working
 
-After a moment, open a new **Notebook** in JupyterLab. If you click on the Python kernal in the **top right corner**, you should now see two options:
+After a moment, open a new tab in JupyterLab. In the **Notebook** section of the Launcher, you should now see your new environment listed as a kernel option alongside the default:
 
 - `Python 3 (ipykernel)` *(default)*
 - `Python(myenv)` ✅ *(your new environment)*
 
+**To start a new notebook using your environment**, click the Python(myenv) icon in the Launcher.
+
+**To switch the kernel in an existing notebook**, click the kernel name in the **top right corner** (next to the small bug icon) and select **Python(myenv)** from the dropdown.
+
 <img width="584" height="297" alt="image" src="https://github.com/user-attachments/assets/7014146a-f45b-4d20-afe6-220d5409765c" />
-
-
----
-
-## Step 7: Start Using Your New Kernel
-
-You have two options:
-
-### Option A — Start a new notebook with your kernel
-Click the **Python(myenv)** icon in the Launcher to open a new notebook that uses your custom environment.
-
-### Option B — Switch the kernel in an existing notebook
-In an open notebook, click the kernel name displayed in the **top right corner** (next to the small bug icon). Select **Python(myenv)** from the dropdown.
 
 ---
 
@@ -97,7 +88,7 @@ In an open notebook, click the kernel name displayed in the **top right corner**
 ```
 conda create -n myenv python=3.11
 conda activate myenv
-pip install ipykernel
+pip install ipykernel numpy pandas matplotlib
 python -m ipykernel install --user --name myenv --display-name "Python(myenv)"
 ```
 
