@@ -1,10 +1,10 @@
 ---
-title: "Creating and Activating a Custom Conda Environment in JupyterLab"
+title: "Custom Conda Environment in JupyterLab"
 author: "Melissa Velez"
 
 tags:
   - JupyterLab
-  - Notebook
+  - notebook
   - conda
   - custom
   - environment
