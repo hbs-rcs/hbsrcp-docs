@@ -18,7 +18,7 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 ### Using Globus
 
-!!! important inline
+!!! important
     Directories created via Globus may initially appear as **0-byte files**. This happens because folders transferred through Globus are stored in Amazon S3 (your project space) with the content type `application/x-globus-dir-placeholder`, which S3 treats as a file rather than a directory. After transferring folders through Globus, open each folder once from the RCP **Files** tab so its content type is updated and recognized as a directory, or, if using an active utility session, restart the session. 
 
 Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. To do this, log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
