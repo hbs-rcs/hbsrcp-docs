@@ -1,37 +1,39 @@
 # HBS Research Computing Platform (RCP) – Frequently Asked Questions
 
 ## 🔄 Transition from HBSGrid to the RCP
+
 ??? note "Why is the HBS Research Grid being retired?"
 
-    HBS is transitioning to a more modern, scalable, and flexible research computing environment. The cloud-based Research Computing Platform (RCP) offers enhanced performance, greater elasticity, access to GPUs, and integrated data science tools that better support evolving research needs.  
+    HBS is transitioning to a more modern, scalable, and flexible research computing environment. The cloud-based Research Computing Platform (RCP) offers enhanced performance, greater elasticity, access to GPUs, and integrated data science tools that better support evolving research needs.
 
-??? note "Do I need to take action today? Will my current projects and home directory be affected right now?" 
+??? note "Do I need to take action today? Will my current projects and home directory be affected right now?"
 
-    While you can continue using the HBSGrid for the next few months, we recommend migrating your project spaces now to allow sufficient time to complete the process. RCS is reaching out to all project space sponsors individually to review migration plans. Additionally, note that home directories will be archived when the HBSGrid retires, so we encourage you to migrate any project-related files into your project spaces prior to migration. 
+    While you can continue using the HBSGrid for the next few months, we recommend migrating your project spaces now to allow sufficient time to complete the process. RCS is reaching out to all project space sponsors individually to review migration plans. Additionally, note that home directories will be archived when the HBSGrid retires, so we encourage you to migrate any project-related files into your project spaces prior to migration.
 
-??? note "What is the process for migrating my projects from the HBSGrid to the RCP?" 
+??? note "What is the process for migrating my projects from the HBSGrid to the RCP?"
 
     The general steps for migration are included below, but we encourage project space owners to email [research@hbs.edu](mailto:research@hbs.edu) if they would like a demo of the platform, or would like to talk through their specific case. 
+
     1. **Request an [RCP account](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)** and log into the platform once to activate it. Note that any collaborators you would like to access the new space will also need to request an account. 
     2. **Request a [project space](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)**. Note that only faculty and doctoral students can request project spaces. 
     3. If your HBSGrid project space contains **Level 3+ data, update your DAT record** to include the RCP as a storage location.
-    4. **Migrate your data** using our documentation on [transferring files](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/) or by contacting [research@hbs.edu](mailto:research@hbs.edu) to request migration by IT. 
+    4. **Migrate your data** using our documentation on [transferring files](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/) or by contacting [research@hbs.edu](mailto:research@hbs.edu) to request migration by IT.
 
 ??? note "What should I do if I am starting a new research project?"
 
     Almost all new project spaces can be provisioned on the RCP. Please see the available software and tools [below](https://hbs-rcs.github.io/hbsrcp-docs/FAQs/#available-software-tools), or contact [research@hbs.edu](mailto:research@hbs.edu) with a description of your work if you'd like to discuss using the platform. We’re happy to discuss your project requirements, or to answer any other questions you may have.
 
-??? note "I'm a doctoral student with an anticipated graduation date of May 2027. Should I migrate my project space(s)?" 
+??? note "I'm a doctoral student with an anticipated graduation date of May 2027. Should I migrate my project space(s)?"
 
-    Doctoral students graduating in May 2027 have the option to archive their project spaces in place without migrating. If, however, the RCP offers computing capabilities of interest, doctoral students are welcome to migrate their space(s) prior to graduation.     
+    Doctoral students graduating in May 2027 have the option to archive their project spaces in place without migrating. If, however, the RCP offers computing capabilities of interest, doctoral students are welcome to migrate their space(s) prior to graduation.
 
-??? note "What if I anticipate completing my project on the HBSGrid in the near future?" 
+??? note "What if I anticipate completing my project on the HBSGrid in the near future?"
 
-    If you expect that you will complete the work in your HBSGrid project space before April 2027, you may opt to archive it in place rather than migrate. Per University guidelines, project space contents are retained for seven years. After that, the contents can either be transferred to the library for permanent archiving or destroyed — this decision is made by the faculty member in consultation with the library.  
+    If you expect that you will complete the work in your HBSGrid project space before April 2027, you may opt to archive it in place rather than migrate. Per University guidelines, project space contents are retained for seven years. After that, the contents can either be transferred to the library for permanent archiving or destroyed — this decision is made by the faculty member in consultation with the library.
 
-??? note "What if I no longer need my HBSGrid project space?" 
+??? note "What if I no longer need my HBSGrid project space?"
 
-    If you no longer need your HBSGrid project space, please email [research@hbs.edu](mailto:research@hbs.edu) so we can mark it for archiving. Per University guidelines, project space contents are retained for seven years. After that, the contents can either be transferred to the library for permanent archiving or destroyed — this decision is made by the faculty member in consultation with the library.  
+    If you no longer need your HBSGrid project space, please email [research@hbs.edu](mailto:research@hbs.edu) so we can mark it for archiving. Per University guidelines, project space contents are retained for seven years. After that, the contents can either be transferred to the library for permanent archiving or destroyed — this decision is made by the faculty member in consultation with the library.
 
 ## 🔐 Access & Project Setup
 
