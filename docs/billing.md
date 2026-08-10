@@ -1,5 +1,9 @@
 # Costs and Billing
 
+!!! info inline end "How often your costs update"
+    
+    You may see a delay before new costs appear, as AWS cost data is not synced in real time.
+
 We have developed a cloud cost chargeback model with the following principles:
 
   - Positive experience for faculty to use the platform and to experiment 
