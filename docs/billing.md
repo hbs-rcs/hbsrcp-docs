@@ -1,6 +1,6 @@
 # Costs and Billing
 
-!!! info inline end "How often your costs update"
+!!! info inline end "Cost update timing"
     
     You may see a delay before new costs appear, as AWS cost data is not synced in real time.
 
