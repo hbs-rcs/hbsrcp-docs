@@ -11,9 +11,19 @@ Please be aware that during the project request process, you will need to specif
 The Project Owner is responsible for the following:
 
 - [Managing access to their projects](#manage-your-team) to the platform and
-- [Specifying what launchers in what configurations](#choose-launcher-configurations) are available to their research team for their particular project
+- [Specifying what launchers in what configurations](#configure-launchers) are available to their research team for their particular project
+- [Configuring services for use with the project](#configure-services)
 - [Monitoring cloud usage and costs](#view-costs)
-- [Configuring Services for use with the project](#configure-services)
+
+Below is a short video describing how to get started with a new project.
+
+## Get Started with a New Project
+
+Once you have [requested your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new) and it has been created, the Project Owner will need to choose what applications are available to the team.
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZrOzN0P0D7M?si=Bi7UDYjCnxWjccvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Manage Your Team
 
@@ -25,14 +35,48 @@ Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to 
 !!! important inline end
     **Note:** Users must **log into their RCP account** at least once before they can be added to a project.
 
-## Get Started with a New Project
+## Configure Launchers
 
-Once you have [requested your project](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/projectspace/new) and it has been created, the Project Owner will need to choose what applications are available to the team.
+To configure launchers, navigate to the Project Management tab. The launcher section is in the lower left corner. Click on the "Assign Launcher" button.
+
+<img width="917" height="361" alt="image" src="https://github.com/user-attachments/assets/2fcac6c1-a876-4ef3-af56-21718ce5a9b1" />
+
+Once the "Create & assign launcher instance" menu is revealed, choose your launcher and the configuration(s) you would like to enable. Click "Create & Assign."
+
+<img width="598" height="476" alt="image" src="https://github.com/user-attachments/assets/76472ec7-8435-40c4-b79e-80e737718107" />
+
+### Modify Launchers
+
+Once you have set up a launcher, you may want to modify the configurations. For example, you may have initially configured your launcher only with CPUs, but your work now requires a GPU. To modify an _existing_ launcher, navigate to the Project Management tab under the "launchers" section. Find the launchers you'd like to adjust and add additional configurations by clicking on the three dots next to the launcher name:
+
+<img width="1294" height="616" alt="image" src="https://github.com/user-attachments/assets/aa157d2c-08e6-4206-903b-d9e57cd52843" />
 
 
+## Configure Services
+To configure services, navigate to the Project Management tab. The services section is in the lower right corner.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZrOzN0P0D7M?si=Bi7UDYjCnxWjccvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      
+
+<img width="662" height="512" alt="image" src="https://github.com/user-attachments/assets/1950b1c3-c75f-487d-9782-6f2ad12a78fb" align="center" />
+
+<br></br>
+
+To add a service, select the "Add Service" button, select the service and click the "Next" button.
+
+
+<img width="496" height="511" alt="image" src="https://github.com/user-attachments/assets/5ab26c27-60fd-4425-8f32-113dfc08d42c" />
+
+Each service will have its own configuration parameters
+
+For the Aurora Database Service, for example, it will require a name and a minimum and maximum capacity.
+
+Once a service is running, if there is information needed by the research team for the service, it will be available by selecting the "Service Credentials" within the workbench tab.  For the Aurora Database, for example, it will show a username, password and connect string, or endpoint, for the database.
+
+### Removing Services
+
+To remove a service from your project space, click on the three dots to the right of the service and select "Stop Service":
+
+<img width="282" height="240" alt="image" src="https://github.com/user-attachments/assets/3b512e15-3ba6-4526-89cb-22723ccf2d01" />
+
 ## View Costs
 
 Project owners can monitor costs by navigating to the cost dashboard in the Project Management tab. 
@@ -60,33 +104,5 @@ Costs can be filtered by
 **Non-session** costs are listed as separate item and include things like storage and general services for each account (e.g networking, virual private clouds, etc).
 
 You can find more information about costs and the future of a developing chargeback model at [Costs and Billing](billing.md).
-
-## Configure Services
-To configure Services, navigate to the Project Management tab, the Services section is in the lower right corner.
-
-
-<img width="662" height="512" alt="image" src="https://github.com/user-attachments/assets/1950b1c3-c75f-487d-9782-6f2ad12a78fb" align="center" />
-
-
-To add a service service, select the "Add Service" button, select the service and click the "Next" button.
-
-
-<img width="496" height="511" alt="image" src="https://github.com/user-attachments/assets/5ab26c27-60fd-4425-8f32-113dfc08d42c" />
-
-
-
-
-
-Each service will have its own configuration parameters
-
-For the Aurora Database Service, for example, it will require a name and a minimum and maximum capacity.
-
-Once a service is running, if there is information needed by the research team for the service, it will be available by selecting the "Service Credentials" within the workbench tab.  For the Aurora Database, for example, it will show a username, password and connect string, or endpoint, for the database.
-
-### Modify Services
-
-Once you have set up a launcher, you may want to modify the configurations. For example, you may have initially configured your launcher only with CPUs, but your work now requires a GPU. To modify an _existing_ launcher, navigate to the Project Management tab under the "launchers" section. Find the launchers you'd like to adjust and add additional configurations by clicking on the three dots next to the launcher name:
-
-<img width="1294" height="616" alt="image" src="https://github.com/user-attachments/assets/aa157d2c-08e6-4206-903b-d9e57cd52843" />
 
 
