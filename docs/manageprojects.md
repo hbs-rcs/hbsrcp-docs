@@ -37,7 +37,7 @@ Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to 
 
 ### Project "Delegates"
 
-Project owners may assign a team member as a **delegate**, granting that person administrative control over the project. Delegates can configure and modify launchers and services just like project owners, making delegation a good option when someone other than the project owner is responsible for the day-to-day management of the project space. Project owners can request that a team member be designated as a delegate by emailing [RCS](mailto:research@hbs.edu)
+Project owners may assign a team member as a **delegate**, granting that person administrative control over the project. Delegates can configure and modify launchers and services just like project owners, making delegation a good option when someone other than the project owner is responsible for the day-to-day management of the project space. Project owners can request that a team member be designated as a delegate by emailing [RCS](mailto:research@hbs.edu).
 
 ## Configure Launchers
 
