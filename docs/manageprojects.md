@@ -30,10 +30,14 @@ Once you have [requested your project](https://secure.hbs.edu/accountManagement/
 The Project Owner can invite additional HBS research team members such as RAs or doctoral students by asking them to request an account using the [same URL as above](https://secure.hbs.edu/accountManagement/secure/research-computing-platform/account/new). 
 External team members must request access with [this URL](https://secure.hbs.edu/accountManagement/guest/research-computing-platform/account/new). Please send the appropriate links to your project team members so that they can onboard.
 
-Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to request that they be added to your project.
-
 !!! important inline end
     **Note:** Users must **log into their RCP account** at least once before they can be added to a project.
+
+Once your team member has an account, [contact RCS](mailto:research@hbs.edu) to request that they be added to your project.
+
+### Project "Delegates"
+
+Project owners may assign a team member as a **delegate**, granting that person administrative control over the project. Delegates can configure and modify launchers and services just like project owners, making delegation a good option when someone other than the project owner is responsible for the day-to-day management of the project space. Project owners can request that a team member be designated as a delegate by emailing [RCS](mailto:research@hbs.edu)
 
 ## Configure Launchers
 
