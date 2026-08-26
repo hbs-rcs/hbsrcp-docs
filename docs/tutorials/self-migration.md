@@ -1,21 +1,21 @@
-# Migrating from HBSGrid to the RCP
+# Self-Migration from the HBSGrid to the RCP
 
 This guide walks you through moving an existing HBSGrid project to the HBS Research Computing Platform (RCP).
 
 ## Step 1: Get access to the RCP
 
-Request an RCP account and log in.
+1. Request an RCP account and log in to activate your account.
 
-Then create or request the RCP project that will replace your HBSGrid project.
+2. Request the RCP project that will replace your HBSGrid project.
 
-[Get started with the RCP](https://hbs-rcs.github.io/hbsrcp-docs/)
+[Get started with the RCP](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
 ---
 ##  Step 2: Check your data security requirements
 
 If your HBSGrid project space contains **Level 3 or Level 4 data**, you must update your **DAT record** to include the RCP as a storage location before moving the data.
 
-[How to update your DAT record](PLACEHOLDER)
+[How to update your DAT record](docs/media/RCP Migration.pdf)
 
 The RCP supports research data at Levels 1–4.
 
@@ -27,20 +27,19 @@ For small amounts of data, you can upload files through the RCP **Files** interf
 
 For large datasets or many files, use **Globus**.
 
-A typical migration looks like:
-
-**HBSGrid project space → Globus → RCP project storage**
-
-!!! important
-    Keep the HBSGrid copy until you have verified that your data transferred successfully.
-
 [Transfer files to the RCP](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
+
+Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databases.
 
 ---
 
 ## Step 4: Recreate your computing environment
 
-Start the RCP tools you need, such as:
+1. Assign launchers, configurations, and services to your project space.
+
+[Manage your project]([https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
+
+2. Launch the RCP tools you need and recreate your environments:
 
 - JupyterLab
 - RStudio
@@ -49,63 +48,42 @@ Start the RCP tools you need, such as:
 - VS Code
 - MATLAB
 
-Reinstall project-specific Python or R packages and bring over any environment files you use, such as:
-
-```text
-requirements.txt
-environment.yml
-renv.lock
-```
-
-[See RCP software and storage](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
+[Launching sessions](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
+[Recreating your environments](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#available-software-and-analysis-tools)
 
 ---
 
-## Step 5: Recreate your jobs
+## Step 5: Recreate your batch jobs (if applicable)
 
-If your HBSGrid project uses batch jobs, review your job scripts carefully.
+If your HBSGrid project uses the scheduler for batch jobs, review your job scripts carefully.
 
 HBSGrid uses **LSF**; RCP uses **SLURM/PCS**, so existing submission scripts will need to be updated.
 
-[Learn about RCP compute and sessions](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
+[Learn about batch jobs]([https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#aws-parallel-computing-service-pcs))
+
+If you do **not need a job scheduler** and your primary aim is to run background jobs, you can run these inside launchers.
+
+[Background jobs in launchers](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#running-background-jobs)
 
 ---
 
-## Step 6: Move your code and services
+## Step 6: Add your collaborators
 
-Clone or sync your Git repositories in the RCP.
-
-For databases or other specialized services, review the RCP options or contact RCS for help with the migration.
-
-[Learn about file transfer and Git](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
+1. Ensure everyone who needs access has an RCP account and has logged in once to activate the account
+2. Email [RCS](mailto:research@hbs.edu) to add collaborators to your space.
 
 ---
 
-## Step 7: Add your collaborators
-
-Make sure everyone who needs access:
-
-1. Has an RCP account
-2. Has logged in at least once
-3. Has been added to the project
-4. Can access the files and tools they need
-
-[Manage your RCP project](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
-
----
-
-## Step 8: Test before you retire HBSGrid
+## Step 8: Test before you retire the HBSGrid Project Space
 
 Before moving off the HBSGrid, verify that:
 
 - [ ] Your data is complete
 - [ ] Your code runs
-- [ ] Your required packages are installed
 - [ ] Your jobs run successfully
 - [ ] Your collaborators have access
-- [ ] Any required compliance steps are complete
 
-Once everything is working, you can retire or archive the HBSGrid project.
+Once everything is working, please contact [RCS](mailto:research@hbs.edu) so that we can archive the HBSGrid project.
 
 ---
 
