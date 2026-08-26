@@ -15,9 +15,9 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 #### Special Note on Uploading Files from the HBSGrid
 
-As the HBSGrid prepares for retirement in FY27, we recommend creating project spaces on RCP for projects currently stored on the HBSGrid. For large data transfers, we recommend using Globus (see instructions below). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
+As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
 
-In NoMachine, open a browser and log into the RCP.
+In NoMachine, open a browser and log in to the RCP.
 
 <img width="749" height="304" alt="image" src="https://github.com/user-attachments/assets/10b652fe-f0e9-4984-9ead-ffa76d364b34" />
 
