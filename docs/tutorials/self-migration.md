@@ -58,7 +58,7 @@ If your HBSGrid project uses the scheduler for batch jobs, review your job scrip
 
 HBSGrid uses **LSF**; RCP uses **SLURM/AWS Parallel Computing Services**, so existing submission scripts will need to be updated.
 
-[Learn about batch jobs](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#aws-parallel-computing-service-pcs)
+[Learn about batch jobs](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#aws-parallel-computing-service-pcs)
 
 If you do **not need a job scheduler** and your primary aim is to run background jobs, you can run these inside launchers.
 
