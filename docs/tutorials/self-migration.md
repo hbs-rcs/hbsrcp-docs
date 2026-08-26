@@ -4,9 +4,7 @@ This guide walks you through moving an existing HBSGrid project to the HBS Resea
 
 ## Step 1: Get access to the RCP
 
-Request an RCP account and log in to activate your account.
-
-2. Request the RCP project that will replace your HBSGrid project.
+Request an RCP account, log in to activate your account, then request the RCP project that will replace your HBSGrid project.
 
 [Get started with the RCP](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
@@ -70,14 +68,15 @@ If you do **not need a job scheduler** and your primary aim is to run background
 
 ## Step 6: Add your collaborators
 
-1. Ensure everyone who needs access has an RCP account and has logged in once to activate the account
-2. Email [RCS](mailto:research@hbs.edu) to add collaborators to your space.
+Ensure everyone who needs access has an RCP account and has logged in once to activate the account. 
+
+Email [RCS](mailto:research@hbs.edu) to add collaborators to your space.
 
 ---
 
-## Step 8: Test before you retire the HBSGrid Project Space
+## Step 8: Test before the HBSGrid is retired
 
-Before moving off the HBSGrid, verify that:
+Verify that:
 
 - [ ] Your data is complete
 - [ ] Your code runs
