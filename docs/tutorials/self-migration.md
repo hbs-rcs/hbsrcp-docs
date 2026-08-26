@@ -4,7 +4,7 @@ This guide walks you through moving an existing HBSGrid project to the HBS Resea
 
 ## Step 1: Get access to the RCP
 
-Request an RCP account, log in to activate your account, then request the RCP project that will replace your HBSGrid project.
+Request an RCP account, log in once to activate it, and then request a new RCP project to replace your HBSGrid project.
 
 [Get started with the RCP](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
@@ -37,7 +37,7 @@ Assign launchers, configurations, and services to your project space.
 
 [Manage your project](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
 
-Launch the RCP tools you need and recreate your environments:
+Launch the tools you need and recreate your working environments:
 
 - JupyterLab
 - RStudio
@@ -56,7 +56,7 @@ Launch the RCP tools you need and recreate your environments:
 
 If your HBSGrid project uses the scheduler for batch jobs, review your job scripts carefully.
 
-HBSGrid uses **LSF**; RCP uses **SLURM/AWS Parallel Computing Services**, so existing submission scripts will need to be updated.
+HBSGrid uses **LSF**, while RCP uses AWS Parallel Computing Service (PCS) with **Slurm**. Existing submission scripts will need to be updated.
 
 [Learn about batch jobs](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#aws-parallel-computing-service-pcs)
 
@@ -78,12 +78,12 @@ Email [RCS](mailto:research@hbs.edu) to add collaborators to your space.
 
 Verify that:
 
-- [ ] Your data is complete
+- [ ] Your data is complete and files open as expected
 - [ ] Your code runs
 - [ ] Your jobs run successfully
 - [ ] Your collaborators have access
 
-Once everything is working, please contact [RCS](mailto:research@hbs.edu) so that we can archive the HBSGrid project.
+Once everything is working, please contact [RCS](mailto:research@hbs.edu) for the HBSGrid project space to be archived. 
 
 ---
 
