@@ -15,7 +15,7 @@ This guide walks you through moving an existing HBSGrid project to the HBS Resea
 
 If your HBSGrid project space contains **Level 3 or Level 4 data**, you must update your **DAT record** to include the RCP as a storage location before moving the data.
 
-[How to update your DAT record](docs/media/RCP Migration.pdf)
+[How to update your DAT record](https://hbs-rcs.github.io/hbsrcp-docs/media/RCP%20Migration.pdf)
 
 The RCP supports research data at Levels 1–4.
 
