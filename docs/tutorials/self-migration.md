@@ -9,7 +9,7 @@ Request an RCP account, log in to activate your account, then request the RCP pr
 [Get started with the RCP](https://hbs-rcs.github.io/hbsrcp-docs/#quick-start)
 
 ---
-##  Step 2: Check your data security requirements
+## Step 2: Check your data security requirements
 
 If your HBSGrid project space contains **Level 3 or Level 4 data**, you must update your **DAT record** to include the RCP as a storage location before moving the data.
 
@@ -56,9 +56,9 @@ Launch the RCP tools you need and recreate your environments:
 
 If your HBSGrid project uses the scheduler for batch jobs, review your job scripts carefully.
 
-HBSGrid uses **LSF**; RCP uses **SLURM/PCS**, so existing submission scripts will need to be updated.
+HBSGrid uses **LSF**; RCP uses **SLURM/AWS Parallel Computing Services**, so existing submission scripts will need to be updated.
 
-[Learn about batch jobs]([https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#aws-parallel-computing-service-pcs))
+[Learn about batch jobs](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#aws-parallel-computing-service-pcs)
 
 If you do **not need a job scheduler** and your primary aim is to run background jobs, you can run these inside launchers.
 
@@ -74,7 +74,7 @@ Email [RCS](mailto:research@hbs.edu) to add collaborators to your space.
 
 ---
 
-## Step 8: Test before the HBSGrid is retired
+## Step 7: Test before the HBSGrid is retired
 
 Verify that:
 
