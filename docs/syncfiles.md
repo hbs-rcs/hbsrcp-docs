@@ -13,8 +13,21 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 **Currently, only one file or folder up to 5GB can be uploaded/downloaded at a time by users**. To upload multiple and/or large files, one option is to compress them locally and then [extract](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) them on the RCP. Similarly, you can [compress](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) files on the RCP prior to downloading them localling. Detailed instructions on can be found in our [Compressing and Extracting Files Tutorial](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/). Otherwise, please use one of the methods outlined in the following sections. 
 
-### Transferring from Cloud Storage
-*Coming soon*
+#### Special Note on Uploading Files from the HBSGrid
+
+As the HBSGrid prepares for retirement in FY27, we recommend creating project spaces on RCP for projects currently stored on the HBSGrid. For large data transfers, we recommend using Globus (see instructions below). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
+
+In NoMachine, open a browser and log into the RCP.
+
+<img width="749" height="304" alt="image" src="https://github.com/user-attachments/assets/10b652fe-f0e9-4984-9ead-ffa76d364b34" />
+
+Navigate to the RCP project space that will receive the data. Select the "Files" tab. To upload a folder, click the arrow next to "Upload File", then select "Upload Folder".
+
+<img width="845" height="135" alt="image" src="https://github.com/user-attachments/assets/27f4532b-a92c-4989-a149-0eaf22fc9a6b" />
+
+Navigate to your HBSGrid project space and select the folder you want to transfer. Click "Upload", then review the selected files and click "Upload" again to confirm.
+
+<img width="320" height="428" alt="image" src="https://github.com/user-attachments/assets/a4d71abd-572d-4b53-b6f8-b5f3b72952e4" />
 
 ### Using Globus
 
