@@ -4,7 +4,7 @@ This guide walks you through moving an existing HBSGrid project to the HBS Resea
 
 ## Step 1: Get access to the RCP
 
-1. Request an RCP account and log in to activate your account.
+Request an RCP account and log in to activate your account.
 
 2. Request the RCP project that will replace your HBSGrid project.
 
@@ -35,11 +35,11 @@ Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databas
 
 ## Step 4: Recreate your computing environment
 
-1. Assign launchers, configurations, and services to your project space.
+Assign launchers, configurations, and services to your project space.
 
 [Manage your project](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
 
-2. Launch the RCP tools you need and recreate your environments:
+Launch the RCP tools you need and recreate your environments:
 
 - JupyterLab
 - RStudio
@@ -49,6 +49,7 @@ Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databas
 - MATLAB
 
 [Launching sessions](https://hbs-rcs.github.io/hbsrcp-docs/launchers_sessions/)
+
 [Recreating your environments](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/#available-software-and-analysis-tools)
 
 ---
