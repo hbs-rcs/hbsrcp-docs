@@ -1,7 +1,7 @@
 # Transferring and Managing Project Files
 
 ## Transferring Files
-### Uploading and Downloading Local Files
+## Uploading and Downloading Local Files
 
 Users can upload and download local files by clicking on the "Files" tab to the right of the Workbench. 
 
@@ -13,7 +13,7 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 **Currently, only one file or folder up to 5GB can be uploaded/downloaded at a time by users**. To upload multiple and/or large files, one option is to compress them locally and then [extract](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) them on the RCP. Similarly, you can [compress](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) files on the RCP prior to downloading them localling. Detailed instructions on can be found in our [Compressing and Extracting Files Tutorial](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/). Otherwise, please use one of the methods outlined in the following sections. 
 
-#### Special Note on Uploading Files from the HBSGrid
+## Special Note on Uploading Files from the HBSGrid
 
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
 
@@ -29,7 +29,7 @@ Navigate to your HBSGrid project space and select the folder you want to transfe
 
 <img width="320" height="428" alt="image" src="https://github.com/user-attachments/assets/a4d71abd-572d-4b53-b6f8-b5f3b72952e4" />
 
-### Using Globus
+## Using Globus
 
 !!! important
     Directories created via Globus may initially appear as **0-byte files**. This happens because folders transferred through Globus are stored in Amazon S3 (your project space) with the content type `application/x-globus-dir-placeholder`, which S3 treats as a file rather than a directory. After transferring folders through Globus, open each folder once from the RCP **Files** tab so its content type is updated and recognized as a directory, or, if using an active utility session, restart the session. 
@@ -40,14 +40,14 @@ Once logged in, navigate to the file manager tab and locate the Harvard Business
 
 <img width="1663" height="541" alt="image" src="https://github.com/user-attachments/assets/892886ff-ed87-421e-9dc7-bd51f38e8709" />
 
-After selecting the "Harvard Business School S3 Storage" Collection, you should see the following dialog:
+After selecting the **"Harvard Business School S3 Storage"** Collection, authenticate (if needed), and then you should see the following dialog:
 <img width="982" height="651" alt="image" src="https://github.com/user-attachments/assets/1860388f-dc61-42df-ac43-9e00d1acade2" />
 Click the continue button and you will be brought to this dialog box:
 <img width="867" height="428" alt="image" src="https://github.com/user-attachments/assets/202ec06d-29fa-498d-977b-3d928ded4203" />
 
 Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project. If you don't have an Access Key ID or Secret Key ID, please fill out [this form](https://forms.cloud.microsoft/r/iV8unLm4jq) to request them for your project.
 
-After entering the Key IDs, you should be able to see the directory listing of your project, as well as be able to upload and download files as shown below.
+After entering the Key IDs, click on "File Manager," and then you should be able to see the directory listing of your project, as well as be able to upload and download files as shown below.
 <img width="1306" height="1016" alt="image" src="https://github.com/user-attachments/assets/66dd65c0-5e6f-4bb9-b7d1-bbe7762d59f6" />
 
 If you are transferring very large files, we recommend transfer from another Globus endpoint (such as the Harvard Business School DTN, attached to the HBSGrid, or by creating your own endpoint using Globus Personal).
