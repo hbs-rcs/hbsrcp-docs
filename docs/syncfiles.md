@@ -36,7 +36,6 @@ Navigate to your HBSGrid project space and select the folder you want to transfe
 
 Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. To do this, log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
 
-## Globus Transfer to RCP
 Once logged in, navigate to the file manager tab and locate the **Harvard Business School S3 Storage Collection** by searching for this collection in the Collection dialog box.
 
 <img width="1663" height="541" alt="image" src="https://github.com/user-attachments/assets/892886ff-ed87-421e-9dc7-bd51f38e8709" />
@@ -55,27 +54,34 @@ If you are transferring very large files, we recommend transfer from another Glo
 
 ## Special Note on Uploading Files from the HBSGrid Using Globus
 
+1. **Copy your HBSGrid project space folder or files to the Globus staging area**
+
+In NoMachine, open the file explorer and navigate to your project space folder. Select the folder you'd like to move to RCP, right click and select "Copy to."
+<img width="474" height="358" alt="image" src="https://github.com/user-attachments/assets/f24b1d87-6d5e-4e29-a5cd-7f5dd531f326" />
+
+Select the `/export/globus` folder as your destination, and then either create a new folder to house the data or click on existing one.
+
+<img width="343" height="368" alt="image" src="https://github.com/user-attachments/assets/4358b6c5-c76d-4e21-92b3-2663e580cd29" />
+
+_Note: you can also move the data into the `/export/globus` staging area using Terminal commands (e.g., `cp -r /path/to/project-folder /export/globus/<your-folder-name>/`
+
+The files must be located in /export/globus/<your-folder-name> before you begin the Globus transfer.
+
+2. **Open the HBS DTN collection in Globus**
 Log into Globus and navigate to the file manager tab and locate the **Harvard Business School DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button.
 
 <img width="971" height="242" alt="image" src="https://github.com/user-attachments/assets/a9d753e0-c76c-411b-a65e-fd29a1a5681c" />
 
-Either create a new folder to house your project space contents, or select an existing one of yours if you have it.
+Select the folder you copied your HBSGrid data into.
 
 <img width="893" height="327" alt="image" src="https://github.com/user-attachments/assets/19924b24-0b89-47ea-bfec-23004754d775" />
 
-In Nomachine, open the file explorer and navigate to your project space folder. Select the folder you'd like to move to RCP, right click and select "Copy to" (note: you can also do this in Terminal using the `mv` commands, moving from your project space path to `/export/globus/<yourfoldername>`).
-
-<img width="474" height="358" alt="image" src="https://github.com/user-attachments/assets/f24b1d87-6d5e-4e29-a5cd-7f5dd531f326" />
-
-Select the `/export/globus` folder as your destination, and then click on the folder you created in Globus to house the data to copy it over.
-
-<img width="343" height="368" alt="image" src="https://github.com/user-attachments/assets/4358b6c5-c76d-4e21-92b3-2663e580cd29" />
-
-Back in your browser in Globus, connect your RCP S3 bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). 
+Connect your RCP S3 bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). 
 
 Select the folder you wish to transfer and click on the Start arrow icon. (The direction the Start button arrow points indicates the direction files will transfer.)
 
 <img width="877" height="168" alt="image" src="https://github.com/user-attachments/assets/f967a40b-fc21-44aa-acff-ea16ec5904bb" />
+<br></br>
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
 
