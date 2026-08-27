@@ -36,7 +36,7 @@ Navigate to your HBSGrid project space and select the folder you want to transfe
 
 Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. To do this, log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
 
-Once logged in, navigate to the file manager tab and locate the Harvard Business School **S3 Collection** by searching for this collection in the Collection dialog box.
+Once logged in, navigate to the file manager tab and locate the **Harvard Business School S3 Storage Collection** by searching for this collection in the Collection dialog box.
 
 <img width="1663" height="541" alt="image" src="https://github.com/user-attachments/assets/892886ff-ed87-421e-9dc7-bd51f38e8709" />
 
@@ -66,13 +66,13 @@ Click on upload and select the project space folder/files you wish to transfer.
 
 <img width="614" height="368" alt="image" src="https://github.com/user-attachments/assets/ebc5d26e-7802-4c96-ac3c-a973f822a5c3" />
 
-On the right-hand side of the screen, search for the **"Harvard Business School S3 Storage"** Collection.
+Connect your RCP S3 bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). 
 
+Select the folder you wish to transfer and click on the Start arrow icon. (The direction the Start button arrow points indicates the direction files will transfer.)
 
-Select the folder you wish to transfer and click on the appropriate Start arrow icon. (The direction the Start button arrow points indicates the direction files will transfer.)
+<img width="877" height="168" alt="image" src="https://github.com/user-attachments/assets/f967a40b-fc21-44aa-acff-ea16ec5904bb" />
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
-
 
 ## Managing Source Code - Syncing to Git
 
