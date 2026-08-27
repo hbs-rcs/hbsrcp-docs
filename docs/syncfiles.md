@@ -1,7 +1,7 @@
 # Transferring and Managing Project Files
 
 ## Transferring Files
-## Uploading and Downloading Local Files
+## Uploading and Downloading Local Files Using the Files Tab
 
 Users can upload and download local files by clicking on the "Files" tab to the right of the Workbench. 
 
@@ -13,7 +13,7 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 **Currently, only one file or folder up to 5GB can be uploaded/downloaded at a time by users**. To upload multiple and/or large files, one option is to compress them locally and then [extract](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) them on the RCP. Similarly, you can [compress](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) files on the RCP prior to downloading them localling. Detailed instructions on can be found in our [Compressing and Extracting Files Tutorial](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/). Otherwise, please use one of the methods outlined in the following sections. 
 
-## Special Note on Uploading Files from the HBSGrid
+## Special Note on Uploading Files from the HBSGrid Using the "Files" Tab
 
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
 
@@ -36,7 +36,7 @@ Navigate to your HBSGrid project space and select the folder you want to transfe
 
 Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. To do this, log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
 
-Once logged in, navigate to the file manager tab and locate the Harvard Business School S3 Collection by searching for this collection in the Collection dialog box.
+Once logged in, navigate to the file manager tab and locate the Harvard Business School **S3 Collection** by searching for this collection in the Collection dialog box.
 
 <img width="1663" height="541" alt="image" src="https://github.com/user-attachments/assets/892886ff-ed87-421e-9dc7-bd51f38e8709" />
 
@@ -52,7 +52,23 @@ After entering the Key IDs, click on "File Manager," and then you should be able
 
 If you are transferring very large files, we recommend transfer from another Globus endpoint (such as the Harvard Business School DTN, attached to the HBSGrid, or by creating your own endpoint using Globus Personal).
 
+## Special Note on Uploading Files from the HBSGrid Using Globus
+
+Navigate to the file manager tab and locate the Harvard Business School **DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button.
+
+<img width="971" height="242" alt="image" src="https://github.com/user-attachments/assets/a9d753e0-c76c-411b-a65e-fd29a1a5681c" />
+
+Either create a new folder to house your project space contents, or select an existing one of yours if you have it.
+
+<img width="893" height="327" alt="image" src="https://github.com/user-attachments/assets/19924b24-0b89-47ea-bfec-23004754d775" />
+
+
+Use the second Collection search box on the right to find the other collection.
+
+Select the folder you wish to transfer and click on the appropriate Start arrow icon. (The direction the Start button arrow points indicates the direction files will transfer.)
+
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
+
 
 ## Managing Source Code - Syncing to Git
 
