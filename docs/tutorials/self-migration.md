@@ -1,3 +1,11 @@
+---
+title: "Self-Migration from the HBSGrid to the RCP"
+author: "Melissa Velez"
+
+tags:
+  - HBSGrid Retirement
+  - Self-Migration
+---
 # Self-Migration from the HBSGrid to the RCP
 
 This guide walks you through moving an existing HBSGrid project to the HBS Research Computing Platform (RCP).
