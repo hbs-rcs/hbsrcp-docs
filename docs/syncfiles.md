@@ -54,7 +54,7 @@ If you are transferring very large files, we recommend transfer from another Glo
 
 ## Special Note on Uploading Files from the HBSGrid Using Globus
 
-Navigate to the file manager tab and locate the Harvard Business School **DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button.
+Navigate to the file manager tab and locate the **Harvard Business School DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button.
 
 <img width="971" height="242" alt="image" src="https://github.com/user-attachments/assets/a9d753e0-c76c-411b-a65e-fd29a1a5681c" />
 
@@ -62,8 +62,12 @@ Either create a new folder to house your project space contents, or select an ex
 
 <img width="893" height="327" alt="image" src="https://github.com/user-attachments/assets/19924b24-0b89-47ea-bfec-23004754d775" />
 
+Click on upload and select the project space folder/files you wish to transfer.
 
-Use the second Collection search box on the right to find the other collection.
+<img width="614" height="368" alt="image" src="https://github.com/user-attachments/assets/ebc5d26e-7802-4c96-ac3c-a973f822a5c3" />
+
+On the right-hand side of the screen, search for the **"Harvard Business School S3 Storage"** Collection.
+
 
 Select the folder you wish to transfer and click on the appropriate Start arrow icon. (The direction the Start button arrow points indicates the direction files will transfer.)
 
