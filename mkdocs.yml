@@ -20,6 +20,7 @@ nav:
       - RCP Quick Start Tutorial: 'tutorials/RCP_Start.md'
       - Claude Code on RCP: 'tutorials/claude.md'
       - Custom Conda Environment in JupyterLab: 'tutorials/jupyterlabconda.md'
+      - Self-Migration from the HBSGrid to the RCP: 'tutorials/self-migration.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
