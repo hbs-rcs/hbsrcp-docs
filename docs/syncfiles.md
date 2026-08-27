@@ -54,6 +54,8 @@ If you are transferring very large files, we recommend transfer from another Glo
 
 ## Special Note on Uploading Files from the HBSGrid Using Globus
 
+As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers from an HBSGrid project space to the RCP we recommend using Globus.
+
 **1. Copy your HBSGrid project space folder or files to the Globus staging area**
 
 Globus requires files to be staged in the `/export/globus` HBSGrid folder before they can be transferred to RCP, so you'll first need to copy your HBSGrid files there.
