@@ -73,17 +73,19 @@ The files must be located in /export/globus/<your-folder-name> before you begin 
 
 **2. Open the HBS DTN collection in Globus**
 
-Log into Globus and navigate to the file manager tab and locate the **Harvard Business School DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button. Select the folder you copied your HBSGrid data into.
+Log in to Globus and navigate to the File Manager tab. In the Collection dialog box, search for and select the **Harvard Business School DTN Collection**. Click Transfer or Sync to…, then navigate to and select the folder containing your staged HBSGrid data.
 
 <img width="971" height="242" alt="image" src="https://github.com/user-attachments/assets/a9d753e0-c76c-411b-a65e-fd29a1a5681c" />
 
 **3. Connect to the RCP project space**
 
-Connect your RCP project space bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). Navigate to or create the destination folder in your RCP project space where you'd like the files to be transferred.
+On the right-hand side of the screen, connect to your RCP project space. If you have not already done so, follow the instructions [above](syncfiles.md#using-globus): search for the **Harvard Business School S3 Storage** Collection, authenticate, and enter your AWS keys.
+
+Navigate to or create the destination folder in your RCP project space where you would like the files to be transferred.
 
 **4. Start the transfer**
 
-Select the folder you wish to transfer and click on the Start arrow icon. For this workflow, files should transfer from the **HBS DTN collection to the RCP S3 bucket**.
+Select the folder you wish to transfer and click on the Start arrow icon. For this workflow, files should transfer from the **Harvard Business School DTN collection** to the **Harvard Business School S3 Storage** collection.
 
 <img width="909" height="155" alt="image" src="https://github.com/user-attachments/assets/1e4419e7-1fa6-4438-9c91-69fe2d1669af" />
 
