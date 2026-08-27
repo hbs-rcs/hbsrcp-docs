@@ -27,7 +27,7 @@ For small amounts of data, you can upload files through the RCP **Files** interf
 
 For large datasets or many files, use **Globus**.
 
-[Transfer files to the RCP using Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/)
+[Transfer files to the RCP using Globus](docs/syncfiles.md)
 
 Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databases.
 
