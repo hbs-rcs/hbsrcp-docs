@@ -56,6 +56,8 @@ If you are transferring very large files, we recommend transfer from another Glo
 
 **1. Copy your HBSGrid project space folder or files to the Globus staging area**
 
+Globus requires files to be staged in the `/export/globus` HBSGrid folder before they can be transferred to RCP, so you'll first need to copy your HBSGrid files there.
+
 In NoMachine, open the file explorer and navigate to your project space folder. Select the folder you'd like to move to RCP, right click and select "Copy to."
 
 <img width="474" height="358" alt="image" src="https://github.com/user-attachments/assets/f24b1d87-6d5e-4e29-a5cd-7f5dd531f326" />
@@ -70,25 +72,24 @@ _Note: you can also move the data into the `/export/globus` staging area using T
 The files must be located in /export/globus/<your-folder-name> before you begin the Globus transfer.
 
 **2. Open the HBS DTN collection in Globus**
-Log into Globus and navigate to the file manager tab and locate the **Harvard Business School DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button.
+
+Log into Globus and navigate to the file manager tab and locate the **Harvard Business School DTN Collection** by searching for this collection in the Collection dialog box. Click on the "Transfer or Sync to..." button. Select the folder you copied your HBSGrid data into.
 
 <img width="971" height="242" alt="image" src="https://github.com/user-attachments/assets/a9d753e0-c76c-411b-a65e-fd29a1a5681c" />
 
-Select the folder you copied your HBSGrid data into.
+**3. Connect to the RCP project space**
 
-<img width="893" height="327" alt="image" src="https://github.com/user-attachments/assets/19924b24-0b89-47ea-bfec-23004754d775" />
-
-**3. Connect to the RCP S3 bucket**
-Connect your RCP S3 bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). 
+Connect your RCP project space bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). Navigate to or create the destination folder in your RCP project space where you'd like the files to be transferred.
 
 **4. Start the transfer**
+
 Select the folder you wish to transfer and click on the Start arrow icon. For this workflow, files should transfer from the **HBS DTN collection to the RCP S3 bucket**.
 
-<img width="877" height="168" alt="image" src="https://github.com/user-attachments/assets/f967a40b-fc21-44aa-acff-ea16ec5904bb" />
-<br></br>
+<img width="909" height="155" alt="image" src="https://github.com/user-attachments/assets/1e4419e7-1fa6-4438-9c91-69fe2d1669af" />
 
 **5. Verify the transfer**
-Monitor the transfer status in Globus and confirm that the files appear in the expected RCP S3 location. Do not delete the files from `/export/globus` until the transfer has completed successfully and the files have been verified.
+
+Monitor the transfer status in Globus and confirm that the files appear in the expected RCP location. Do not delete the files from `/export/globus` until the transfer has completed successfully and the files have been verified.
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
 
