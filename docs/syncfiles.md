@@ -76,12 +76,17 @@ Select the folder you copied your HBSGrid data into.
 
 <img width="893" height="327" alt="image" src="https://github.com/user-attachments/assets/19924b24-0b89-47ea-bfec-23004754d775" />
 
+3. **Connect to the RCP S3 bucket**
 Connect your RCP S3 bucket on the right-hand side of the screen by following the instructions [above](syncfiles.md#using-globus) if you haven't already (i.e., search for the **"Harvard Business School S3 Storage"** Collection, authenticate, enter your AWS keys). 
 
-Select the folder you wish to transfer and click on the Start arrow icon. (The direction the Start button arrow points indicates the direction files will transfer.)
+4. **Start the transfer**
+Select the folder you wish to transfer and click on the Start arrow icon. For this workflow, files should transfer from the **HBS DTN collection to the RCP S3 bucket**.
 
 <img width="877" height="168" alt="image" src="https://github.com/user-attachments/assets/f967a40b-fc21-44aa-acff-ea16ec5904bb" />
 <br></br>
+
+5. **Verify the transfer**
+Monitor the transfer status in Globus and confirm that the files appear in the expected RCP S3 location. Do not delete the files from `/export/globus` until the transfer has completed successfully and the files have been verified.
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
 
