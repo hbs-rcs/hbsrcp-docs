@@ -31,7 +31,7 @@ The RCP supports research data at Levels 1–4.
 
 For small amounts of data, you can upload files through the RCP **Files** interface.
 
-[Transfer files using RCP File interface](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles.html#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-the-files-tab)
+[Transfer files using RCP File interface](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-the-files-tab)
 
 For large datasets or many files, use **Globus**.
 
