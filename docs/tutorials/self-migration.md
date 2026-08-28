@@ -31,11 +31,11 @@ The RCP supports research data at Levels 1–4.
 
 For small amounts of data, you can upload files through the RCP **Files** interface.
 
-[Transfer files using RCP File interface](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-using-the-files-tab)
+[Transfer files using RCP File interface](syncfiles.md/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-the-files-tab)
 
 For large datasets or many files, use **Globus**.
 
-[Transfer files to the RCP using Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-using-globus)
+[Transfer files to the RCP using Globus](syncfiles.md/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-globus)
 
 Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databases.
 
