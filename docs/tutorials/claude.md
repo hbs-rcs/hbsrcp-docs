@@ -90,7 +90,25 @@ You can now use Claude Code to do all of the following from within this Terminal
 ## Using SSH to connect a Claude Code Session to PCS
 If you wish to use Claude Code to schedule jobs on a PCS Cluster using SSH, you will need to configuration SSH between a Claude Code session and a PCS Head Node session.
 1.  Connect to a Claude Code session and open a terminal window.
-2.  Generate SSH keys within Claude Code using the following command 
+2.  Generate SSH keys within Claude Code using the following command
+   ```bash
+  ssh-keygen -t ed25519 -C "your@email.address"
+```
+This will create an SSH Key using the elliptic curve cryptography, which is faster and more secure than older RSA keys.  The key will be stored in the sessions ```.ssh  ``` folder.
+
+3.  Navigate to the SSH folder ```cd .ssh```
+4.  View the public key ```cat id_ed25519.pub ``` and then copy the public key
+5.  From the RCP Workbench, launch a new PCS head node and connect to it.
+6.  Open a terminal window and navigate to the SSH folder.  You should see an ```authorized_keys``` file.
+   <img width="562" height="104" alt="image" src="https://github.com/user-attachments/assets/1836bc76-99f1-4ca9-9dcf-51dd0d6c216b" />
+
+8.  Edit the ```authorized_keys``` file and add the public key from step 4.
+9.  You will need the hostname from the PCS headnode, which is readily available with the command ```hostname```
+
+To test the connection, simple navigate back to the ClaudeCode terminal session and type ```ssh <hostname_PCS_headnode>```
+
+**Please Note** Because the home directory for the PCS Headnode is mounted from persist-able memory, terminating the PCS session will not remove the SSH folder so subsequent connections from the Claude Code session will still work, even if the PCS headnode is terminated and relaunched.  That is not true for the Claude Code session, so you may want to make a backup copy of the keys stored in the Claude Code session.
+   
 ## Token Usage and Billing — Please Read
 
 Claude Code usage on the RCP is tied to your Claude account (HBS or personal) and **billed separately to that account**.
