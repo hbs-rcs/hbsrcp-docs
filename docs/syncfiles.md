@@ -73,6 +73,29 @@ After entering the Key IDs, click on "File Manager," and then you should be able
 
 If you are transferring very large files, we recommend transfer from another Globus endpoint (such as the Harvard Business School DTN, attached to the HBSGrid, or by creating your own endpoint using Globus Personal).
 
+**6.Accessing Mulitple Project Folders**
+
+If you want to access multiple project folders within RCP using Globus, you will need to add multiple key sets, one for each project storage location.  After the default location has been added, use the + button in the "manage credentials" view to add additional keys.
+
+<img width="1221" height="432" alt="image" src="https://github.com/user-attachments/assets/64cf5fa4-6f9b-4bd5-8599-4458d70427a3" />
+
+In addition to entering the Access Key ID and Secret Key you need to enter the S3 bucket name.  
+
+<img width="1267" height="432" alt="image" src="https://github.com/user-attachments/assets/d4ac6c72-7efa-4838-bcd3-8305dface5db" />
+
+You can copy the bucket address from the Files tab within RCP.
+
+<img width="674" height="328" alt="image" src="https://github.com/user-attachments/assets/7fa565c2-a1ac-4c17-9489-213612a83b98" />
+
+Only the bucket name is needed instead of the entire bucket URN.  So for example, the bucket with the URN of "s3://rcp-project-rcptesting-owzh-projectstorage/ProjectStorage/" would only require "rcp-project-rcptesting-owzh-projectstorage".  Also note that bucket name will not be the same as the storage location name within RCP.  Entering several project storage locations will result in multiple entries in the "manage credentials" tab.
+
+<img width="1047" height="517" alt="image" src="https://github.com/user-attachments/assets/d61046b4-238e-47a7-8da1-820bf07246b9" />
+
+and each project storage location will be visible as a separate folder with the File Manager tab.
+
+<img width="1047" height="708" alt="image" src="https://github.com/user-attachments/assets/fc46eea3-0a97-4ae9-b8bb-cca2fc8b1066" />
+
+
 ### Special Note on Uploading Files from the HBSGrid to the RCP Using Globus
 
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers from an HBSGrid project space to the RCP we recommend using Globus.
