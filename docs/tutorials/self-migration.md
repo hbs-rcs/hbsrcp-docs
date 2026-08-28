@@ -45,7 +45,7 @@ Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databas
 
 Assign launchers, configurations, and services to your project space.
 
-[Manage your project](https://hbs-rcs.github.io/hbsrcp-docs/storage_software/)
+[Manage your project](https://hbs-rcs.github.io/hbsrcp-docs/manageprojects/)
 
 Launch the tools you need and recreate your working environments:
 
