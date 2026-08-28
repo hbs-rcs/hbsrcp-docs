@@ -79,7 +79,7 @@ Select the `/export/globus` folder as your destination, and then either create a
 
 _Note: you can also move the data into the `/export/globus` staging area using Terminal commands (e.g., `cp -r /path/to/project-folder /export/globus/<your-folder-name>/`_
 
-The files must be located in /export/globus/<your-folder-name> before you begin the Globus transfer.
+The files must be located in `/export/globus/<your-folder-name>` before you begin the Globus transfer.
 
 **2. Open the HBS DTN collection in Globus**
 
