@@ -18,16 +18,21 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
 
 **1.Log in to the RCP**
+
 In NoMachine, open a browser and log in to the RCP.
 
 <img width="749" height="304" alt="image" src="https://github.com/user-attachments/assets/10b652fe-f0e9-4984-9ead-ffa76d364b34" />
 
+
 **2.Select the RCP Project Space**
+
 Navigate to the RCP project space that will receive the data. Select the "Files" tab. To upload a folder, click the arrow next to "Upload File", then select "Upload Folder".
 
 <img width="845" height="135" alt="image" src="https://github.com/user-attachments/assets/27f4532b-a92c-4989-a149-0eaf22fc9a6b" />
 
+
 **3.Select and Upload the HBSGrid Folder**
+
 Navigate to your HBSGrid project space and select the folder you want to transfer. Click "Upload", then review the selected files and click "Upload" again to confirm.
 
 <img width="320" height="428" alt="image" src="https://github.com/user-attachments/assets/a4d71abd-572d-4b53-b6f8-b5f3b72952e4" />
