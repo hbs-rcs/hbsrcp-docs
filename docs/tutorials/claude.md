@@ -87,7 +87,10 @@ You can now use Claude Code to do all of the following from within this Terminal
 - Answer questions about your project
 
 ---
-
+## Using SSH to connect a Claude Code Session to PCS
+If you wish to use Claude Code to schedule jobs on a PCS Cluster using SSH, you will need to configuration SSH between a Claude Code session and a PCS Head Node session.
+1.  Connect to a Claude Code session and open a terminal window.
+2.  Generate SSH keys within Claude Code using the following command 
 ## Token Usage and Billing — Please Read
 
 Claude Code usage on the RCP is tied to your Claude account (HBS or personal) and **billed separately to that account**.
