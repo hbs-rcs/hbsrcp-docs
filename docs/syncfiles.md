@@ -13,7 +13,7 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 **Currently, only one file or folder up to 5GB can be uploaded/downloaded at a time by users**. To upload multiple and/or large files, one option is to compress them locally and then [extract](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) them on the RCP. Similarly, you can [compress](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/) files on the RCP prior to downloading them localling. Detailed instructions on can be found in our [Compressing and Extracting Files Tutorial](https://hbs-rcs.github.io/hbsrcp-docs/tutorials/compressextract/). Otherwise, please use one of the methods outlined in the following sections. 
 
-## Special Note on Uploading Files from the HBSGrid to the RCP Using the Files Tab
+### Special Note on Uploading Files from the HBSGrid to the RCP Using the Files Tab
 
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
 
@@ -73,7 +73,7 @@ After entering the Key IDs, click on "File Manager," and then you should be able
 
 If you are transferring very large files, we recommend transfer from another Globus endpoint (such as the Harvard Business School DTN, attached to the HBSGrid, or by creating your own endpoint using Globus Personal).
 
-## Special Note on Uploading Files from the HBSGrid to the RCP Using Globus
+### Special Note on Uploading Files from the HBSGrid to the RCP Using Globus
 
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers from an HBSGrid project space to the RCP we recommend using Globus.
 
