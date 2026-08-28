@@ -88,10 +88,10 @@ Email [RCS](mailto:research@hbs.edu) to add collaborators to your space.
 
 Verify that:
 
-- [ ] Your data is complete and files open as expected
-- [ ] Your code runs
-- [ ] Your jobs run successfully
-- [ ] Your collaborators have access
+- Your data is complete and files open as expected
+- Your code runs
+- Your jobs run successfully
+- Your collaborators have access
 
 Once everything is working, please contact [RCS](mailto:research@hbs.edu) for the HBSGrid project space to be archived. 
 
