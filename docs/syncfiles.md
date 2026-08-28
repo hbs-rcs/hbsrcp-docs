@@ -15,7 +15,7 @@ To upload a file, click on the "Upload File" button next to the "Actions" button
 
 ## Special Note on Uploading Files from the HBSGrid to the RCP Using the Files Tab
 
-As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
+As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers, we recommend using [Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-globus). For smaller transfers, you can use the RCP "Files" interface to upload data directly from the HBSGrid.
 
 **1.Log in to the RCP**
 
@@ -42,18 +42,31 @@ Navigate to your HBSGrid project space and select the folder you want to transfe
 !!! important
     Directories created via Globus may initially appear as **0-byte files**. This happens because folders transferred through Globus are stored in Amazon S3 (your project space) with the content type `application/x-globus-dir-placeholder`, which S3 treats as a file rather than a directory. After transferring folders through Globus, open each folder once from the RCP **Files** tab so its content type is updated and recognized as a directory, or, if using an active utility session, restart the session. 
 
-Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. To do this, log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
+Globus, a data transfer service, can be used to transfer multiple files at once and/or files exceeding the 5GB limit. Globus can be used to transfer data into a project space on the RCP or out of the RCP to another location. In order to use Globus, you will need to establish your project as an end point for Globus. 
 
-Once logged in, navigate to the file manager tab and locate the **Harvard Business School S3 Storage Collection** by searching for this collection in the Collection dialog box.
+**1.Log in to Globus**
+
+Log into the Globus transfer application at www.globus.org.  You will need to select Harvard University as your institution followed by entering your Harvard Key credentials and password. Please note that only HBS credentials will have access to HBS resources. Credentials from other schools will not work properly.
+
+**2.Open the File Manager**
+
+Navigate to the file manager tab and locate the **Harvard Business School S3 Storage Collection** by searching for this collection in the Collection dialog box.
 
 <img width="1663" height="541" alt="image" src="https://github.com/user-attachments/assets/892886ff-ed87-421e-9dc7-bd51f38e8709" />
 
-After selecting the **"Harvard Business School S3 Storage"** Collection, authenticate (if needed), and then you should see the following dialog:
+**3.Select the HBS S3 Storage Collection and Authenticate**
+
+Select the **"Harvard Business School S3 Storage"** Collection, authenticate (if needed), and then you should see the following dialog:
 <img width="982" height="651" alt="image" src="https://github.com/user-attachments/assets/1860388f-dc61-42df-ac43-9e00d1acade2" />
+
+**4.Enter Your AWS IAM Credentials**
+
 Click the continue button and you will be brought to this dialog box:
 <img width="867" height="428" alt="image" src="https://github.com/user-attachments/assets/202ec06d-29fa-498d-977b-3d928ded4203" />
 
 Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project. If you don't have an Access Key ID or Secret Key ID, please fill out [this form](https://forms.cloud.microsoft/r/iV8unLm4jq) to request them for your project.
+
+**5.Access Your Project Files**
 
 After entering the Key IDs, click on "File Manager," and then you should be able to see the directory listing of your project, as well as be able to upload and download files as shown below.
 <img width="1306" height="1016" alt="image" src="https://github.com/user-attachments/assets/66dd65c0-5e6f-4bb9-b7d1-bbe7762d59f6" />
