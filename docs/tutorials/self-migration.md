@@ -29,6 +29,7 @@ The RCP supports research data at Levels 1–4.
 
 ## Step 3: Move your data
 
+### If you prefer to move your data yourself
 For small amounts of data, you can upload files through the RCP **Files** interface.
 
 [Transfer files using RCP File interface](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-the-files-tab)
@@ -36,6 +37,9 @@ For small amounts of data, you can upload files through the RCP **Files** interf
 For large datasets or many files, use **Globus**.
 
 [Transfer files to the RCP using Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-globus)
+
+### If you prefer that IT moves your data
+Please contact [RCS](mailto:research@hbs.edu) and provide a time window that works for your research team. Depending on the size of your HBSGrid project space, the migration may take several days, so please plan accordingly.
 
 Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databases.
 
