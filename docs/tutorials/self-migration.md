@@ -38,7 +38,7 @@ For large datasets or many files, use **Globus**.
 
 [Transfer files to the RCP using Globus](https://hbs-rcs.github.io/hbsrcp-docs/syncfiles/#special-note-on-uploading-files-from-the-hbsgrid-to-the-rcp-using-globus)
 
-### If you prefer that IT moves your data
+### If you prefer IT to move your data
 Please contact [RCS](mailto:research@hbs.edu) and provide a time window that works for your research team. Depending on the size of your HBSGrid project space, the migration may take several days, so please plan accordingly.
 
 Contact [RCS](mailto:research@hbs.edu) for guidance on migrating MariaDB databases.
