@@ -4,8 +4,10 @@ author: "Melissa Velez"
 
 tags:
   - rclone
-  - syncing
+  - sync data
+  - copy data
   - transfer data
+  - upload data
 ---
 
 # Copying RCP Files to Dropbox with rclone
