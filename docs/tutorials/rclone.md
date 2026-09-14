@@ -1,3 +1,13 @@
+---
+title: "Copying RCP Files to Dropbox with rclonel"
+author: "Melissa Velez"
+
+tags:
+  - rclone
+  - syncing
+  - transfer data
+---
+
 # Copying RCP Files to Dropbox with rclone
 
 rclone is a command-line tool that can be used to copy files between your RCP project space and Dropbox. This tutorial walks through configuring a Dropbox connection and copying files from the RCP to Dropbox.
