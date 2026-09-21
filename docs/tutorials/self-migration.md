@@ -19,7 +19,7 @@ Request an RCP account, log in once to activate it, and then request a new RCP p
 ---
 ## Step 2: Check your data security requirements
 
-If your HBSGrid project space contains **Level 3 or Level 4 data**, you must update your **DAT record** to include the RCP as a storage location before moving the data.
+If your HBSGrid project space contains [**Level 3 or Level 4 data**](https://privsec.harvard.edu/classify-risk), you must update your **DAT record** to include the RCP as a storage location before moving the data.
 
 [How to update your DAT record](https://hbs-rcs.github.io/hbsrcp-docs/media/RCP%20Migration.pdf)
 
