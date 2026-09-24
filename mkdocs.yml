@@ -22,6 +22,7 @@ nav:
       - Custom Conda Environment in JupyterLab: 'tutorials/jupyterlabconda.md'
       - Self-Migration from the HBSGrid to the RCP: 'tutorials/self-migration.md'
       - Copying RCP Files to Dropbox with rclone: 'tutorials/rclone.md'
+      - Claude Code in VS Code: 'tutorials/claude_code_vscode.md'
   - Help & Support Requests:
       - Troubleshooting: 'trouble.md'  
       - Support Channels: 'help.md'
