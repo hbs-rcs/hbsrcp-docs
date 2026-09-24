@@ -1,3 +1,11 @@
+---
+title: "Claude Code in VS Code"
+author: "Samah Karim"
+
+tags:
+  - claude
+  - vscode
+---
 # Claude Code in VS Code
 
 You can install Claude Code into RCP's **VSCode** launcher as an extension. Claude works in a
