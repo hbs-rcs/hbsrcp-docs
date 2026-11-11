@@ -7,7 +7,7 @@ tags:
   - Self-Migration
 ---
 # Self-Migration from the HBSGrid to the RCP
-
+ 
 This guide walks you through moving an existing HBSGrid project to the HBS Research Computing Platform (RCP).
 
 > 🛑 **Stop:** If any of your HBSGrid project spaces pull data from a Baker Library Licensed Data storage location (e.g., Pitchbook; PatStat), contact [RCS](mailto:research@hbs.edu) so that we can discuss how this will work on the RCP.
