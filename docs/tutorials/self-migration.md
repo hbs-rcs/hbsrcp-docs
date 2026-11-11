@@ -25,8 +25,7 @@ The RCP supports research data at Levels 1–4. If your HBSGrid project space co
 
 [How to update your DAT record](https://hbs-rcs.github.io/hbsrcp-docs/media/RCP%20Migration.pdf)
 
-> [!IMPORTANT]
-> If your project space contains Baker Licensed data, it is automatically considered Level 3. If you do not have a DAT for it, contact [RCS](mailto:research@hbs.edu) so we can point you to the resources for creating one. 
+> **Important:** If your project space contains Baker Licensed data, it is automatically considered Level 3. If you do not have a DAT for it, contact [RCS](mailto:research@hbs.edu) so we can point you to the resources for creating one.
 
 ---
 
