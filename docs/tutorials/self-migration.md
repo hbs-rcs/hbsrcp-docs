@@ -10,6 +10,8 @@ tags:
 
 This guide walks you through moving an existing HBSGrid project to the HBS Research Computing Platform (RCP).
 
+> 🛑 **Stop:** If any of your HBSGrid project spaces pull data from a Baker Library Licensed Data storage location (e.g., Pitchbook; PatStat), contact [RCS](mailto:research@hbs.edu) so that we can discuss how this will work on the RCP.
+
 ## Step 1: Get access to the RCP
 
 Request an RCP account, log in once to activate it, and then request a new RCP project to replace your HBSGrid project.
@@ -19,11 +21,12 @@ Request an RCP account, log in once to activate it, and then request a new RCP p
 ---
 ## Step 2: Check your data security requirements
 
-If your HBSGrid project space contains [**Level 3 or Level 4 data**](https://privsec.harvard.edu/classify-risk), you must update your **DAT record** to include the RCP as a storage location before moving the data.
+The RCP supports research data at Levels 1–4. If your HBSGrid project space contains [**Level 3 or Level 4 data**](https://privsec.harvard.edu/classify-risk), you must update your **DAT record** to include the RCP as a storage location before moving the data.
 
 [How to update your DAT record](https://hbs-rcs.github.io/hbsrcp-docs/media/RCP%20Migration.pdf)
 
-The RCP supports research data at Levels 1–4.
+> [!IMPORTANT]
+> If your project space contains Baker Licensed data, it is automatically considered Level 3. If you do not have a DAT for it, contact [RCS](mailto:research@hbs.edu) so we can point you to the resources for creating one. 
 
 ---
 
