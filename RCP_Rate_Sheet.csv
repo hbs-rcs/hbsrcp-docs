@@ -1,0 +1,44 @@
+﻿Launcher Type,Configuration Name,CPUs,Memory,GPU?,Hourly Cost
+AWS PCS,Compute-Optimized-c6i.xlarge,4,16 GB,-,$0.17
+AWS PCS,Compute-Optimized-c6i.4xlarge,16,32 GB,-,$0.68
+AWS PCS,Compute-Optimized-c6i.8xlarge,32,64 GB,-,$1.36
+AWS PCS,Compute-Optimized-c6i.16xlarge,64,128 GB,-,$2.72
+AWS PCS,Memory-Optimized-r6i.12xlarge,48,384 GB,-,$3.024
+AWS PCS,High-Performance-g5.2xlargeGPU8cores32GB,8,32 GB,GPU,$1.212
+AWS PCS,High-Performance-g5.4xlargeGPU16cores64GB,16,64 GB,GPU,$1.624
+AWS PCS,High-Performance-g5.12xlargeGPU48cores192GB,48,192 GB,GPU,$5.672
+JupyterLab,General-Purpose-t3.medium,2,4 GB,-,$0.0416
+JupyterLab,General-Purpose-t2.large,2,8 GB,-,$0.0928
+JupyterLab,Compute-Optimized-c7a.large,2,4 GB,-,$0.10264
+Rstudio,General-Purpose-t2.large,2,8 GB,-,$0.0928
+Rstudio,Compute-Optimized-c7a.large,2,4 GB,-,$0.10264
+Rstudio,Cost-Effective-g4dn.xlarge,4,16 GB,GPU,$0.526
+Rstudio,General-Purpose-t3.xlarge,4,16 GB,-,$0.1664
+Rstudio,General-Burstable-m5.xlarge,4,16 GB,-,$0.192
+Rstudio,Memory-Optimized-r5.large,2,16 GB,-,$0.126
+Rstudio,Memory-Optimized-r5.xlarge,4,32 GB,-,$0.252
+Rstudio,Memory-Optimized-r5.2xlarge,8,64 GB,-,$0.504
+Spyder,General-Purpose-t3.xlarge,4,16 GB,-,$0.1664
+Spyder,General-Purpose-t3.2xlarge,8,32 GB,-,$0.3328
+Spyder,Compute-Optimized-c7a.2xlarge,8,16 GB,-,$0.41056
+Spyder,Compute-Optimized-c7a.4xlarge,16,32 GB,-,$0.82112
+Stata,Memory-optimized-r5a.2xlarge,2,4 GB,-,TBA
+Stata,General-Purpose-t3.xlarge,4,16 GB,-,$0.1664
+Stata,High-Performance-g5.xlarge,4,16 GB,GPU,$1.006
+Stata,Compute-Optimized-c7a.2xlarge,8,16 GB,-,$0.41056
+Stata,Compute-Optimized-c7a.4xlarge,16,32 GB,-,$0.82112
+Stata,General-Purpose-t3.2xlarge,8,32 GB,-,$0.3328
+VSCode,Compute-Optimized-c7a.large,2,4 GB,-,$0.10264
+VSCode,General-Purpose-t2.large,2,8 GB,-,$0.0928
+VSCode,High-Performance-g6.12xlarge,48,192 GB,GPU,$4.6016
+VSCode,Cost-Effective-g4dn.12xlarge,48,192 GB,GPU,$3.912
+VSCode,Cost-Effective-g4dn.xlarge,4,16 GB,GPU,$0.526
+VSCode,General-Purpose-t3.xlarge,4,16 GB,-,$0.1664
+VSCode,General-Burstable-m5.xlarge,4,16 GB,-,$0.192
+VSCode,Memory-Optimized-r5.large,2,16 GB,-,$0.126
+VSCode,Memory-Optimized-r5.xlarge,4,32 GB,-,$0.252
+VSCode,Memory-Optimized-r5.2xlarge,8,64 GB,-,$0.504
+VSCode,Cost-Efficient-g6e.8xlarge,32,256 GB, GPU,$4.52856
+SageMaker Notebook,Standard-ml.t3.large,2,8 GB,-,$0.0832
+SageMaker Notebook,Standard-ml.t3.xlarge,4,32 GB,-,TBA
+Sagemaker Canvas,SageMaker-Canvas-Default,-,-,-,TBA
