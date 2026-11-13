@@ -65,13 +65,13 @@ Select the **"Harvard Business School S3 Storage"** Collection, authenticate (if
 
 Enter the AWS IAM Access Key ID and AWS IAM Secret Key. These keys can be generated via the Files tab by clicking on the key button at the top of the page (detailed instructions [here](#accessing-aws-s3-access-keys)).
 
-!!!important
-    Keys are only valid for 90 days. If your keys expired or you rotated them, follow our [instructions](#update-expired-or-rotated-credentials) for generating new ones.
-
 <img width="341" height="44" alt="image" src="https://github.com/user-attachments/assets/759db853-b731-4ef4-aef3-63a64b78960c" />
 
 Click the continue button and you will be brought to this dialog box:
 <img width="867" height="428" alt="image" src="https://github.com/user-attachments/assets/202ec06d-29fa-498d-977b-3d928ded4203" />
+
+!!!important
+    Keys are only valid for 90 days. If your keys expired or you rotated them, follow our [instructions](#update-expired-or-rotated-credentials) for generating new ones.
 
 **5.Access Your Project Files**
 
