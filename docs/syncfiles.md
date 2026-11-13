@@ -178,6 +178,7 @@ The credentials window also displays the expiration date. RCP provides status no
 <img width="760" height="591" alt="image" src="https://github.com/user-attachments/assets/1c206e2e-72ac-4aba-bb96-73d7bb3c93a9" />
 
 **Credentials may appear in the following states:**
+
 * Active — More than 30 days left
 * Active — 8 to 30 days left
 * Active — 7 days or fewer left
