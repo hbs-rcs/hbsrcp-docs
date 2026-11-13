@@ -181,11 +181,11 @@ The S3 Credentials window opens.
 Select **Generate Credentials.** The system generates an Access Key ID and Secret Access Key.
 
 !!! important
-    The Secret Access Key is displayed only once. Copy both credentials or download the CSV file before closing the window. You cannot retrieve the Secret Access Key afterward.
+    The Secret Access Key is displayed only once. Copy both credentials before closing the window. You cannot retrieve the Secret Access Key afterward.
 
 **Add the credentials to Globus**
 
-You can either copy the Access Key ID and Secret Access Key directly into Globus or select Download CSV to save the credentials as a CSV file.
+Copy the Access Key ID and Secret Access Key directly into Globus.
 
 The credentials window also displays the expiration date. RCP provides status notifications as credentials approach expiration.
 
