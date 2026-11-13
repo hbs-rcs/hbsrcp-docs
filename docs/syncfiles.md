@@ -61,6 +61,8 @@ Select the **"Harvard Business School S3 Storage"** Collection, authenticate (if
 
 **4.Enter Your AWS IAM Credentials**
 
+> 🛑 **Stop!** Please treat your AWS Keys as you would a password. Do not store them, share them with others, or expose them to AI.
+
 Enter the AWS IAM Access Key ID and AWS IAM Secret Key. These keys can be generated via the Files tab by clicking on the key button at the top of the page (detailed instructions [here](#accessing-aws-s3-access-keys)).
 
 !!!important
@@ -163,6 +165,8 @@ If you have any questions or run into issues, please reach out to [research@hbs.
 ## Accessing AWS S3 Access Keys
 
 Each RCP project has its own project storage bucket. You must generate separate S3 credentials for **each project you are assigned to.** The generated AWS S3 Access Keys are **valid for 90 days** from the time they are generated. After they expire, they can no longer be used to access the project bucket or transfer files through Globus.
+
+> 🛑 **Stop!** Please treat your AWS Keys as you would a password. Do not store them, share them with others, or expose them to AI.
 
 **Generate S3 credentials**
 
