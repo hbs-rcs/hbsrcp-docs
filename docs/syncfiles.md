@@ -61,10 +61,15 @@ Select the **"Harvard Business School S3 Storage"** Collection, authenticate (if
 
 **4.Enter Your AWS IAM Credentials**
 
+Enter the AWS IAM Access Key ID and AWS IAM Secret Key. These keys can be generated via the Files tab by clicking on the key button at the top of the page (detailed instructions [here](#accessing-aws-s3-access-keys)).
+
+!!!important
+    Keys are only valid for 90 days. If your keys expired or you rotated them, follow our [instructions](#update-expired-or-rotated-credentials) for generating new ones.
+
+<img width="341" height="44" alt="image" src="https://github.com/user-attachments/assets/759db853-b731-4ef4-aef3-63a64b78960c" />
+
 Click the continue button and you will be brought to this dialog box:
 <img width="867" height="428" alt="image" src="https://github.com/user-attachments/assets/202ec06d-29fa-498d-977b-3d928ded4203" />
-
-Enter the AWS IAM Access Key ID and AWS IAM Secret Key provided to you by the Research Technology team for your project. If you don't have an Access Key ID or Secret Key ID, please fill out [this form](https://forms.cloud.microsoft/r/iV8unLm4jq) to request them for your project.
 
 **5.Access Your Project Files**
 
@@ -149,9 +154,64 @@ For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.
 
 If you are brand new to code code version control with git, [please visit this useful guide](https://docs.github.com/en/get-started/start-your-journey).
 
-
 If you are using Harvard’s Github enterprise for your repositories the standard login and password do not work and you will need to use either ssh keys or tokens.  Please see
 1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
 2.	https://github.com/settings/ssh for ssh
 
 If you have any questions or run into issues, please reach out to [research@hbs.edu](research@hbs.edu).
+
+## Accessing AWS S3 Access Keys
+
+Each RCP project has its own project storage bucket. You must generate separate S3 credentials for **each project you are assigned to.** The generated AWS S3 Access Keys are **valid for 90 days** from the time they are generated. After they expire, they can no longer be used to access the project bucket or transfer files through Globus.
+
+**Generate S3 credentials**
+
+In the RCP project space, select the Files tab. Click on the Key icon next to the bucket name. 
+
+<img width="765" height="386" alt="image" src="https://github.com/user-attachments/assets/ca9fd556-720a-447f-bce5-1e42a50e95fd" />
+
+The S3 Credentials window opens.
+
+<img width="389" height="424" alt="image" src="https://github.com/user-attachments/assets/54cfaa06-7354-4913-a43d-96e819cd5a6f" />
+
+Select **Generate Credentials.** The system generates an Access Key ID and Secret Access Key.
+
+!!! important
+    The Secret Access Key is displayed only once. Copy both credentials or download the CSV file before closing the window. You cannot retrieve the Secret Access Key afterward.
+
+**Add the credentials to Globus**
+
+You can either copy the Access Key ID and Secret Access Key directly into Globus or select Download CSV to save the credentials as a CSV file.
+
+The credentials window also displays the expiration date. RCP provides status notifications as credentials approach expiration.
+
+<img width="760" height="591" alt="image" src="https://github.com/user-attachments/assets/1c206e2e-72ac-4aba-bb96-73d7bb3c93a9" />
+
+**Credentials may appear in the following states:**
+* Active — More than 30 days left
+* Active — 8 to 30 days left
+* Active — 7 days or fewer left
+* Expired credentials
+
+When credentials are close to expiring, select Rotate Credentials to generate a new set. Rotating credentials immediately invalidates the previous credentials, so update Globus and any other tools that use them.
+
+**Troubleshooting**
+
+If an error occurs while generating credentials, select Try Again after a short wait
+
+<img width="392" height="481" alt="image" src="https://github.com/user-attachments/assets/448d3e98-7cf9-4c0a-aa83-9740bbbdc028" />
+
+If the error persists, please contact [RCS](mailto:research@hbs.edu). 
+
+### Update expired or rotated credentials
+RCP S3 credentials expire after 90 days. They also become invalid immediately when credentials are rotated.
+
+When the credentials expire or are rotated:
+1. Generate a new Access Key ID and Secret Access Key in RCP.
+2. Return to the Globus collection’s Credentials tab.
+3. Add the new credentials and the project bucket name.
+4. Remove the old credentials.
+5. If the old credentials are not updated, Globus may be unable to access the project folder or transfer files.
+
+
+
