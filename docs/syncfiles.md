@@ -148,20 +148,6 @@ Monitor the transfer status in Globus and confirm that the files appear in the e
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
 
-## Managing Source Code - Syncing to Git
-
-All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute git commands.  
-
-For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.com/cheat-sheet).
-
-If you are brand new to code code version control with git, [please visit this useful guide](https://docs.github.com/en/get-started/start-your-journey).
-
-If you are using Harvard’s Github enterprise for your repositories the standard login and password do not work and you will need to use either ssh keys or tokens.  Please see
-1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
-2.	https://github.com/settings/ssh for ssh
-
-If you have any questions or run into issues, please reach out to [research@hbs.edu](research@hbs.edu).
-
 ## Accessing AWS S3 Access Keys
 
 Each RCP project has its own project storage bucket. You must generate separate S3 credentials for **each project you are assigned to.** The generated AWS S3 Access Keys are **valid for 90 days** from the time they are generated. After they expire, they can no longer be used to access the project bucket or transfer files through Globus.
@@ -216,6 +202,22 @@ When the credentials expire or are rotated:
 3. Add the new credentials and the project bucket name.
 4. Remove the old credentials.
 5. If the old credentials are not updated, Globus may be unable to access the project folder or transfer files.
+
+## Managing Source Code - Syncing to Git
+
+All launchers for IDEs (including Stata, VSCode, RStudio, Jupyter and Spyder) have git installed on their base images.   To use git for sessions using these launchers, please use the terminal window for each to execute git commands.  
+
+For a list of common git commands see the [Git Hub Cheat Sheet](https://git-scm.com/cheat-sheet).
+
+If you are brand new to code code version control with git, [please visit this useful guide](https://docs.github.com/en/get-started/start-your-journey).
+
+If you are using Harvard’s Github enterprise for your repositories the standard login and password do not work and you will need to use either ssh keys or tokens.  Please see
+1.	[https://github.com/settings/tokens](https://github.com/settings/tokens) for using tokens  
+2.	https://github.com/settings/ssh for ssh
+
+If you have any questions or run into issues, please reach out to [research@hbs.edu](research@hbs.edu).
+
+
 
 
 
