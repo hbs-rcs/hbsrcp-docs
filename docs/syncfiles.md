@@ -147,7 +147,7 @@ Monitor the transfer status in Globus and confirm that the files appear in the e
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
 
-## Moving Files from the HBSGrid to Harvard Dropbox Using Globus
+### Moving Files from the HBSGrid to Harvard Dropbox Using Globus
 
 !!! important "This ONLY works with a Harvard Dropbox account"
     These instructions will **not** work with a personal Dropbox account or a Dropbox account from another institution. You must have a **Harvard Dropbox** account before you begin.
