@@ -102,7 +102,6 @@ and each project storage location will be visible as a separate folder with the 
 
 <img width="1047" height="708" alt="image" src="https://github.com/user-attachments/assets/fc46eea3-0a97-4ae9-b8bb-cca2fc8b1066" />
 
-
 ### Special Note on Uploading Files from the HBSGrid to the RCP Using Globus
 
 As the HBSGrid prepares for retirement in FY27, we recommend creating RCP project spaces to replace projects currently hosted on the HBSGrid. For large data transfers from an HBSGrid project space to the RCP we recommend using Globus.
@@ -147,6 +146,80 @@ Select the folder you wish to transfer and click on the Start arrow icon. For th
 Monitor the transfer status in Globus and confirm that the files appear in the expected RCP location. Do not delete the files from `/export/globus` until the transfer has completed successfully and the files have been verified.
 
 If you need help at any point along the way, please contact [research@hbs.edu](mailto:research@hbs.edu).
+
+## Moving Files from the HBSGrid to Harvard Dropbox Using Globus
+
+!!! important "This ONLY works with a Harvard Dropbox account"
+    These instructions will **not** work with a personal Dropbox account or a Dropbox account from another institution. You must have a **Harvard Dropbox** account before you begin.
+
+    **Don't have one?** Request a Harvard Dropbox account by filling out [this form](https://harvard.service-now.com/ithelp?id=sc_cat_item&sys_id=b5cdd311db238f00f7627eb6bf9619c0).
+
+    Wait until your account is approved and you can log in to Harvard Dropbox before continuing.
+
+If you want to move your HBSGrid project files in Dropbox, you can use Globus to transfer them directly from the HBSGrid to your Harvard Dropbox account. Globus is the recommended method for large transfers or transfers with many files.
+
+**1: Stage your files on the HBSGrid**
+
+Copy the HBSGrid folder you want to transfer into the `/export/globus` staging folder. You can do this in NoMachine using the file browser's "Copy to" option, or from a Terminal.
+
+Browser:
+
+<img width="948" height="715" alt="image" src="https://github.com/user-attachments/assets/1481c822-1f61-40b7-bc8f-ca4bb179739c" />
+<img width="685" height="736" alt="image" src="https://github.com/user-attachments/assets/ff9e6f4e-f591-48f1-851a-be940a7eaccc" />
+
+Terminal:
+
+```bash
+cp -r /path/to/your/project/folder /export/globus/<your-folder-name>
+```
+
+Your files must be in `/export/globus/<your-folder-name>` before you start the transfer.
+
+**2: Log in to Globus**
+
+Go to [www.globus.org](https://www.globus.org), click **Log In**, select **Harvard University**, and sign in with your HarvardKey.
+
+**3: Open the HBS DTN collection**
+
+In the **File Manager**, make sure the two-panel view is turned on (use the **Panels** buttons in the top right). In the **left** Collection box, search for and select **Harvard Business School DTN**. Find your staged folder and check the box next to it.
+
+<img width="975" height="359" alt="image" src="https://github.com/user-attachments/assets/ce6bd01c-26fd-42a8-a32b-02cbd836f29a" />
+
+**4: Open the Harvard Dropbox collection**
+
+In the **right** Collection box, search for and select **Harvard Dropbox**.
+
+The first time you connect, you will see the message **"Authentication/Consent is required for Globus transfer service to manage data on this collection."** Click **Continue** and follow the prompts to grant consent.
+
+**5: Link your Dropbox account**
+
+Next, a **Provision Credential** window will appear with your DropBox Account email address and your Globus Identity. 
+
+Click **Continue**. You may be redirected to Dropbox to sign in and allow Globus access to your account.
+
+<img width="975" height="327" alt="image" src="https://github.com/user-attachments/assets/17968160-7cf6-4b8c-9d6c-4882b31c65ae" />
+
+!!! note
+    If the Dropbox Account field shows the wrong account, correct it before clicking **Continue**. It must match the Harvard Dropbox account you were approved for.
+
+**6: Choose the destination folder**
+
+Once connected, the right panel shows the contents of your Harvard Dropbox. Browse to the folder where you want your files to go, or click **New Folder** to create one.
+
+**7: Start the transfer**
+
+With your staged folder selected on the left and your Dropbox destination open on the right, click the **Start** button under the **left** panel. The transfer direction should be **Harvard Business School DTN → Harvard Dropbox**.
+
+You can adjust settings (such as sync options or email notification) under **Transfer & Timer Options** before clicking Start.
+
+**8: Monitor and verify**
+
+Go to the **Activity** page in Globus to watch the progress of your transfer. You'll also get an email when it finishes. When it's done, log in to Dropbox and confirm that your files arrived.
+
+!!! important
+    Do not delete your files from `/export/globus` or from the HBSGrid until the transfer has completed successfully and you have verified the files in Dropbox.
+
+If you have questions or run into problems, contact RCS at [research@hbs.edu](mailto:research@hbs.edu).
 
 ## Accessing AWS S3 Access Keys
 
